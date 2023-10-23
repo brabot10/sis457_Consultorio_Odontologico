@@ -1,11 +1,6 @@
-﻿--EL ESPACIADO INDICA LA EJECUCION DE CADA COMANDO
--- DDL comando para crear la base de datos  --> Lenguaje de definicion de dato
-
+﻿-- DDL
 CREATE DATABASE LabConsultorioOdontologico; 
 
-
-
---CREAR un Usuario especifico
 
 USE master
 GO
@@ -22,14 +17,6 @@ ALTER ROLE db_owner ADD MEMBER usrconsultorio
 GO
 
 
-
---CHECK_EXPIRATION=OFF,VERIFICACIÓN DE POLITICAS
---CHECK_POLICY=ON     VERICACION DE LAS POLITICAS        
-
-
-
-
---CREACION DE LAS TABLAS NO ES NECESARIO EJECUTAR EL DROP EN LA PRIMERA EJECUCIÓN
 
 DROP TABLE Usuario;
 DROP TABLE Personal;
@@ -100,19 +87,15 @@ ALTER TABLE Medicamento ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_N
 ALTER TABLE Medicamento ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
 ALTER TABLE Medicamento ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
 
---El Alter es para practicar comandos sql
 
 
-
---DML -> Lenguaje de definición Modelado metodo para crear un procedimiento almacenado 
-
-CREATE PROC paPersonalListar @parametro1 VARCHAR(50) --creamos la tabla con un parametro
+CREATE PROC paPersonalListar @parametro1 VARCHAR(50) 
 AS
-  SELECT id, cedulaIdentidad, nombres, primerApellido, segundoApellido, direccion, celular, cargo, usuarioRegistro, fechaRegistro, estado -- todo lo que vamos a tomar
+  SELECT id, cedulaIdentidad, nombres, primerApellido, segundoApellido, direccion, celular, cargo, usuarioRegistro, fechaRegistro, estado -
   FROM Personal  --De que tabla lo tomaremos
-  WHERE estado<>-1 AND nombres LIKE '%'+REPLACE(@parametro1,' ','%')+'%';-- WHERE estado<>-1 DONDE ESTADO SEA DIFENTE DE -1 LUEGO VIENE EL Proc.almacenado '%'+REPLACE(@parametro1,' ','%')+'%' nos sirve para buscar una palabra sin importar lo que hay atras o adelate 
+  WHERE estado<>-1 AND nombres LIKE '%'+REPLACE(@parametro1,' ','%')+'%';
 
-EXEC paPersonalListar 'Juan';--para porbar el Proc.almacenado
+EXEC paPersonalListar 'Juan';
 
 
 CREATE PROC paPacienteListar @parametro2 VARCHAR(50)
@@ -140,9 +123,7 @@ AS
 
 EXEC paMedicamentoListar 'Paracetamol';
 
-
-
--- Personal Comandos para insertar datos
+--DML
 
 INSERT INTO Personal (cedulaIdentidad, nombres, primerApellido, segundoApellido, direccion, celular, cargo)
 VALUES ('123456789', 'Juan', 'Pérez', 'García', 'Calle 123', 9876543210, 'Médico');
