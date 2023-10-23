@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CpConsultorioOdontologico", "CpConsultorioOdontologico\CpConsultorioOdontologico.csproj", "{07D0F5E4-5C70-4256-98C1-2DAEB238F651}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadConsultorioOdontologico", "CadConsultorioOdontologico\CadConsultorioOdontologico.csproj", "{873AB1A7-66B7-4E84-9572-3AF1885EC8D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{07D0F5E4-5C70-4256-98C1-2DAEB238F651}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07D0F5E4-5C70-4256-98C1-2DAEB238F651}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07D0F5E4-5C70-4256-98C1-2DAEB238F651}.Release|Any CPU.Build.0 = Release|Any CPU
+		{873AB1A7-66B7-4E84-9572-3AF1885EC8D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{873AB1A7-66B7-4E84-9572-3AF1885EC8D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{873AB1A7-66B7-4E84-9572-3AF1885EC8D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{873AB1A7-66B7-4E84-9572-3AF1885EC8D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
