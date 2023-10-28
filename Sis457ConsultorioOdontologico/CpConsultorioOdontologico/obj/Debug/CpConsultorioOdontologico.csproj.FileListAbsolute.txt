@@ -19,3 +19,25 @@ C:\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOd
 C:\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.csproj.CopyComplete
 C:\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.exe
 C:\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.pdb
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\CpConsultorioOdontologico.exe.config
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\CpConsultorioOdontologico.exe
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\CpConsultorioOdontologico.pdb
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\CadConsultorioOdontologico.dll
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\ClnConsultorioOdontologico.dll
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\EntityFramework.dll
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\EntityFramework.SqlServer.dll
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\CadConsultorioOdontologico.pdb
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\CadConsultorioOdontologico.dll.config
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\ClnConsultorioOdontologico.pdb
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\ClnConsultorioOdontologico.dll.config
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\EntityFramework.xml
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\EntityFramework.SqlServer.xml
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.csproj.AssemblyReference.cache
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.FrmPaciente.resources
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.FrmPrincipal.resources
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.Properties.Resources.resources
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.csproj.GenerateResource.cache
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.csproj.CoreCompileInputs.cache
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.csproj.CopyComplete
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.exe
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.pdb

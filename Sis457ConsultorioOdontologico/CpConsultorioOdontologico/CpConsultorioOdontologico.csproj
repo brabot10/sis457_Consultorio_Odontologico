@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPaciente.Designer.cs">
+      <DependentUpon>FrmPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmPaciente.resx">
+      <DependentUpon>FrmPaciente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +84,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -99,6 +109,30 @@
       <Project>{376be4a5-c10f-47e3-bc26-46db2653d912}</Project>
       <Name>ClnConsultorioOdontologico</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pacientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnCliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnNuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnEditar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3017912_annul_cancel_clean_delete_eliminate_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1891023_cancel_cercle_close_delete_dismiss_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1891021_approved_check_checkbox_checkmark_confirm_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnCancelar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

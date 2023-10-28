@@ -62,11 +62,11 @@ namespace ClnConsultorioOdontologico
             }
         }
 
-        public static List<paPacienteListar_Result> listarPa(string parametro2)
+        public static List<paPacienteListar_Result> listarPa(string parametro)
         {
             using (var context = new LabConsultorioOdontologicoEntities())
             {
-                return context.paPacienteListar(parametro2).ToList();
+                return context.paPacienteListar(parametro).ToList();
             }
         }
     }
