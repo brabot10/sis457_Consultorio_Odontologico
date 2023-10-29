@@ -48,7 +48,7 @@ namespace CpConsultorioOdontologico
         {
             Size = new Size(776, 493);
             esNuevo = true;
-            txtNombre.Focus();
+            txtCelular.Focus();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace CpConsultorioOdontologico
             int index = dgvLista.CurrentCell.RowIndex;
             int id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
             var paciente = PacienteCln.get(id);
-            txtNombre.Text = paciente.nombres;
+            txtCelular.Text = paciente.nombres;
             txtCedulaIdentidad.Text = paciente.cedulaIdentidad;
             txtAlergias.Text = paciente.alergias;
             dtpFechaNacimiento.Value = paciente.fechaNacimiento;
@@ -87,10 +87,46 @@ namespace CpConsultorioOdontologico
             if (e.KeyChar == (char)Keys.Enter) listar();
         }
 
+        private bool validar()
+        {
+            bool esValido = true;
+            erpNombre.SetError(txtNombre, "");
+            erpCedulaIdentidad.SetError(txtCedulaIdentidad, "");
+            erpAlergias.SetError(txtAlergias, "");
+            erpFechaNacimiento.SetError(dtpFechaNacimiento, "");
+            erpCelular.SetError(txtCelular, "");
+            if (string.IsNullOrEmpty(txtNombre.Text))
+            {
+                esValido = false;
+                erpNombre.SetError(txtNombre, "El campo Nombre es obligatorio");
+            }
+            if (string.IsNullOrEmpty(txtCedulaIdentidad.Text))
+            {
+                esValido = false;
+                erpCedulaIdentidad.SetError(txtCedulaIdentidad, "El campo Cedula de Identidad es obligatorio");
+            }
+            if (string.IsNullOrEmpty(txtAlergias.Text))
+            {
+                esValido = false;
+                erpAlergias.SetError(txtAlergias, "El campo Alergias es obligatorio");
+            }
+            if (string.IsNullOrEmpty(dtpFechaNacimiento.Text))
+            {
+                esValido = false;
+                erpFechaNacimiento.SetError(dtpFechaNacimiento, "El campo Fecha de Nacimiento es obligatorio");
+            }
+            if (string.IsNullOrEmpty(txtCelular.Text))
+            {
+                esValido = false;
+                erpCelular.SetError(txtCelular, "El campo Celular es obligatorio");
+            }
+            return esValido;
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             var paciente = new Paciente();
-            paciente.nombres = txtNombre.Text.Trim();
+            paciente.nombres = txtCelular.Text.Trim();
             paciente.cedulaIdentidad = txtCedulaIdentidad.Text.Trim();
             paciente.alergias = txtAlergias.Text;
             paciente.fechaNacimiento = dtpFechaNacimiento.Value;
@@ -116,7 +152,7 @@ namespace CpConsultorioOdontologico
         }
         private void limpiar()
         {
-            txtNombre.Text = string.Empty;
+            txtCelular.Text = string.Empty;
             txtCedulaIdentidad.Text = string.Empty;
             txtAlergias.Text = string.Empty;
             dtpFechaNacimiento.Value = DateTime.Now;

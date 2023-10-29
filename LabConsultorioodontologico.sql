@@ -136,3 +136,13 @@ UPDATE Personal SET estado=-1 WHERE id=2;
 UPDATE Personal SET estado=0 WHERE id=2;
 
 SELECT * FROM Personal WHERE estado=1;
+
+INSERT INTO Usuario(usuario, clave, idPersonal)
+VALUES ('Bryan', '123456', 1);
+
+DELETE FROM Usuario
+WHERE id = 3;
+
+SELECT * FROM Usuario;
+
+
