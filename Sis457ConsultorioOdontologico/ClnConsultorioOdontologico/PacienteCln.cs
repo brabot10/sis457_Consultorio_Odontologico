@@ -29,7 +29,6 @@ namespace ClnConsultorioOdontologico
                 existente.alergias = paciente.alergias;
                 existente.fechaNacimiento = paciente.fechaNacimiento;
                 existente.celular = paciente.celular;
-                existente.estado = paciente.estado;
                 existente.usuarioRegistro = paciente.usuarioRegistro;
                 return context.SaveChanges();
             }

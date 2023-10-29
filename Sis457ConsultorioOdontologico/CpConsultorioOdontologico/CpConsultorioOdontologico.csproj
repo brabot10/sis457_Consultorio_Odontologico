@@ -134,6 +134,18 @@
   <ItemGroup>
     <None Include="Resources\btnCancelar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paciente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\citas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicamentos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personal.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
