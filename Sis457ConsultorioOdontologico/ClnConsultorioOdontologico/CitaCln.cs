@@ -24,10 +24,12 @@ namespace ClnConsultorioOdontologico
             {
                 var existente = context.Cita.Find(cita.id);
                 existente.fecha = cita.fecha;
-                existente.hora = cita.hora;
                 existente.tratamiento = cita.tratamiento;
                 existente.pago = cita.pago;
                 existente.usuarioRegistro = cita.usuarioRegistro;
+                existente.fechaRegistro =   cita.fechaRegistro;
+                existente.hora = cita.hora;
+                existente.aCuenta = cita.aCuenta;
                 return context.SaveChanges();
             }
         }

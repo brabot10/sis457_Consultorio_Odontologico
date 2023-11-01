@@ -177,5 +177,21 @@ namespace CpConsultorioOdontologico
 
             }
         }
+
+        private void btnPaciente_Click(object sender, EventArgs e)
+        {
+            FrmPaciente llamar = new FrmPaciente();
+            llamar.Show();
+            Size = new Size(776, 344);
+            this.Hide();
+        }
+
+        private void btnCitas_Click(object sender, EventArgs e)
+        {
+            FrmCita llamar = new FrmCita();
+            llamar.Show();
+            Size = new Size(776, 344);
+            this.Hide();
+        }
     }
 }

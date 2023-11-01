@@ -369,12 +369,12 @@
     <value>146, 17</value>
   </metadata>
   <metadata name="erpAlergias.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>275, 17</value>
+    <value>346, 17</value>
   </metadata>
   <metadata name="erpFechaNacimiento.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>404, 17</value>
+    <value>601, 22</value>
   </metadata>
   <metadata name="erpCelular.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>533, 17</value>
+    <value>478, 19</value>
   </metadata>
 </root>

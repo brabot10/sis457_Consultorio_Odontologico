@@ -143,6 +143,36 @@ namespace CpConsultorioOdontologico.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BuscarCitas {
+            get {
+                object obj = ResourceManager.GetObject("BuscarCitas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CalcelarCitas {
+            get {
+                object obj = ResourceManager.GetObject("CalcelarCitas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CerrarCitas {
+            get {
+                object obj = ResourceManager.GetObject("CerrarCitas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap citas {
             get {
                 object obj = ResourceManager.GetObject("citas", resourceCulture);
@@ -153,9 +183,39 @@ namespace CpConsultorioOdontologico.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EditarCitas {
+            get {
+                object obj = ResourceManager.GetObject("EditarCitas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EliminarCitas {
+            get {
+                object obj = ResourceManager.GetObject("EliminarCitas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondo {
             get {
                 object obj = ResourceManager.GetObject("fondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GuardarCitas {
+            get {
+                object obj = ResourceManager.GetObject("GuardarCitas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +236,16 @@ namespace CpConsultorioOdontologico.Properties {
         internal static System.Drawing.Bitmap medicamentos {
             get {
                 object obj = ResourceManager.GetObject("medicamentos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NuevoCitas {
+            get {
+                object obj = ResourceManager.GetObject("NuevoCitas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

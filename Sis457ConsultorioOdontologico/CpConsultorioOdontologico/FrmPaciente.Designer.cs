@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPaciente));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
@@ -97,26 +97,29 @@
             this.pnlMenu.Controls.Add(this.btnPaciente);
             this.pnlMenu.Controls.Add(this.pbxLogo);
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(157, 342);
+            this.pnlMenu.Size = new System.Drawing.Size(209, 421);
             this.pnlMenu.TabIndex = 1;
             // 
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.pnlTitulo.Controls.Add(this.lblTitulo);
-            this.pnlTitulo.Location = new System.Drawing.Point(156, 0);
+            this.pnlTitulo.Location = new System.Drawing.Point(208, 0);
+            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(620, 71);
+            this.pnlTitulo.Size = new System.Drawing.Size(827, 87);
             this.pnlTitulo.TabIndex = 2;
             // 
             // lblTitulo
             // 
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(14, 17);
+            this.lblTitulo.Location = new System.Drawing.Point(19, 21);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(591, 32);
+            this.lblTitulo.Size = new System.Drawing.Size(788, 39);
             this.lblTitulo.TabIndex = 29;
             this.lblTitulo.Text = "Consultorio Odontologico :::Pacientes:::";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -126,10 +129,9 @@
             this.lblBusqueda.AutoSize = true;
             this.lblBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBusqueda.ForeColor = System.Drawing.Color.White;
-            this.lblBusqueda.Location = new System.Drawing.Point(7, 11);
-            this.lblBusqueda.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBusqueda.Location = new System.Drawing.Point(9, 14);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(233, 16);
+            this.lblBusqueda.Size = new System.Drawing.Size(286, 20);
             this.lblBusqueda.TabIndex = 31;
             this.lblBusqueda.Text = "Buscar por nombre del Paciente:";
             // 
@@ -141,9 +143,10 @@
             this.pnlDatos.Controls.Add(this.btnBuscar);
             this.pnlDatos.Controls.Add(this.txtParametro);
             this.pnlDatos.Controls.Add(this.lblBusqueda);
-            this.pnlDatos.Location = new System.Drawing.Point(156, 71);
+            this.pnlDatos.Location = new System.Drawing.Point(208, 87);
+            this.pnlDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlDatos.Name = "pnlDatos";
-            this.pnlDatos.Size = new System.Drawing.Size(620, 271);
+            this.pnlDatos.Size = new System.Drawing.Size(827, 334);
             this.pnlDatos.TabIndex = 30;
             // 
             // pnlAcciones
@@ -152,10 +155,10 @@
             this.pnlAcciones.Controls.Add(this.btnEliminar);
             this.pnlAcciones.Controls.Add(this.btnNuevo);
             this.pnlAcciones.Controls.Add(this.btnCerrar);
-            this.pnlAcciones.Location = new System.Drawing.Point(13, 194);
-            this.pnlAcciones.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlAcciones.Location = new System.Drawing.Point(17, 239);
+            this.pnlAcciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlAcciones.Name = "pnlAcciones";
-            this.pnlAcciones.Size = new System.Drawing.Size(592, 72);
+            this.pnlAcciones.Size = new System.Drawing.Size(789, 89);
             this.pnlAcciones.TabIndex = 36;
             // 
             // gbxLista
@@ -163,14 +166,14 @@
             this.gbxLista.Controls.Add(this.dgvLista);
             this.gbxLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxLista.ForeColor = System.Drawing.Color.White;
-            this.gbxLista.Location = new System.Drawing.Point(10, 61);
-            this.gbxLista.Margin = new System.Windows.Forms.Padding(2);
+            this.gbxLista.Location = new System.Drawing.Point(13, 75);
+            this.gbxLista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbxLista.Name = "gbxLista";
-            this.gbxLista.Padding = new System.Windows.Forms.Padding(2);
-            this.gbxLista.Size = new System.Drawing.Size(592, 129);
+            this.gbxLista.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbxLista.Size = new System.Drawing.Size(789, 159);
             this.gbxLista.TabIndex = 35;
             this.gbxLista.TabStop = false;
-            this.gbxLista.Text = "Lista de Terapeutas:";
+            this.gbxLista.Text = "Lista de Pacientes:";
             // 
             // dgvLista
             // 
@@ -182,56 +185,57 @@
             this.dgvLista.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvLista.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLista.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(164)))), ((int)(((byte)(168)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(164)))), ((int)(((byte)(168)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(164)))), ((int)(((byte)(168)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(164)))), ((int)(((byte)(168)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLista.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLista.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvLista.EnableHeadersVisualStyles = false;
             this.dgvLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(203)))), ((int)(((byte)(209)))));
-            this.dgvLista.Location = new System.Drawing.Point(5, 21);
+            this.dgvLista.Location = new System.Drawing.Point(7, 26);
+            this.dgvLista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvLista.MultiSelect = false;
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.ReadOnly = true;
             this.dgvLista.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(203)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(203)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLista.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(203)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(203)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLista.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvLista.RowHeadersVisible = false;
             this.dgvLista.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
-            this.dgvLista.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
+            this.dgvLista.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLista.Size = new System.Drawing.Size(582, 103);
+            this.dgvLista.Size = new System.Drawing.Size(776, 127);
             this.dgvLista.TabIndex = 0;
             // 
             // txtParametro
             // 
-            this.txtParametro.Location = new System.Drawing.Point(6, 37);
-            this.txtParametro.Margin = new System.Windows.Forms.Padding(2);
+            this.txtParametro.Location = new System.Drawing.Point(8, 46);
+            this.txtParametro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtParametro.Name = "txtParametro";
-            this.txtParametro.Size = new System.Drawing.Size(484, 20);
+            this.txtParametro.Size = new System.Drawing.Size(644, 22);
             this.txtParametro.TabIndex = 32;
             this.txtParametro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParametro_KeyPress);
             // 
@@ -239,9 +243,10 @@
             // 
             this.pnlDatosDes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(124)))), ((int)(((byte)(127)))));
             this.pnlDatosDes.Controls.Add(this.gbxDatos);
-            this.pnlDatosDes.Location = new System.Drawing.Point(0, 342);
+            this.pnlDatosDes.Location = new System.Drawing.Point(0, 421);
+            this.pnlDatosDes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlDatosDes.Name = "pnlDatosDes";
-            this.pnlDatosDes.Size = new System.Drawing.Size(776, 152);
+            this.pnlDatosDes.Size = new System.Drawing.Size(1035, 187);
             this.pnlDatosDes.TabIndex = 31;
             // 
             // gbxDatos
@@ -260,11 +265,11 @@
             this.gbxDatos.Controls.Add(this.btnCancelar);
             this.gbxDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxDatos.ForeColor = System.Drawing.Color.White;
-            this.gbxDatos.Location = new System.Drawing.Point(2, 2);
-            this.gbxDatos.Margin = new System.Windows.Forms.Padding(2);
+            this.gbxDatos.Location = new System.Drawing.Point(3, 2);
+            this.gbxDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbxDatos.Name = "gbxDatos";
-            this.gbxDatos.Padding = new System.Windows.Forms.Padding(2);
-            this.gbxDatos.Size = new System.Drawing.Size(774, 151);
+            this.gbxDatos.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbxDatos.Size = new System.Drawing.Size(1032, 186);
             this.gbxDatos.TabIndex = 37;
             this.gbxDatos.TabStop = false;
             this.gbxDatos.Text = "Datos del Producto";
@@ -277,94 +282,90 @@
             this.dtpFechaNacimiento.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.dtpFechaNacimiento.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(164)))), ((int)(((byte)(168)))));
             this.dtpFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(154, 106);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(205, 130);
+            this.dtpFechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(265, 22);
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(352, 26);
             this.dtpFechaNacimiento.TabIndex = 26;
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(536, 18);
-            this.txtCelular.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCelular.Location = new System.Drawing.Point(715, 22);
+            this.txtCelular.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCelular.MaxLength = 100;
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(215, 21);
+            this.txtCelular.Size = new System.Drawing.Size(285, 24);
             this.txtCelular.TabIndex = 25;
             // 
             // lblCelular
             // 
             this.lblCelular.AutoSize = true;
-            this.lblCelular.Location = new System.Drawing.Point(463, 23);
-            this.lblCelular.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCelular.Location = new System.Drawing.Point(617, 28);
             this.lblCelular.Name = "lblCelular";
-            this.lblCelular.Size = new System.Drawing.Size(57, 15);
+            this.lblCelular.Size = new System.Drawing.Size(66, 18);
             this.lblCelular.TabIndex = 24;
             this.lblCelular.Text = "Celular:";
             // 
             // txtAlergias
             // 
-            this.txtAlergias.Location = new System.Drawing.Point(154, 78);
-            this.txtAlergias.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAlergias.Location = new System.Drawing.Point(205, 96);
+            this.txtAlergias.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAlergias.MaxLength = 250;
             this.txtAlergias.Name = "txtAlergias";
-            this.txtAlergias.Size = new System.Drawing.Size(265, 21);
+            this.txtAlergias.Size = new System.Drawing.Size(352, 24);
             this.txtAlergias.TabIndex = 21;
             // 
             // lblFechaNacimiento
             // 
             this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(7, 111);
-            this.lblFechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(9, 137);
             this.lblFechaNacimiento.Name = "lblFechaNacimiento";
-            this.lblFechaNacimiento.Size = new System.Drawing.Size(139, 15);
+            this.lblFechaNacimiento.Size = new System.Drawing.Size(172, 18);
             this.lblFechaNacimiento.TabIndex = 18;
-            this.lblFechaNacimiento.Text = "Fecha de Ncimiento:";
+            this.lblFechaNacimiento.Text = "Fecha de Nacimiento:";
             // 
             // lblAlergias
             // 
             this.lblAlergias.AutoSize = true;
-            this.lblAlergias.Location = new System.Drawing.Point(8, 81);
-            this.lblAlergias.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAlergias.Location = new System.Drawing.Point(11, 100);
             this.lblAlergias.Name = "lblAlergias";
-            this.lblAlergias.Size = new System.Drawing.Size(63, 15);
+            this.lblAlergias.Size = new System.Drawing.Size(73, 18);
             this.lblAlergias.TabIndex = 16;
             this.lblAlergias.Text = "Alergias:";
             // 
             // txtCedulaIdentidad
             // 
-            this.txtCedulaIdentidad.Location = new System.Drawing.Point(154, 45);
-            this.txtCedulaIdentidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCedulaIdentidad.Location = new System.Drawing.Point(205, 55);
+            this.txtCedulaIdentidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCedulaIdentidad.MaxLength = 15;
             this.txtCedulaIdentidad.Name = "txtCedulaIdentidad";
-            this.txtCedulaIdentidad.Size = new System.Drawing.Size(265, 21);
+            this.txtCedulaIdentidad.Size = new System.Drawing.Size(352, 24);
             this.txtCedulaIdentidad.TabIndex = 15;
             // 
             // lblCedulaIdentidad
             // 
             this.lblCedulaIdentidad.AutoSize = true;
-            this.lblCedulaIdentidad.Location = new System.Drawing.Point(7, 49);
-            this.lblCedulaIdentidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCedulaIdentidad.Location = new System.Drawing.Point(9, 60);
             this.lblCedulaIdentidad.Name = "lblCedulaIdentidad";
-            this.lblCedulaIdentidad.Size = new System.Drawing.Size(140, 15);
+            this.lblCedulaIdentidad.Size = new System.Drawing.Size(160, 18);
             this.lblCedulaIdentidad.TabIndex = 14;
             this.lblCedulaIdentidad.Text = "Cedula de Identidad:";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(154, 15);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombre.Location = new System.Drawing.Point(205, 18);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombre.MaxLength = 20;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(265, 21);
+            this.txtNombre.Size = new System.Drawing.Size(352, 24);
             this.txtNombre.TabIndex = 13;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(8, 23);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombre.Location = new System.Drawing.Point(11, 28);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(62, 15);
+            this.lblNombre.Size = new System.Drawing.Size(73, 18);
             this.lblNombre.TabIndex = 8;
             this.lblNombre.Text = "Nombre:";
             // 
@@ -395,10 +396,10 @@
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.btnGuardar.Image = global::CpConsultorioOdontologico.Properties.Resources._1891021_approved_check_checkbox_checkmark_confirm_icon;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(463, 68);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuardar.Location = new System.Drawing.Point(617, 84);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(132, 59);
+            this.btnGuardar.Size = new System.Drawing.Size(176, 73);
             this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -412,10 +413,10 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.btnCancelar.Image = global::CpConsultorioOdontologico.Properties.Resources.btnCancelar;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(621, 70);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Location = new System.Drawing.Point(828, 86);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(130, 57);
+            this.btnCancelar.Size = new System.Drawing.Size(173, 70);
             this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -431,10 +432,10 @@
             this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.btnEditar.Image = global::CpConsultorioOdontologico.Properties.Resources.btnEditar;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(175, 5);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditar.Location = new System.Drawing.Point(233, 6);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(111, 59);
+            this.btnEditar.Size = new System.Drawing.Size(148, 73);
             this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -450,10 +451,10 @@
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.btnEliminar.Image = global::CpConsultorioOdontologico.Properties.Resources._3017912_annul_cancel_clean_delete_eliminate_icon;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(317, 5);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Location = new System.Drawing.Point(423, 6);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(111, 59);
+            this.btnEliminar.Size = new System.Drawing.Size(148, 73);
             this.btnEliminar.TabIndex = 12;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -468,10 +469,10 @@
             this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.btnNuevo.Image = global::CpConsultorioOdontologico.Properties.Resources.btnNuevo;
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(36, 5);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevo.Location = new System.Drawing.Point(48, 6);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(111, 59);
+            this.btnNuevo.Size = new System.Drawing.Size(148, 73);
             this.btnNuevo.TabIndex = 7;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -486,10 +487,10 @@
             this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.btnCerrar.Image = global::CpConsultorioOdontologico.Properties.Resources._1891023_cancel_cercle_close_delete_dismiss_icon;
             this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrar.Location = new System.Drawing.Point(454, 5);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrar.Location = new System.Drawing.Point(605, 6);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(111, 59);
+            this.btnCerrar.Size = new System.Drawing.Size(148, 73);
             this.btnCerrar.TabIndex = 10;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -504,10 +505,10 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.btnBuscar.Image = global::CpConsultorioOdontologico.Properties.Resources.btnCliente;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(494, 5);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Location = new System.Drawing.Point(659, 6);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(111, 52);
+            this.btnBuscar.Size = new System.Drawing.Size(148, 64);
             this.btnBuscar.TabIndex = 33;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -522,10 +523,10 @@
             this.btnPersonal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.btnPersonal.Image = global::CpConsultorioOdontologico.Properties.Resources.personal;
             this.btnPersonal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPersonal.Location = new System.Drawing.Point(0, 275);
-            this.btnPersonal.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPersonal.Location = new System.Drawing.Point(0, 338);
+            this.btnPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPersonal.Name = "btnPersonal";
-            this.btnPersonal.Size = new System.Drawing.Size(155, 59);
+            this.btnPersonal.Size = new System.Drawing.Size(207, 73);
             this.btnPersonal.TabIndex = 16;
             this.btnPersonal.Text = "  Personal";
             this.btnPersonal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -539,10 +540,10 @@
             this.btnMedicamentos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.btnMedicamentos.Image = global::CpConsultorioOdontologico.Properties.Resources.medicamentos;
             this.btnMedicamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMedicamentos.Location = new System.Drawing.Point(0, 212);
-            this.btnMedicamentos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMedicamentos.Location = new System.Drawing.Point(0, 261);
+            this.btnMedicamentos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMedicamentos.Name = "btnMedicamentos";
-            this.btnMedicamentos.Size = new System.Drawing.Size(155, 59);
+            this.btnMedicamentos.Size = new System.Drawing.Size(207, 73);
             this.btnMedicamentos.TabIndex = 15;
             this.btnMedicamentos.Text = "           Medicamentos";
             this.btnMedicamentos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -556,14 +557,15 @@
             this.btnCitas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.btnCitas.Image = global::CpConsultorioOdontologico.Properties.Resources.citas;
             this.btnCitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCitas.Location = new System.Drawing.Point(0, 150);
-            this.btnCitas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCitas.Location = new System.Drawing.Point(0, 185);
+            this.btnCitas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCitas.Name = "btnCitas";
-            this.btnCitas.Size = new System.Drawing.Size(155, 59);
+            this.btnCitas.Size = new System.Drawing.Size(207, 73);
             this.btnCitas.TabIndex = 14;
             this.btnCitas.Text = "Citas";
             this.btnCitas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCitas.UseVisualStyleBackColor = false;
+            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
             // 
             // btnPaciente
             // 
@@ -573,15 +575,16 @@
             this.btnPaciente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.btnPaciente.Image = global::CpConsultorioOdontologico.Properties.Resources.Paciente;
             this.btnPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPaciente.Location = new System.Drawing.Point(0, 88);
-            this.btnPaciente.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPaciente.Location = new System.Drawing.Point(0, 108);
+            this.btnPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPaciente.Name = "btnPaciente";
-            this.btnPaciente.Size = new System.Drawing.Size(155, 59);
+            this.btnPaciente.Size = new System.Drawing.Size(207, 73);
             this.btnPaciente.TabIndex = 13;
             this.btnPaciente.Text = "Pacientes";
             this.btnPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPaciente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPaciente.UseVisualStyleBackColor = false;
+            this.btnPaciente.Click += new System.EventHandler(this.btnPaciente_Click);
             // 
             // pbxLogo
             // 
@@ -589,23 +592,25 @@
             this.pbxLogo.BackgroundImage = global::CpConsultorioOdontologico.Properties.Resources.pacientes;
             this.pbxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxLogo.Image = global::CpConsultorioOdontologico.Properties.Resources.pacientes;
-            this.pbxLogo.Location = new System.Drawing.Point(42, 3);
+            this.pbxLogo.Location = new System.Drawing.Point(56, 4);
+            this.pbxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pbxLogo.Name = "pbxLogo";
-            this.pbxLogo.Size = new System.Drawing.Size(73, 93);
+            this.pbxLogo.Size = new System.Drawing.Size(97, 114);
             this.pbxLogo.TabIndex = 0;
             this.pbxLogo.TabStop = false;
             // 
             // FrmPaciente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 493);
+            this.ClientSize = new System.Drawing.Size(1035, 607);
             this.Controls.Add(this.pnlDatosDes);
             this.Controls.Add(this.pnlDatos);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.pnlMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPaciente";

@@ -53,9 +53,10 @@
             this.pbxLogo.BackColor = System.Drawing.Color.Transparent;
             this.pbxLogo.BackgroundImage = global::CpConsultorioOdontologico.Properties.Resources.icon;
             this.pbxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxLogo.Location = new System.Drawing.Point(321, 30);
+            this.pbxLogo.Location = new System.Drawing.Point(428, 37);
+            this.pbxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbxLogo.Name = "pbxLogo";
-            this.pbxLogo.Size = new System.Drawing.Size(124, 101);
+            this.pbxLogo.Size = new System.Drawing.Size(165, 124);
             this.pbxLogo.TabIndex = 1;
             this.pbxLogo.TabStop = false;
             // 
@@ -65,9 +66,10 @@
             this.btnSalir.BackgroundImage = global::CpConsultorioOdontologico.Properties.Resources.salida;
             this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSalir.Location = new System.Drawing.Point(703, 12);
+            this.btnSalir.Location = new System.Drawing.Point(937, 15);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(60, 59);
+            this.btnSalir.Size = new System.Drawing.Size(80, 73);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -79,17 +81,20 @@
             this.pnlCabeza.Controls.Add(this.pbxLogo);
             this.pnlCabeza.Controls.Add(this.btnSalir);
             this.pnlCabeza.Location = new System.Drawing.Point(1, 0);
+            this.pnlCabeza.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlCabeza.Name = "pnlCabeza";
-            this.pnlCabeza.Size = new System.Drawing.Size(775, 137);
+            this.pnlCabeza.Size = new System.Drawing.Size(1033, 169);
             this.pnlCabeza.TabIndex = 3;
+            this.pnlCabeza.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCabeza_Paint);
             // 
             // lblTitulo
             // 
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(124)))), ((int)(((byte)(127)))));
-            this.lblTitulo.Location = new System.Drawing.Point(11, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(15, 11);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(268, 35);
+            this.lblTitulo.Size = new System.Drawing.Size(357, 43);
             this.lblTitulo.TabIndex = 7;
             this.lblTitulo.Text = "Acceso al Sistema";
             // 
@@ -97,9 +102,10 @@
             // 
             this.pbsUsuario.BackgroundImage = global::CpConsultorioOdontologico.Properties.Resources.background_text;
             this.pbsUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbsUsuario.Location = new System.Drawing.Point(2, 55);
+            this.pbsUsuario.Location = new System.Drawing.Point(3, 68);
+            this.pbsUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbsUsuario.Name = "pbsUsuario";
-            this.pbsUsuario.Size = new System.Drawing.Size(271, 53);
+            this.pbsUsuario.Size = new System.Drawing.Size(361, 65);
             this.pbsUsuario.TabIndex = 0;
             this.pbsUsuario.TabStop = false;
             // 
@@ -109,18 +115,20 @@
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.White;
-            this.txtUsuario.Location = new System.Drawing.Point(8, 76);
+            this.txtUsuario.Location = new System.Drawing.Point(11, 94);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(249, 17);
+            this.txtUsuario.Size = new System.Drawing.Size(332, 22);
             this.txtUsuario.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::CpConsultorioOdontologico.Properties.Resources.background_text;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 149);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 183);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(271, 53);
+            this.pictureBox1.Size = new System.Drawing.Size(361, 65);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -130,10 +138,11 @@
             this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClave.ForeColor = System.Drawing.Color.White;
-            this.txtClave.Location = new System.Drawing.Point(8, 168);
+            this.txtClave.Location = new System.Drawing.Point(11, 207);
+            this.txtClave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
-            this.txtClave.Size = new System.Drawing.Size(249, 17);
+            this.txtClave.Size = new System.Drawing.Size(332, 22);
             this.txtClave.TabIndex = 3;
             this.txtClave.UseSystemPasswordChar = true;
             // 
@@ -141,9 +150,10 @@
             // 
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(124)))), ((int)(((byte)(127)))));
-            this.lblUsuario.Location = new System.Drawing.Point(3, 17);
+            this.lblUsuario.Location = new System.Drawing.Point(4, 21);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(268, 35);
+            this.lblUsuario.Size = new System.Drawing.Size(357, 43);
             this.lblUsuario.TabIndex = 4;
             this.lblUsuario.Text = "USUARIO:";
             // 
@@ -151,9 +161,10 @@
             // 
             this.lblContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(124)))), ((int)(((byte)(127)))));
-            this.lblContraseña.Location = new System.Drawing.Point(2, 113);
+            this.lblContraseña.Location = new System.Drawing.Point(3, 139);
+            this.lblContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(271, 35);
+            this.lblContraseña.Size = new System.Drawing.Size(361, 43);
             this.lblContraseña.TabIndex = 5;
             this.lblContraseña.Text = "CONTRASEÑA:";
             // 
@@ -165,9 +176,10 @@
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
-            this.btnIngresar.Location = new System.Drawing.Point(54, 229);
+            this.btnIngresar.Location = new System.Drawing.Point(72, 282);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(184, 35);
+            this.btnIngresar.Size = new System.Drawing.Size(245, 43);
             this.btnIngresar.TabIndex = 6;
             this.btnIngresar.Text = "Iniciar Sesión";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -183,27 +195,29 @@
             this.pnlDatos.Controls.Add(this.pictureBox1);
             this.pnlDatos.Controls.Add(this.txtUsuario);
             this.pnlDatos.Controls.Add(this.pbsUsuario);
-            this.pnlDatos.Location = new System.Drawing.Point(246, 137);
+            this.pnlDatos.Location = new System.Drawing.Point(328, 169);
+            this.pnlDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlDatos.Name = "pnlDatos";
-            this.pnlDatos.Size = new System.Drawing.Size(274, 283);
+            this.pnlDatos.Size = new System.Drawing.Size(365, 348);
             this.pnlDatos.TabIndex = 0;
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::CpConsultorioOdontologico.Properties.Resources.fondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(776, 493);
+            this.ClientSize = new System.Drawing.Size(1035, 607);
             this.Controls.Add(this.pnlCabeza);
             this.Controls.Add(this.pnlDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ":::Principal:::Consultorio Odontologico";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             this.pnlCabeza.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbsUsuario)).EndInit();

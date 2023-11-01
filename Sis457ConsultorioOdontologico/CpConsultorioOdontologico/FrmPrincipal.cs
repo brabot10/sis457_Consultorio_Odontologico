@@ -62,5 +62,15 @@ namespace CpConsultorioOdontologico
             // conexionDB.Close();
 
         }
+
+        private void pnlCabeza_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -146,3 +146,26 @@ WHERE id = 3;
 SELECT * FROM Usuario;
 
 
+
+COMANDOS DE CORRECCIÓN PARA LA TABLA DE CITAS:
+
+
+ALTER TABLE Cita ADD aCuenta VARCHAR(20) NOT NULL;
+
+ALTER TABLE Cita
+DROP COLUMN hora;
+
+ALTER TABLE Cita ADD hora DECIMAL NOT NULL;
+
+
+ALTER PROC paCitaListar @parametro3 VARCHAR(50)
+AS
+  SELECT id, fecha, tratamiento, pago, usuarioRegistro, fechaRegistro, estado, aCuenta, hora
+  FROM Cita
+  WHERE estado<>-1 AND tratamiento LIKE '%'+REPLACE(@parametro3,' ','%')+'%';
+EXEC paCitaListar 'Limpieza dental';
+
+ALTER TABLE Cita
+DROP COLUMN pago;
+
+
