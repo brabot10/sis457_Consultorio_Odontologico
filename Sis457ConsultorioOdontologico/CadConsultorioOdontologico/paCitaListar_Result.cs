@@ -15,12 +15,12 @@ namespace CadConsultorioOdontologico
     {
         public int id { get; set; }
         public System.DateTime fecha { get; set; }
+        public string hora { get; set; }
         public string tratamiento { get; set; }
         public string pago { get; set; }
+        public string aCuenta { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }
-        public string aCuenta { get; set; }
-        public decimal hora { get; set; }
     }
 }

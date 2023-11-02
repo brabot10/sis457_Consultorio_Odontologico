@@ -27,15 +27,15 @@ namespace CpConsultorioOdontologico
             dgvLista.Columns["id"].Visible = false;
             dgvLista.Columns["estado"].Visible = false;
             dgvLista.Columns["fecha"].HeaderText = "Fecha de la Consulta";
+            dgvLista.Columns["hora"].HeaderText = "Hora de la Consulta";
             dgvLista.Columns["tratamiento"].HeaderText = "Tratamiento";
             dgvLista.Columns["pago"].HeaderText = "Historial de Pago";
-            dgvLista.Columns["hora"].HeaderText = "Hora de la Consulta";
+            dgvLista.Columns["aCuenta"].HeaderText = "A Cuenta";
             dgvLista.Columns["usuarioRegistro"].HeaderText = "Usuario";
             dgvLista.Columns["fechaRegistro"].HeaderText = "Fecha del Registro";
-            dgvLista.Columns["aCuenta"].HeaderText = "A Cuenta";
             btnEditar.Enabled = cita.Count > 0;
             btnEliminar.Enabled = cita.Count > 0;
-            if (cita.Count > 0) dgvLista.Rows[0].Cells["traamiento"].Selected = true;
+            if (cita.Count > 0) dgvLista.Rows[0].Cells["tratamiento"].Selected = true;
 
         }
 
@@ -63,9 +63,9 @@ namespace CpConsultorioOdontologico
             var cita = CitaCln.get(id);
             dtpFecha.Value = cita.fecha;
             txtTratamiento.Text = cita.tratamiento;
-            cbxPago.Text= cita.pago.ToString();
+            cbxPago.Text = cita.pago;
             txtAcuenta.Text = cita.aCuenta;
-            nudHora.Text = cita.hora.ToString();
+            txtHora.Text = cita.hora;
         }
 
         private void button2_Click(object sender, EventArgs e)//Cancelar
@@ -93,9 +93,8 @@ namespace CpConsultorioOdontologico
             erpFecha.SetError(dtpFecha, "");
             erpTratamiento.SetError(txtTratamiento, "");
             erpPago.SetError(cbxPago, "");
-            //erpPago.SetError(cbxPago, "");
             erpAcuenta.SetError(txtAcuenta, "");
-            erpHora.SetError(nudHora, "");
+            erpHora.SetError(txtHora, "");
             if (string.IsNullOrEmpty(dtpFecha.Text))
             {
                 esValido = false;
@@ -104,7 +103,7 @@ namespace CpConsultorioOdontologico
             if (string.IsNullOrEmpty(txtTratamiento.Text))
             {
                 esValido = false;
-                erpTratamiento.SetError(txtTratamiento, "El campo Trataiento es obligatorio");
+                erpTratamiento.SetError(txtTratamiento, "El campo Tratamiento es obligatorio");
             }
             if (string.IsNullOrEmpty(cbxPago.Text))
             {
@@ -116,10 +115,10 @@ namespace CpConsultorioOdontologico
                 esValido = false;
                 erpAcuenta.SetError(txtAcuenta, "El campo a Cuenta es obligatorio");
             }
-            if (string.IsNullOrEmpty(nudHora.Text))
+            if (string.IsNullOrEmpty(txtHora.Text))
             {
                 esValido = false;
-                erpHora.SetError(nudHora, "El campo Hora es obligatorio");
+                erpHora.SetError(txtHora, "El campo Hora es obligatorio");
             }
             return esValido;
         }
@@ -134,14 +133,14 @@ namespace CpConsultorioOdontologico
             cita.tratamiento = txtTratamiento.Text.Trim();
             cita.pago = cbxPago.Text;
             cita.aCuenta = txtAcuenta.Text.Trim();
-            cita.hora = nudHora.Value;
-            cita.usuarioRegistro = "SIS257";
+            cita.hora = txtHora.Text.Trim();
+            cita.usuarioRegistro = "SIS457";
 
             if (esNuevo)
             {
                 cita.fechaRegistro = DateTime.Now;
                 cita.estado = 1;
-                cita.idPaciente = 1;
+                cita.idPaciente = 4;//solo para el paciente con id 4 
                 CitaCln.insertar(cita);
             }
             else
@@ -161,7 +160,7 @@ namespace CpConsultorioOdontologico
             txtTratamiento.Text = string.Empty;
             cbxPago.SelectedIndex = -1;
             txtAcuenta.Text = string.Empty;
-            nudHora.Value = 0;
+            txtHora.Text = string.Empty;
 
         }
 
@@ -170,8 +169,8 @@ namespace CpConsultorioOdontologico
             {
                 int index = dgvLista.CurrentCell.RowIndex;
                 int id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
-                string tratamiento = dgvLista.Rows[index].Cells["tratamiento"].Value.ToString();
-                DialogResult dialog = MessageBox.Show($"¿Está seguro de eliminar la Cita {tratamiento}?",
+                string fecha = dgvLista.Rows[index].Cells["fecha"].Value.ToString();
+                DialogResult dialog = MessageBox.Show($"¿Está seguro de eliminar la Cita {fecha}?",
                     "::: Consultorio Odontologico - Mensaje :::", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dialog == DialogResult.OK)
                 {
@@ -200,7 +199,5 @@ namespace CpConsultorioOdontologico
             Size = new Size(776, 344);
             this.Hide();
         }
-
-
     }
 }

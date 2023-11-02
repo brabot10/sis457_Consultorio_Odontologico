@@ -57,11 +57,10 @@ CREATE TABLE Cita (
   id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
   idPaciente INT NOT NULL,
   fecha DATE NOT NULL,
-  hora VARCHAR(20) NOT NULL,
+  hora TIME NOT NULL,
   tratamiento VARCHAR(250) NOT NULL,
-  pago VARCHAR(20) NOT NULL,
-  aCuenta VARCHAR(15) NOT NUL,
-  CONSTRAINT fk_Cita_Paciente FOREIGN KEY(idPaciente) REFERENCES Paciente(id) -- nombres
+  pago DECIMAL NOT NULL
+  CONSTRAINT fk_Cita_Paciente FOREIGN KEY(idPaciente) REFERENCES Paciente(id)
 );
 
 CREATE TABLE Medicamento (
@@ -151,14 +150,26 @@ SELECT * FROM Usuario;
 COMANDOS DE CORRECCIÓN PARA LA TABLA DE CITAS:
 
 
-ALTER TABLE Cita ADD aCuenta VARCHAR(20) NOT NULL;
+DROP TABLE Cita;
 
-ALTER TABLE Cita
-DROP COLUMN hora;
 
-ALTER TABLE Cita ADD pago VARCHAR(20) NOT NULL;
 
-ALTER TABLE Cita ADD hora DECIMAL NOT NULL;
+CREATE TABLE Cita (
+  id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+  idPaciente INT NOT NULL,
+  fecha DATE NOT NULL,
+  hora VARCHAR(20) NOT NULL,
+  tratamiento VARCHAR(250) NOT NULL,
+  pago VARCHAR(20) NOT NULL,
+  aCuenta VARCHAR(15) NOT NUL
+  CONSTRAINT fk_Cita_Paciente FOREIGN KEY(idPaciente) REFERENCES Paciente(id) 
+);
+
+ALTER TABLE Cita ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
+ALTER TABLE Cita ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
+ALTER TABLE Cita ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
+
+
 
 
 ALTER PROC paCitaListar @parametro3 VARCHAR(50)
@@ -167,10 +178,6 @@ AS
   FROM Cita
   WHERE estado<>-1 AND fecha LIKE '%'+REPLACE(@parametro3,' ','%')+'%';
 EXEC paCitaListar 'Limpieza dental';
-
-ALTER TABLE Cita
 DROP COLUMN pago;
-
-ALTER TABLE Cita ADD hora DECIMAL NOT NULL;
 
 

@@ -47,6 +47,7 @@
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.pnlDatosDes = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtHora = new System.Windows.Forms.TextBox();
             this.cbxPago = new System.Windows.Forms.ComboBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.txtAcuenta = new System.Windows.Forms.TextBox();
@@ -71,7 +72,6 @@
             this.erpPago = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpAcuenta = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpHora = new System.Windows.Forms.ErrorProvider(this.components);
-            this.nudHora = new System.Windows.Forms.NumericUpDown();
             this.pnlDatos.SuspendLayout();
             this.pnlAcciones.SuspendLayout();
             this.gbxLista.SuspendLayout();
@@ -86,7 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.erpPago)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpAcuenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpHora)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHora)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlDatos
@@ -98,7 +97,7 @@
             this.pnlDatos.Controls.Add(this.txtParametro);
             this.pnlDatos.Controls.Add(this.lblBusqueda);
             this.pnlDatos.Location = new System.Drawing.Point(207, 87);
-            this.pnlDatos.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlDatos.Name = "pnlDatos";
             this.pnlDatos.Size = new System.Drawing.Size(1633, 334);
             this.pnlDatos.TabIndex = 40;
@@ -233,7 +232,7 @@
             this.dgvLista.EnableHeadersVisualStyles = false;
             this.dgvLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(203)))), ((int)(((byte)(209)))));
             this.dgvLista.Location = new System.Drawing.Point(7, 26);
-            this.dgvLista.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvLista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvLista.MultiSelect = false;
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.ReadOnly = true;
@@ -302,7 +301,7 @@
             this.pnlDatosDes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(124)))), ((int)(((byte)(127)))));
             this.pnlDatosDes.Controls.Add(this.groupBox1);
             this.pnlDatosDes.Location = new System.Drawing.Point(0, 421);
-            this.pnlDatosDes.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlDatosDes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlDatosDes.Name = "pnlDatosDes";
             this.pnlDatosDes.Size = new System.Drawing.Size(1035, 187);
             this.pnlDatosDes.TabIndex = 42;
@@ -310,7 +309,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
-            this.groupBox1.Controls.Add(this.nudHora);
+            this.groupBox1.Controls.Add(this.txtHora);
             this.groupBox1.Controls.Add(this.cbxPago);
             this.groupBox1.Controls.Add(this.dtpFecha);
             this.groupBox1.Controls.Add(this.txtAcuenta);
@@ -333,14 +332,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la Cita:";
             // 
+            // txtHora
+            // 
+            this.txtHora.Location = new System.Drawing.Point(735, 18);
+            this.txtHora.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHora.MaxLength = 250;
+            this.txtHora.Name = "txtHora";
+            this.txtHora.Size = new System.Drawing.Size(252, 24);
+            this.txtHora.TabIndex = 29;
+            // 
             // cbxPago
             // 
+            this.cbxPago.BackColor = System.Drawing.Color.Wheat;
             this.cbxPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.cbxPago.FormattingEnabled = true;
             this.cbxPago.Items.AddRange(new object[] {
             "CANCELADO",
             "PENDIENTE"});
             this.cbxPago.Location = new System.Drawing.Point(204, 96);
+            this.cbxPago.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxPago.Name = "cbxPago";
             this.cbxPago.Size = new System.Drawing.Size(352, 26);
             this.cbxPago.TabIndex = 27;
@@ -353,8 +364,8 @@
             this.dtpFecha.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.dtpFecha.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(164)))), ((int)(((byte)(168)))));
             this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFecha.Location = new System.Drawing.Point(204, 19);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFecha.Location = new System.Drawing.Point(204, 18);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(352, 26);
             this.dtpFecha.TabIndex = 26;
@@ -415,7 +426,7 @@
             // lblTratamiento
             // 
             this.lblTratamiento.AutoSize = true;
-            this.lblTratamiento.Location = new System.Drawing.Point(11, 61);
+            this.lblTratamiento.Location = new System.Drawing.Point(11, 62);
             this.lblTratamiento.Name = "lblTratamiento";
             this.lblTratamiento.Size = new System.Drawing.Size(103, 18);
             this.lblTratamiento.TabIndex = 16;
@@ -433,7 +444,7 @@
             // lblPago
             // 
             this.lblPago.AutoSize = true;
-            this.lblPago.Location = new System.Drawing.Point(11, 99);
+            this.lblPago.Location = new System.Drawing.Point(11, 98);
             this.lblPago.Name = "lblPago";
             this.lblPago.Size = new System.Drawing.Size(137, 18);
             this.lblPago.TabIndex = 8;
@@ -461,16 +472,16 @@
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.pnlTitulo.Controls.Add(this.lblTitulo);
             this.pnlTitulo.Location = new System.Drawing.Point(207, -1);
-            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(828, 88);
+            this.pnlTitulo.Size = new System.Drawing.Size(828, 89);
             this.pnlTitulo.TabIndex = 39;
             // 
             // lblTitulo
             // 
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(19, 24);
+            this.lblTitulo.Location = new System.Drawing.Point(19, 25);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(788, 39);
@@ -487,7 +498,7 @@
             this.pnlMenu.Controls.Add(this.btnPaciente);
             this.pnlMenu.Controls.Add(this.pbxLogo);
             this.pnlMenu.Location = new System.Drawing.Point(-1, -1);
-            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(209, 422);
             this.pnlMenu.TabIndex = 38;
@@ -570,7 +581,7 @@
             this.pbxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxLogo.Image = global::CpConsultorioOdontologico.Properties.Resources.pacientes;
             this.pbxLogo.Location = new System.Drawing.Point(56, 4);
-            this.pbxLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.pbxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbxLogo.Name = "pbxLogo";
             this.pbxLogo.Size = new System.Drawing.Size(97, 114);
             this.pbxLogo.TabIndex = 0;
@@ -596,13 +607,6 @@
             // 
             this.erpHora.ContainerControl = this;
             // 
-            // nudHora
-            // 
-            this.nudHora.Location = new System.Drawing.Point(729, 21);
-            this.nudHora.Name = "nudHora";
-            this.nudHora.Size = new System.Drawing.Size(277, 24);
-            this.nudHora.TabIndex = 28;
-            // 
             // FrmCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -614,6 +618,7 @@
             this.Controls.Add(this.pnlMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmCita";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCita";
@@ -634,7 +639,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.erpPago)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpAcuenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpHora)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHora)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -678,6 +682,6 @@
         private System.Windows.Forms.ErrorProvider erpAcuenta;
         private System.Windows.Forms.ErrorProvider erpHora;
         private System.Windows.Forms.ComboBox cbxPago;
-        private System.Windows.Forms.NumericUpDown nudHora;
+        private System.Windows.Forms.TextBox txtHora;
     }
 }

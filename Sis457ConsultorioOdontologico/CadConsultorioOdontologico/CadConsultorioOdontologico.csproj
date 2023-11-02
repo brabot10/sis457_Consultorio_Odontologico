@@ -54,75 +54,75 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cita.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelO.tt</DependentUpon>
     </Compile>
     <Compile Include="Medicamento.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelO.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo.Context.cs">
+    <Compile Include="ModelO.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Modelo.Context.tt</DependentUpon>
+      <DependentUpon>ModelO.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo.cs">
+    <Compile Include="ModelO.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelO.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo.Designer.cs">
+    <Compile Include="ModelO.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Modelo.edmx</DependentUpon>
+      <DependentUpon>ModelO.edmx</DependentUpon>
     </Compile>
     <Compile Include="Paciente.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelO.tt</DependentUpon>
     </Compile>
     <Compile Include="paCitaListar_Result.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelO.tt</DependentUpon>
     </Compile>
     <Compile Include="paMedicamentoListar_Result.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelO.tt</DependentUpon>
     </Compile>
     <Compile Include="paPacienteListar_Result.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelO.tt</DependentUpon>
     </Compile>
     <Compile Include="paPersonalListar_Result.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelO.tt</DependentUpon>
     </Compile>
     <Compile Include="Personal.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelO.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelO.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Modelo.edmx">
+    <EntityDeploy Include="ModelO.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Modelo.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelO.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="Modelo.edmx.diagram">
-      <DependentUpon>Modelo.edmx</DependentUpon>
+    <None Include="ModelO.edmx.diagram">
+      <DependentUpon>ModelO.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Modelo.Context.tt">
+    <Content Include="ModelO.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Modelo.Context.cs</LastGenOutput>
-      <DependentUpon>Modelo.edmx</DependentUpon>
+      <LastGenOutput>ModelO.Context.cs</LastGenOutput>
+      <DependentUpon>ModelO.edmx</DependentUpon>
     </Content>
-    <Content Include="Modelo.tt">
+    <Content Include="ModelO.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Modelo.edmx</DependentUpon>
-      <LastGenOutput>Modelo.cs</LastGenOutput>
+      <DependentUpon>ModelO.edmx</DependentUpon>
+      <LastGenOutput>ModelO.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
