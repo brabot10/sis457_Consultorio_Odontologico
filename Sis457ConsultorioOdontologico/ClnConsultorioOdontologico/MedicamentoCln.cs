@@ -27,7 +27,7 @@ namespace ClnConsultorioOdontologico
                 existente.articulo = medicamento.articulo;
                 existente.descripcion = medicamento.descripcion;
                 existente.precio = medicamento.precio;
-                existente.estado = medicamento.estado;
+                //existente.estado = medicamento.estado;
                 existente.usuarioRegistro = medicamento.usuarioRegistro;
                 return context.SaveChanges();
             }

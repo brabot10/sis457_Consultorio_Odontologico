@@ -37,11 +37,18 @@ namespace CpConsultorioOdontologico
             if (paciente.Count > 0) dgvLista.Rows[0].Cells["nombres"].Selected = true;
 
         }
+        private void cargarPersonal()
+        {
+            cbxPersonal.DataSource = PersonalCln.listar();
+            cbxPersonal.DisplayMember = "nombres";
+            cbxPersonal.ValueMember = "id";
+        }
 
         private void FrmPaciente_Load(object sender, EventArgs e)
         {
             Size = new Size(776, 344);
             listar();
+            cargarPersonal();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -59,7 +66,7 @@ namespace CpConsultorioOdontologico
             int index = dgvLista.CurrentCell.RowIndex;
             int id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
             var paciente = PacienteCln.get(id);
-            txtCelular.Text = paciente.nombres;
+            txtNombre.Text = paciente.nombres;
             txtCedulaIdentidad.Text = paciente.cedulaIdentidad;
             txtAlergias.Text = paciente.alergias;
             dtpFechaNacimiento.Value = paciente.fechaNacimiento;
@@ -136,7 +143,7 @@ namespace CpConsultorioOdontologico
             {
                 paciente.fechaRegistro = DateTime.Now;
                 paciente.estado = 1;
-                paciente.idPersonal = 1;
+                paciente.idPersonal = Convert.ToInt32(cbxPersonal.SelectedValue);
                 PacienteCln.insertar(paciente);
             }
             else

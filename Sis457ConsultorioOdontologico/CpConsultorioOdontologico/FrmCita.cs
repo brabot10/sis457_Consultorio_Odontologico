@@ -38,12 +38,18 @@ namespace CpConsultorioOdontologico
             if (cita.Count > 0) dgvLista.Rows[0].Cells["tratamiento"].Selected = true;
 
         }
+        private void cargarPaciente()
+        {
+            cbxPaciente.DataSource = PacienteCln.listar();
+            cbxPaciente.DisplayMember = "nombres";
+            cbxPaciente.ValueMember = "id";
+        }
 
         private void FrmCita_Load(object sender, EventArgs e)
         {
             Size = new Size(776, 344);
             listar();
-
+            cargarPaciente();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -140,7 +146,8 @@ namespace CpConsultorioOdontologico
             {
                 cita.fechaRegistro = DateTime.Now;
                 cita.estado = 1;
-                cita.idPaciente = 4;//solo para el paciente con id 4 
+                cita.idPaciente = Convert.ToInt32 (cbxPaciente.SelectedValue); 
+                //cita.idPaciente = 4;//solo para el paciente con id 4 
                 CitaCln.insertar(cita);
             }
             else

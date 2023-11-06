@@ -47,6 +47,7 @@
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.pnlDatosDes = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxPaciente = new System.Windows.Forms.ComboBox();
             this.txtHora = new System.Windows.Forms.TextBox();
             this.cbxPago = new System.Windows.Forms.ComboBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
@@ -72,6 +73,7 @@
             this.erpPago = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpAcuenta = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpHora = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblPaciente = new System.Windows.Forms.Label();
             this.pnlDatos.SuspendLayout();
             this.pnlAcciones.SuspendLayout();
             this.gbxLista.SuspendLayout();
@@ -309,6 +311,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
+            this.groupBox1.Controls.Add(this.lblPaciente);
+            this.groupBox1.Controls.Add(this.cbxPaciente);
             this.groupBox1.Controls.Add(this.txtHora);
             this.groupBox1.Controls.Add(this.cbxPago);
             this.groupBox1.Controls.Add(this.dtpFecha);
@@ -331,6 +335,21 @@
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la Cita:";
+            // 
+            // cbxPaciente
+            // 
+            this.cbxPaciente.BackColor = System.Drawing.Color.Wheat;
+            this.cbxPaciente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPaciente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
+            this.cbxPaciente.FormattingEnabled = true;
+            this.cbxPaciente.Items.AddRange(new object[] {
+            "CANCELADO",
+            "PENDIENTE"});
+            this.cbxPaciente.Location = new System.Drawing.Point(735, 51);
+            this.cbxPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxPaciente.Name = "cbxPaciente";
+            this.cbxPaciente.Size = new System.Drawing.Size(252, 26);
+            this.cbxPaciente.TabIndex = 30;
             // 
             // txtHora
             // 
@@ -607,6 +626,15 @@
             // 
             this.erpHora.ContainerControl = this;
             // 
+            // lblPaciente
+            // 
+            this.lblPaciente.AutoSize = true;
+            this.lblPaciente.Location = new System.Drawing.Point(587, 54);
+            this.lblPaciente.Name = "lblPaciente";
+            this.lblPaciente.Size = new System.Drawing.Size(133, 18);
+            this.lblPaciente.TabIndex = 31;
+            this.lblPaciente.Text = "Asignar la cita a:";
+            // 
             // FrmCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -683,5 +711,7 @@
         private System.Windows.Forms.ErrorProvider erpHora;
         private System.Windows.Forms.ComboBox cbxPago;
         private System.Windows.Forms.TextBox txtHora;
+        private System.Windows.Forms.ComboBox cbxPaciente;
+        private System.Windows.Forms.Label lblPaciente;
     }
 }

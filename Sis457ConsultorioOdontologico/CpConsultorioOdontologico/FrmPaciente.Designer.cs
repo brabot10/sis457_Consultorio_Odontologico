@@ -72,6 +72,8 @@
             this.erpAlergias = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpFechaNacimiento = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpCelular = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblPersonal = new System.Windows.Forms.Label();
+            this.cbxPersonal = new System.Windows.Forms.ComboBox();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.pnlTitulo.SuspendLayout();
@@ -97,7 +99,7 @@
             this.pnlMenu.Controls.Add(this.btnPaciente);
             this.pnlMenu.Controls.Add(this.pbxLogo);
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
-            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(209, 421);
             this.pnlMenu.TabIndex = 1;
@@ -180,7 +182,7 @@
             this.pbxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxLogo.Image = global::CpConsultorioOdontologico.Properties.Resources.pacientes;
             this.pbxLogo.Location = new System.Drawing.Point(56, 4);
-            this.pbxLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.pbxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbxLogo.Name = "pbxLogo";
             this.pbxLogo.Size = new System.Drawing.Size(97, 114);
             this.pbxLogo.TabIndex = 0;
@@ -191,7 +193,7 @@
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.pnlTitulo.Controls.Add(this.lblTitulo);
             this.pnlTitulo.Location = new System.Drawing.Point(208, 0);
-            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(827, 87);
             this.pnlTitulo.TabIndex = 2;
@@ -228,7 +230,7 @@
             this.pnlDatos.Controls.Add(this.txtParametro);
             this.pnlDatos.Controls.Add(this.lblBusqueda);
             this.pnlDatos.Location = new System.Drawing.Point(208, 87);
-            this.pnlDatos.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlDatos.Name = "pnlDatos";
             this.pnlDatos.Size = new System.Drawing.Size(827, 334);
             this.pnlDatos.TabIndex = 30;
@@ -363,7 +365,7 @@
             this.dgvLista.EnableHeadersVisualStyles = false;
             this.dgvLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(203)))), ((int)(((byte)(209)))));
             this.dgvLista.Location = new System.Drawing.Point(7, 26);
-            this.dgvLista.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvLista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvLista.MultiSelect = false;
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.ReadOnly = true;
@@ -420,14 +422,16 @@
             this.pnlDatosDes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(124)))), ((int)(((byte)(127)))));
             this.pnlDatosDes.Controls.Add(this.gbxDatos);
             this.pnlDatosDes.Location = new System.Drawing.Point(0, 421);
-            this.pnlDatosDes.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlDatosDes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlDatosDes.Name = "pnlDatosDes";
             this.pnlDatosDes.Size = new System.Drawing.Size(1035, 187);
             this.pnlDatosDes.TabIndex = 31;
             // 
             // gbxDatos
             // 
+            this.gbxDatos.Controls.Add(this.lblPersonal);
             this.gbxDatos.Controls.Add(this.dtpFechaNacimiento);
+            this.gbxDatos.Controls.Add(this.cbxPersonal);
             this.gbxDatos.Controls.Add(this.txtCelular);
             this.gbxDatos.Controls.Add(this.lblCelular);
             this.gbxDatos.Controls.Add(this.btnGuardar);
@@ -459,24 +463,24 @@
             this.dtpFechaNacimiento.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(164)))), ((int)(((byte)(168)))));
             this.dtpFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(205, 130);
-            this.dtpFechaNacimiento.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(352, 26);
             this.dtpFechaNacimiento.TabIndex = 26;
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(715, 22);
+            this.txtCelular.Location = new System.Drawing.Point(744, 22);
             this.txtCelular.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCelular.MaxLength = 100;
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(285, 24);
+            this.txtCelular.Size = new System.Drawing.Size(256, 24);
             this.txtCelular.TabIndex = 25;
             // 
             // lblCelular
             // 
             this.lblCelular.AutoSize = true;
-            this.lblCelular.Location = new System.Drawing.Point(617, 28);
+            this.lblCelular.Location = new System.Drawing.Point(585, 28);
             this.lblCelular.Name = "lblCelular";
             this.lblCelular.Size = new System.Drawing.Size(66, 18);
             this.lblCelular.TabIndex = 24;
@@ -489,7 +493,7 @@
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.btnGuardar.Image = global::CpConsultorioOdontologico.Properties.Resources._1891021_approved_check_checkbox_checkmark_confirm_icon;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(617, 84);
+            this.btnGuardar.Location = new System.Drawing.Point(617, 96);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(176, 73);
@@ -569,7 +573,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.btnCancelar.Image = global::CpConsultorioOdontologico.Properties.Resources.btnCancelar;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(828, 86);
+            this.btnCancelar.Location = new System.Drawing.Point(827, 96);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(173, 70);
@@ -599,6 +603,30 @@
             // 
             this.erpCelular.ContainerControl = this;
             // 
+            // lblPersonal
+            // 
+            this.lblPersonal.AutoSize = true;
+            this.lblPersonal.Location = new System.Drawing.Point(585, 58);
+            this.lblPersonal.Name = "lblPersonal";
+            this.lblPersonal.Size = new System.Drawing.Size(133, 18);
+            this.lblPersonal.TabIndex = 33;
+            this.lblPersonal.Text = "Asignar la cita a:";
+            // 
+            // cbxPersonal
+            // 
+            this.cbxPersonal.BackColor = System.Drawing.Color.Wheat;
+            this.cbxPersonal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPersonal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
+            this.cbxPersonal.FormattingEnabled = true;
+            this.cbxPersonal.Items.AddRange(new object[] {
+            "CANCELADO",
+            "PENDIENTE"});
+            this.cbxPersonal.Location = new System.Drawing.Point(744, 55);
+            this.cbxPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxPersonal.Name = "cbxPersonal";
+            this.cbxPersonal.Size = new System.Drawing.Size(256, 26);
+            this.cbxPersonal.TabIndex = 32;
+            // 
             // FrmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -610,7 +638,7 @@
             this.Controls.Add(this.pnlMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPaciente";
@@ -674,5 +702,7 @@
         private System.Windows.Forms.ErrorProvider erpAlergias;
         private System.Windows.Forms.ErrorProvider erpFechaNacimiento;
         private System.Windows.Forms.ErrorProvider erpCelular;
+        private System.Windows.Forms.Label lblPersonal;
+        private System.Windows.Forms.ComboBox cbxPersonal;
     }
 }
