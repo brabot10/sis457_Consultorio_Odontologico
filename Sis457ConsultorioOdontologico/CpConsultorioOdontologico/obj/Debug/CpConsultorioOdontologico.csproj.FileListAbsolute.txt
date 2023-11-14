@@ -72,6 +72,6 @@ D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_O
 D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\System.Numerics.Vectors.xml
 D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.csproj.SuggestedBindingRedirects.cache
-D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.exe.config
 D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.FrmCita.resources
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.FrmPersonal.resources
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.FrmMedicamento.resources

@@ -24,13 +24,33 @@ namespace CpConsultorioOdontologico
         {
             Application.Exit();
         }
+        private bool validar()
+        {
+            bool esValido = true;
+            erpUsuario.SetError(txtUsuario, "");
+            erpClave.SetError(txtClave, "");
+            if (string.IsNullOrEmpty(txtUsuario.Text))
+            {
+                erpUsuario.SetError(txtUsuario, "El campo usuario es obligatorio");
+                esValido = false;
+            }
+            if (string.IsNullOrEmpty(txtClave.Text))
+            {
+                erpClave.SetError(txtClave, "El campo contraseña es obligatorio");
+                esValido = false;
+            }
+            return esValido;
+        }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            FrmPaciente llamar = new FrmPaciente();
-            llamar.Show();
-            Size = new Size(776, 344);
-            this.Hide();
+            if (validar())
+            {
+                FrmPaciente llamar = new FrmPaciente();
+                llamar.Show();
+                Size = new Size(776, 344);
+                this.Hide();
+            }
             //try
             //{
             //    conexionDB.Open();
@@ -71,6 +91,22 @@ namespace CpConsultorioOdontologico
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        int posY = 0;
+        int posX = 0;
+        private void pnlCabeza_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
         }
     }
 }

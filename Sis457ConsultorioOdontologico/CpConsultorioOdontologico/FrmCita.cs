@@ -104,7 +104,17 @@ namespace CpConsultorioOdontologico
             if (string.IsNullOrEmpty(dtpFecha.Text))
             {
                 esValido = false;
-                erpFecha.SetError(dtpFecha, "El campo Fecha es obligatorio");
+                erpFecha.SetError(dtpFecha, "El campo Fecha de consulta es obligatorio");
+            }
+            else
+            {
+                DateTime fechaActual = DateTime.Now;
+                DateTime fechaConsulta = DateTime.Parse(dtpFecha.Text);
+                if (fechaConsulta < fechaActual)
+                {
+                    esValido = false;
+                    erpFecha.SetError(dtpFecha, "La fecha de consulta no puede ser anterior a la fecha actual");
+                }
             }
             if (string.IsNullOrEmpty(txtTratamiento.Text))
             {
@@ -131,35 +141,53 @@ namespace CpConsultorioOdontologico
 
         private void button1_Click(object sender, EventArgs e)//Guardar
         {
-            //var nombrePaciente = MessageBox.Show("Ingrese el nombre del paciente:", "Ingrese el nombre del paciente",
-            //MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-            var cita = new Cita();
-            cita.fecha = dtpFecha.Value;
-            cita.tratamiento = txtTratamiento.Text.Trim();
-            cita.pago = cbxPago.Text;
-            cita.aCuenta = txtAcuenta.Text.Trim();
-            cita.hora = txtHora.Text.Trim();
-            cita.usuarioRegistro = "SIS457";
-
-            if (esNuevo)
+            if (validar())
             {
-                cita.fechaRegistro = DateTime.Now;
-                cita.estado = 1;
-                cita.idPaciente = Convert.ToInt32 (cbxPaciente.SelectedValue); 
-                //cita.idPaciente = 4;//solo para el paciente con id 4 
-                CitaCln.insertar(cita);
+                var cita = new Cita();
+                cita.fecha = dtpFecha.Value;
+                cita.tratamiento = txtTratamiento.Text.Trim();
+                cita.pago = cbxPago.Text;
+                cita.aCuenta = txtAcuenta.Text.Trim();
+                cita.hora = txtHora.Text.Trim();
+                cita.usuarioRegistro = "SIS457";
+
+                var existeCitas = CitaCln.Listar();
+                bool citaExiste = false;
+
+                foreach (var existeCita in existeCitas)
+                {
+                    if (existeCita.fecha == cita.fecha && existeCita.hora == cita.hora && (esNuevo || existeCita.id != cita.id))
+                    {
+                        citaExiste = true;
+                        break;
+                    }
+                }
+
+                if (citaExiste)
+                {
+                    MessageBox.Show("Ya existe una cita con la misma fecha y hora de registro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (esNuevo)
+                {
+                    cita.fechaRegistro = DateTime.Now;
+                    cita.estado = 1;
+                    cita.idPaciente = Convert.ToInt32(cbxPaciente.SelectedValue);
+
+                    CitaCln.insertar(cita);
+                }
+                else
+                {
+                    int index = dgvLista.CurrentCell.RowIndex;
+                    cita.id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
+                    CitaCln.actualizar(cita);
+                }
+                listar();
+                btnCancelar.PerformClick();
+                MessageBox.Show("Cita guardada correctamente", "::: Consultorio Odontologico - Mensaje::: ",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
-            {
-                int index = dgvLista.CurrentCell.RowIndex;
-                cita.id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
-                CitaCln.actualizar(cita);
-            }
-            listar();
-            btnCancelar.PerformClick();
-            MessageBox.Show("Cita guardada correctamente", "::: Consultorio Odontologico - Mensaje::: ",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void limpiar()
         {
@@ -201,10 +229,38 @@ namespace CpConsultorioOdontologico
 
         private void btnCitas_Click(object sender, EventArgs e)
         {
-            FrmCita llamar = new FrmCita();
+
+        }
+
+        private void btnMedicamentos_Click(object sender, EventArgs e)
+        {
+            FrmMedicamento llamar = new FrmMedicamento();
             llamar.Show();
             Size = new Size(776, 344);
             this.Hide();
+        }
+
+        private void btnPersonal_Click(object sender, EventArgs e)
+        {
+            FrmPersonal llamar = new FrmPersonal();
+            llamar.Show();
+            Size = new Size(776, 344);
+            this.Hide();
+        }
+        int posY = 0;
+        int posX = 0;
+        private void pnlTitulo_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
         }
     }
 }

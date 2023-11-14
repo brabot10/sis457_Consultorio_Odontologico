@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +16,7 @@ namespace CpConsultorioOdontologico
     public partial class FrmPaciente : Form
     {
         bool esNuevo = false;
+        bool cedula = false;
         public FrmPaciente()
         {
             InitializeComponent();
@@ -56,6 +58,7 @@ namespace CpConsultorioOdontologico
             Size = new Size(776, 493);
             esNuevo = true;
             txtCelular.Focus();
+            cedula = true;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -107,6 +110,11 @@ namespace CpConsultorioOdontologico
                 esValido = false;
                 erpNombre.SetError(txtNombre, "El campo Nombre es obligatorio");
             }
+            else if (!Regex.IsMatch(txtNombre.Text, "^[a-zA-Z\\s]+$"))
+            {
+                esValido = false;
+                erpNombre.SetError(txtNombre, "El campo Alergias debe contener solo letras y espacios");
+            }
             if (string.IsNullOrEmpty(txtCedulaIdentidad.Text))
             {
                 esValido = false;
@@ -117,45 +125,120 @@ namespace CpConsultorioOdontologico
                 esValido = false;
                 erpAlergias.SetError(txtAlergias, "El campo Alergias es obligatorio");
             }
+            else if (!Regex.IsMatch(txtAlergias.Text, "^[a-zA-Z\\s]+$"))
+            {
+                esValido = false;
+                erpAlergias.SetError(txtAlergias, "El campo Alergias debe contener solo letras y espacios");
+            }
             if (string.IsNullOrEmpty(dtpFechaNacimiento.Text))
             {
                 esValido = false;
                 erpFechaNacimiento.SetError(dtpFechaNacimiento, "El campo Fecha de Nacimiento es obligatorio");
+            }
+            else
+            {
+                DateTime fechaActual = DateTime.Now;
+                DateTime fechaNacimiento = DateTime.Parse(dtpFechaNacimiento.Text);
+                if (fechaActual.Year - fechaNacimiento.Year < 1)
+                {
+                    esValido = false;
+                    erpFechaNacimiento.SetError(dtpFechaNacimiento, "El paciente debe ser mayor a un año");
+                }
             }
             if (string.IsNullOrEmpty(txtCelular.Text))
             {
                 esValido = false;
                 erpCelular.SetError(txtCelular, "El campo Celular es obligatorio");
             }
+            else if (!Regex.IsMatch(txtCelular.Text, "^\\d+$"))
+            {
+                esValido = false;
+                erpCelular.SetError(txtCelular, "El campo Celular debe contener solo números");
+            }
             return esValido;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            var paciente = new Paciente();
-            paciente.nombres = txtCelular.Text.Trim();
-            paciente.cedulaIdentidad = txtCedulaIdentidad.Text.Trim();
-            paciente.alergias = txtAlergias.Text;
-            paciente.fechaNacimiento = dtpFechaNacimiento.Value;
-            paciente.celular = int.Parse(txtCelular.Text);
-            paciente.usuarioRegistro = "SIS257";
-            if (esNuevo)
+            if (cedula == true)
             {
-                paciente.fechaRegistro = DateTime.Now;
-                paciente.estado = 1;
-                paciente.idPersonal = Convert.ToInt32(cbxPersonal.SelectedValue);
-                PacienteCln.insertar(paciente);
+                if (validar())
+                {
+                    var paciente = new Paciente();
+                    paciente.nombres = txtNombre.Text.Trim();
+                    paciente.cedulaIdentidad = txtCedulaIdentidad.Text.Trim();
+                    paciente.alergias = txtAlergias.Text;
+                    paciente.fechaNacimiento = dtpFechaNacimiento.Value;
+                    paciente.celular = int.Parse(txtCelular.Text);
+                    paciente.usuarioRegistro = "SIS324";
+
+                    var existePacientes = PacienteCln.listar();
+                    bool pacienteExiste = false;
+
+                    foreach (var existePaciente in existePacientes)
+                    {
+                        if (existePaciente.cedulaIdentidad == paciente.cedulaIdentidad && (esNuevo || existePaciente.id != paciente.id))
+                        {
+                            pacienteExiste = true;
+                            break;
+                        }
+                    }
+
+                    if (pacienteExiste)
+                    {
+                        MessageBox.Show("Ya existe un paciente con el mismo CI.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (esNuevo)
+                    {
+                        paciente.fechaRegistro = DateTime.Now;
+                        paciente.estado = 1;
+                        paciente.idPersonal = Convert.ToInt32(cbxPersonal.SelectedValue);
+                        PacienteCln.insertar(paciente);
+                    }
+                    else
+                    {
+                        int index = dgvLista.CurrentCell.RowIndex;
+                        paciente.id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
+                        PacienteCln.actualizar(paciente);
+                    }
+                    listar();
+                    btnCancelar.PerformClick();
+                    MessageBox.Show("Paciente guardado correctamente", "::: Consultorio Odontologico - Mensaje::: ",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
-                int index = dgvLista.CurrentCell.RowIndex;
-                paciente.id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
-                PacienteCln.actualizar(paciente);
+                if (validar())
+                {
+                    var paciente = new Paciente();
+                    paciente.nombres = txtNombre.Text.Trim();
+                    paciente.cedulaIdentidad = txtCedulaIdentidad.Text.Trim();
+                    paciente.alergias = txtAlergias.Text;
+                    paciente.fechaNacimiento = dtpFechaNacimiento.Value;
+                    paciente.celular = int.Parse(txtCelular.Text);
+                    paciente.usuarioRegistro = "SIS324";
+
+                    if (esNuevo)
+                    {
+                        paciente.fechaRegistro = DateTime.Now;
+                        paciente.estado = 1;
+                        paciente.idPersonal = Convert.ToInt32(cbxPersonal.SelectedValue);
+                        PacienteCln.insertar(paciente);
+                    }
+                    else
+                    {
+                        int index = dgvLista.CurrentCell.RowIndex;
+                        paciente.id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
+                        PacienteCln.actualizar(paciente);
+                    }
+                    listar();
+                    btnCancelar.PerformClick();
+                    MessageBox.Show("Paciente guardado correctamente", "::: Consultorio Odontologico - Mensaje::: ",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            listar();
-            btnCancelar.PerformClick();
-            MessageBox.Show("Paciente guardado correctamente", "::: Consultorio Odontologico - Mensaje::: ",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void limpiar()
         {
@@ -187,10 +270,7 @@ namespace CpConsultorioOdontologico
 
         private void btnPaciente_Click(object sender, EventArgs e)
         {
-            FrmPaciente llamar = new FrmPaciente();
-            llamar.Show();
-            Size = new Size(776, 344);
-            this.Hide();
+
         }
 
         private void btnCitas_Click(object sender, EventArgs e)
@@ -199,6 +279,37 @@ namespace CpConsultorioOdontologico
             llamar.Show();
             Size = new Size(776, 344);
             this.Hide();
+        }
+
+        private void btnMedicamentos_Click(object sender, EventArgs e)
+        {
+            FrmMedicamento llamar = new FrmMedicamento();
+            llamar.Show();
+            Size = new Size(776, 344);
+            this.Hide();
+        }
+
+        private void btnPersonal_Click(object sender, EventArgs e)
+        {
+            FrmPersonal llamar = new FrmPersonal();
+            llamar.Show();
+            Size = new Size(776, 344);
+            this.Hide();
+        }
+        int posY = 0;
+        int posX = 0;
+        private void pnlTitulo_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
         }
     }
 }
