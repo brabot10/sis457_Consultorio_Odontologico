@@ -18,7 +18,7 @@ namespace CpConsultorioOdontologico
         {
             InitializeComponent();
         }
-        MySqlConnection conexionDB = UsuarioCln.conexion();
+        //MySqlConnection conexionDB = UsuarioCln.conexion();
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -50,37 +50,23 @@ namespace CpConsultorioOdontologico
                 llamar.Show();
                 Size = new Size(776, 344);
                 this.Hide();
+                /*var usuario = UsuarioCln.validar(txtUsuario.Text, Util.Encrypt(txtClave.Text));
+                if (usuario != null)
+                {
+                    Util.usuario = usuario;
+                    txtClave.Text = string.Empty;
+                    txtUsuario.Focus();
+                    txtUsuario.SelectAll();
+
+                }
+                else
+                {
+                    MessageBox.Show("Usuario y/o contraseña incorrectos",
+                    "::: Minerva - Mensaje :::", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }*/
+
             }
-            //try
-            //{
-            //    conexionDB.Open();
-            //}
-            //catch (Exception ex)
-            //{
-            //  MessageBox.Show(ex.Message);
-            //}
-            //MySqlCommand codigo = new MySqlCommand();
-            //codigo.Connection = conexionDB;
-
-            //codigo.CommandText = ("SELECT * FROM usuario WHERE usuario = '" + txtUsuario.Text + "'and clave = '" + txtClave.Text + "' ");
-
-            //MySqlDataReader leer = codigo.ExecuteReader();
-
-            //if (leer.Read())
-            //{
-            //   FrmPaciente llamar = new FrmPaciente();
-            //   llamar.Show();
-            //   Size = new Size(776, 344);
-            //   this.Hide();
-            // }
-            //else
-            //{
-            //   MessageBox.Show("Usuario o Contraseña Incorrecta");
-            //   txtUsuario.Clear();
-            //    txtClave.Clear();
-            // }
-            // conexionDB.Close();
-
         }
 
         private void pnlCabeza_Paint(object sender, PaintEventArgs e)
