@@ -16,5 +16,10 @@ namespace CpConsultorioOdontologico
         {
             InitializeComponent();
         }
+
+        private void FrmUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
