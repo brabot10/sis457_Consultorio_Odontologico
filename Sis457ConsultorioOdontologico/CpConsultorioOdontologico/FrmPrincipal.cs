@@ -46,26 +46,24 @@ namespace CpConsultorioOdontologico
         {
             if (validar())
             {
-                FrmPaciente llamar = new FrmPaciente();
-                llamar.Show();
-                Size = new Size(776, 344);
-                this.Hide();
-                /*var usuario = UsuarioCln.validar(txtUsuario.Text, Util.Encrypt(txtClave.Text));
+                var usuario = UsuarioCln.validar(txtUsuario.Text, (txtClave.Text));
                 if (usuario != null)
                 {
                     Util.usuario = usuario;
                     txtClave.Text = string.Empty;
                     txtUsuario.Focus();
                     txtUsuario.SelectAll();
-
+                    FrmPaciente llamar = new FrmPaciente();
+                    llamar.Show();
+                    Size = new Size(776, 344);
+                    this.Hide();
                 }
                 else
                 {
                     MessageBox.Show("Usuario y/o contraseña incorrectos",
                     "::: Minerva - Mensaje :::", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-                }*/
-
+                }
             }
         }
 
