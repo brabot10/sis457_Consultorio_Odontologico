@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -26,6 +27,7 @@ namespace CpConsultorioOdontologico
             dgvLista.DataSource = cita;
             dgvLista.Columns["id"].Visible = false;
             dgvLista.Columns["estado"].Visible = false;
+            dgvLista.Columns["idPaciente"].HeaderText = "Nombre del paciente";
             dgvLista.Columns["fecha"].HeaderText = "Fecha de la Consulta";
             dgvLista.Columns["hora"].HeaderText = "Hora de la Consulta";
             dgvLista.Columns["tratamiento"].HeaderText = "Tratamiento";
@@ -36,7 +38,6 @@ namespace CpConsultorioOdontologico
             btnEditar.Enabled = cita.Count > 0;
             btnEliminar.Enabled = cita.Count > 0;
             if (cita.Count > 0) dgvLista.Rows[0].Cells["tratamiento"].Selected = true;
-
         }
         private void cargarPaciente()
         {
@@ -174,7 +175,6 @@ namespace CpConsultorioOdontologico
                     cita.fechaRegistro = DateTime.Now;
                     cita.estado = 1;
                     cita.idPaciente = Convert.ToInt32(cbxPaciente.SelectedValue);
-
                     CitaCln.insertar(cita);
                 }
                 else

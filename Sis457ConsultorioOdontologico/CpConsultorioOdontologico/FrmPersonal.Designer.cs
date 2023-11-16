@@ -65,6 +65,7 @@
             this.erpDireccion = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpCelular = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpCargo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnUsuario = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -130,6 +131,7 @@
             // 
             // pnlAcciones
             // 
+            this.pnlAcciones.Controls.Add(this.btnUsuario);
             this.pnlAcciones.Controls.Add(this.btnEditar);
             this.pnlAcciones.Controls.Add(this.btnEliminar);
             this.pnlAcciones.Controls.Add(this.btnNuevo);
@@ -183,7 +185,7 @@
             this.dgvLista.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLista.EnableHeadersVisualStyles = false;
             this.dgvLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(203)))), ((int)(((byte)(209)))));
-            this.dgvLista.Location = new System.Drawing.Point(5, 21);
+            this.dgvLista.Location = new System.Drawing.Point(6, 21);
             this.dgvLista.MultiSelect = false;
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.ReadOnly = true;
@@ -427,6 +429,26 @@
             // 
             this.erpCargo.ContainerControl = this;
             // 
+            // btnUsuario
+            // 
+            this.btnUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(124)))), ((int)(((byte)(127)))));
+            this.btnUsuario.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnUsuario.FlatAppearance.BorderSize = 2;
+            this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuario.ForeColor = System.Drawing.Color.White;
+            this.btnUsuario.Image = global::CpConsultorioOdontologico.Properties.Resources.per_login;
+            this.btnUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuario.Location = new System.Drawing.Point(474, 5);
+            this.btnUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUsuario.Name = "btnUsuario";
+            this.btnUsuario.Size = new System.Drawing.Size(111, 59);
+            this.btnUsuario.TabIndex = 14;
+            this.btnUsuario.Text = "Usuario";
+            this.btnUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUsuario.UseVisualStyleBackColor = false;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
+            // 
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(124)))), ((int)(((byte)(127)))));
@@ -438,7 +460,7 @@
             this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Image = global::CpConsultorioOdontologico.Properties.Resources.per_editar;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(175, 5);
+            this.btnEditar.Location = new System.Drawing.Point(121, 5);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(111, 59);
@@ -459,7 +481,7 @@
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.Image = global::CpConsultorioOdontologico.Properties.Resources.per_eliminar;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(317, 5);
+            this.btnEliminar.Location = new System.Drawing.Point(239, 5);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(111, 59);
@@ -479,7 +501,7 @@
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
             this.btnNuevo.Image = global::CpConsultorioOdontologico.Properties.Resources.per_agregar;
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(36, 5);
+            this.btnNuevo.Location = new System.Drawing.Point(6, 5);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(111, 59);
@@ -499,7 +521,7 @@
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
             this.btnCerrar.Image = global::CpConsultorioOdontologico.Properties.Resources.per_cerrar;
             this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrar.Location = new System.Drawing.Point(454, 5);
+            this.btnCerrar.Location = new System.Drawing.Point(357, 5);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(111, 59);
@@ -732,5 +754,6 @@
         private System.Windows.Forms.ErrorProvider erpDireccion;
         private System.Windows.Forms.ErrorProvider erpCelular;
         private System.Windows.Forms.ErrorProvider erpCargo;
+        private System.Windows.Forms.Button btnUsuario;
     }
 }

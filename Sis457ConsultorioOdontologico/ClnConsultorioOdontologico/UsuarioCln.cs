@@ -47,7 +47,7 @@ namespace ClnConsultorioOdontologico
                 return context.Usuario.Find(id);
             }
         }
-        public static List<Usuario> Listar()
+        public static List<Usuario> listar()
         {
             using (var context = new LabConsultorioOdontologicoEntities())
             {

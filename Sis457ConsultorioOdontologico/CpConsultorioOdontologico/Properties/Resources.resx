@@ -193,6 +193,9 @@
   <data name="btnNuevo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnNuevo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="per_cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\per_cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BuscarCitas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BuscarCitas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -226,7 +229,7 @@
   <data name="personal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\personal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="per_cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\per_cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="per_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\per_login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

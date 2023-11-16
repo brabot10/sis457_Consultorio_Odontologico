@@ -122,3 +122,4 @@ C:\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOd
 C:\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.FrmUsuario.resources
+D:\Bryan 2023\Info\Fundamentos de la programación- sis-457\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\CpConsultorioOdontologico\obj\Debug\CpConsultorioOdontologico.FrmUsuario.resources

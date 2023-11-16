@@ -21,33 +21,35 @@ namespace CpConsultorioOdontologico
             InitializeComponent();
         }
 
-            private void listar()
-            {
-                var usuario = UsuarioCln.listarPa(txtParametro.Text.Trim());
-                dgvLista.DataSource = usuario;
-                dgvLista.Columns["id"].Visible = false;
-                dgvLista.Columns["estado"].Visible = false;
-                dgvLista.Columns["usuario"].HeaderText = "Usuario";
-                dgvLista.Columns["clave"].HeaderText = "Clave";
-                dgvLista.Columns["usuarioRegistro"].HeaderText = "Usuario";
-                dgvLista.Columns["fechaRegistro"].HeaderText = "Fecha del Registro";
-                if (usuario.Count > 0) dgvLista.Rows[0].Cells["usuario"].Selected = true;
+        private void listar()
+        {
+            var usuario = UsuarioCln.listarPa(txtParametro.Text.Trim());
+            dgvLista.DataSource = usuario;
+            dgvLista.Columns["id"].Visible = false;
+            dgvLista.Columns["estado"].Visible = false;
+            dgvLista.Columns["idPersonal"].HeaderText = "Encargado";
+            dgvLista.Columns["usuario"].HeaderText = "Usuario";
+            dgvLista.Columns["clave"].HeaderText = "Clave";
+            dgvLista.Columns["usuarioRegistro"].HeaderText = "Usuario";
+            dgvLista.Columns["fechaRegistro"].HeaderText = "Fecha del Registro";
+            if (usuario.Count > 0) dgvLista.Rows[0].Cells["usuario"].Selected = true;
 
-            }
+        }
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
             listar();
             cargarpersonal();
         }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             limpiar();
-            //Establecer DialogResult como OK para indicar que se cerró correctamente
+            // Establecer DialogResult como OK para indicar que se cerró correctamente
             this.DialogResult = DialogResult.OK;
 
-            //Cerrar el fot¿rmulario
+            // Cerrar el formulario
             this.Close();
+
+            // Close();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -61,11 +63,12 @@ namespace CpConsultorioOdontologico
             cbxPersonal.DisplayMember = "nombres";
             cbxPersonal.ValueMember = "id";
         }
-
-        private void txtPrametro_keyPress(object sender, KeyPressEventArgs e)
+        private void txtParametro_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter) listar();
         }
+
+
         private bool validar()
         {
             bool esValido = true;
@@ -93,7 +96,7 @@ namespace CpConsultorioOdontologico
                 usuario.clave = txtClave.Text.Trim();
                 usuario.usuarioRegistro = "SIS324";
 
-                var existeUsuario= UsuarioCln.Listar();
+                var existeUsuario = UsuarioCln.listar();
                 bool usuarioExiste = false;
 
                 foreach (var existeUsuarios in existeUsuario)
@@ -128,15 +131,17 @@ namespace CpConsultorioOdontologico
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+
         private void limpiar()
         {
             txtUsuario.Text = string.Empty;
+            txtClave.Text = string.Empty;
         }
 
         int posX = 0;
         int posY = 0;
-
-        private void pnlMovimiento_MouseMove(object sender, MouseEventArgs e)
+        private void pnlMovimiento_MouseMove_1(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)
             {
@@ -149,6 +154,6 @@ namespace CpConsultorioOdontologico
                 Top = Top + (e.Y - posY);
             }
         }
-            
+
     }
 }
