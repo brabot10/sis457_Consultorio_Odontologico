@@ -1,5 +1,4 @@
 ﻿using ClnConsultorioOdontologico;
-using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +17,6 @@ namespace CpConsultorioOdontologico
         {
             InitializeComponent();
         }
-        //MySqlConnection conexionDB = UsuarioCln.conexion();
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -46,13 +44,14 @@ namespace CpConsultorioOdontologico
         {
             if (validar())
             {
-                var usuario = UsuarioCln.validar(txtUsuario.Text, (txtClave.Text));
+                var usuario = UsuarioCln.validar(txtUsuario.Text, Util.Encrypt(txtClave.Text));
                 if (usuario != null)
                 {
                     Util.usuario = usuario;
-                    txtClave.Text = string.Empty;
                     txtUsuario.Focus();
                     txtUsuario.SelectAll();
+                    txtClave.Text = string.Empty;
+                    Visible = false;
                     FrmPaciente llamar = new FrmPaciente();
                     llamar.Show();
                     Size = new Size(776, 344);
@@ -65,6 +64,10 @@ namespace CpConsultorioOdontologico
                     MessageBoxIcon.Error);
                 }
             }
+        }
+        private void txtClave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter) btnIngresar.PerformClick();
         }
 
         private void pnlCabeza_Paint(object sender, PaintEventArgs e)

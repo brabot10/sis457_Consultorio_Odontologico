@@ -83,7 +83,14 @@ namespace CpConsultorioOdontologico
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            RecargarFormularioLogin();
             Close();
+        }
+        private void RecargarFormularioLogin()
+        {
+            FrmPrincipal nuevoFormulario = new FrmPrincipal();
+            nuevoFormulario.Show();
+            this.Close();  // Cierra el formulario actual
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

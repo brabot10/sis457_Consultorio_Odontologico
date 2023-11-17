@@ -81,7 +81,14 @@ namespace CpConsultorioOdontologico
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            RecargarFormularioLogin();
             Close();
+        }
+        private void RecargarFormularioLogin()
+        {
+            FrmPrincipal nuevoFormulario = new FrmPrincipal();
+            nuevoFormulario.Show();
+            this.Close();  // Cierra el formulario actual
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -175,7 +182,7 @@ namespace CpConsultorioOdontologico
                     personal.direccion = txtDireccion.Text;
                     personal.celular = int.Parse(txtCelular.Text);
                     personal.cargo = txtCargo.Text;
-                    personal.usuarioRegistro = "SIS257";
+                    personal.usuarioRegistro = "SIS457";
                     var existePersonales = PersonalCln.listar();
                     bool personalExiste = false;
 

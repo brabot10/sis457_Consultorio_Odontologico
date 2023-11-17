@@ -116,6 +116,7 @@ CREATE PROC paCitaListar @parametro3 VARCHAR(50)
 AS
   SELECT id, idPaciente, fecha, hora, tratamiento, pago, aCuenta, usuarioRegistro, fechaRegistro, estado
   FROM Cita
+
   WHERE estado<>-1 AND fecha LIKE '%'+REPLACE(@parametro3,' ','%')+'%';
 EXEC paCitaListar 'Limpieza dental';
 

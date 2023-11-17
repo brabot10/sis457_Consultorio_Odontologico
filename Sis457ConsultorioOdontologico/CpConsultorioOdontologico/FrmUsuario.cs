@@ -15,7 +15,8 @@ namespace CpConsultorioOdontologico
 {
     public partial class FrmUsuario : Form
     {
-        bool esNuevo = false;
+        bool esNuevo = true;
+
         public FrmUsuario()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace CpConsultorioOdontologico
             dgvLista.Columns["clave"].HeaderText = "Clave";
             dgvLista.Columns["usuarioRegistro"].HeaderText = "Usuario";
             dgvLista.Columns["fechaRegistro"].HeaderText = "Fecha del Registro";
+            btnEliminar.Enabled = usuario.Count > 0;
             if (usuario.Count > 0) dgvLista.Rows[0].Cells["usuario"].Selected = true;
 
         }
@@ -68,7 +70,6 @@ namespace CpConsultorioOdontologico
             if (e.KeyChar == (char)Keys.Enter) listar();
         }
 
-
         private bool validar()
         {
             bool esValido = true;
@@ -93,8 +94,8 @@ namespace CpConsultorioOdontologico
             {
                 var usuario = new Usuario();
                 usuario.usuario1 = txtUsuario.Text.Trim();
-                usuario.clave = txtClave.Text.Trim();
-                usuario.usuarioRegistro = "SIS324";
+                usuario.clave = Util.Encrypt(txtClave.Text.Trim());
+                usuario.usuarioRegistro = "SIS457";
 
                 var existeUsuario = UsuarioCln.listar();
                 bool usuarioExiste = false;
@@ -155,5 +156,20 @@ namespace CpConsultorioOdontologico
             }
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int index = dgvLista.CurrentCell.RowIndex;
+            int id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
+            string usuario = dgvLista.Rows[index].Cells["usuario"].Value.ToString();
+            DialogResult dialog = MessageBox.Show($"¿Está seguro que desea eliminar el Usuario {usuario}?",
+                "::: Consultorio Odontologico - Mensaje :::", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dialog == DialogResult.OK)
+            {
+                UsuarioCln.eliminar(id, "SIS457");
+                listar();
+                MessageBox.Show("Usuario eliminado correctamente", "::: Consultorio Odontologico - Mensaje :::",
+                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

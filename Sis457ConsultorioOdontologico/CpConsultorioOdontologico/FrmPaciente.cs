@@ -85,7 +85,14 @@ namespace CpConsultorioOdontologico
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            RecargarFormularioLogin();
             Close();
+        }
+        private void RecargarFormularioLogin()
+        {
+            FrmPrincipal nuevoFormulario = new FrmPrincipal();
+            nuevoFormulario.Show();
+            this.Close();  // Cierra el formulario actual
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -171,7 +178,7 @@ namespace CpConsultorioOdontologico
                     paciente.alergias = txtAlergias.Text;
                     paciente.fechaNacimiento = dtpFechaNacimiento.Value;
                     paciente.celular = int.Parse(txtCelular.Text);
-                    paciente.usuarioRegistro = "SIS324";
+                    paciente.usuarioRegistro = "SIS457";
 
                     var existePacientes = PacienteCln.listar();
                     bool pacienteExiste = false;
@@ -219,7 +226,7 @@ namespace CpConsultorioOdontologico
                     paciente.alergias = txtAlergias.Text;
                     paciente.fechaNacimiento = dtpFechaNacimiento.Value;
                     paciente.celular = int.Parse(txtCelular.Text);
-                    paciente.usuarioRegistro = "SIS324";
+                    paciente.usuarioRegistro = "SIS457";
 
                     if (esNuevo)
                     {

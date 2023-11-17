@@ -78,7 +78,14 @@ namespace CpConsultorioOdontologico
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            RecargarFormularioLogin();
             Close();
+        }
+        private void RecargarFormularioLogin()
+        {
+            FrmPrincipal nuevoFormulario = new FrmPrincipal();
+            nuevoFormulario.Show();
+            this.Close();  // Cierra el formulario actual
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -128,7 +135,7 @@ namespace CpConsultorioOdontologico
                 medicamento.articulo = txtArticulo.Text.Trim();
                 medicamento.descripcion = txtDescripcion.Text.Trim();
                 medicamento.precio = int.Parse(txtPrecio.Text);
-                medicamento.usuarioRegistro = "SIS324";
+                medicamento.usuarioRegistro = "SIS457";
                 if (esNuevo)
                 {
                     medicamento.fechaRegistro = DateTime.Now;
@@ -165,7 +172,7 @@ namespace CpConsultorioOdontologico
                     "::: Consultorio Odontologico - Mensaje :::", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dialog == DialogResult.OK)
                 {
-                    MedicamentoCln.eliminar(id, "SIS324");
+                    MedicamentoCln.eliminar(id, "SIS457");
                     listar();
                     MessageBox.Show("Medicamento eliminado correctamente", "::: Consultorio Odontologico - Mensaje :::",
                      MessageBoxButtons.OK, MessageBoxIcon.Information);
