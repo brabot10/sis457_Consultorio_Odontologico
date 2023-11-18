@@ -27,7 +27,8 @@ namespace CpConsultorioOdontologico
             dgvLista.DataSource = cita;
             dgvLista.Columns["id"].Visible = false;
             dgvLista.Columns["estado"].Visible = false;
-            dgvLista.Columns["idPaciente"].HeaderText = "Nombre del paciente";
+            //dgvLista.Columns["idPaciente"].Visible = false;
+            dgvLista.Columns["nombresPaciente"].HeaderText = "Nombre del paciente";
             dgvLista.Columns["fecha"].HeaderText = "Fecha de la Consulta";
             dgvLista.Columns["hora"].HeaderText = "Hora de la Consulta";
             dgvLista.Columns["tratamiento"].HeaderText = "Tratamiento";
@@ -58,6 +59,8 @@ namespace CpConsultorioOdontologico
             Size = new Size(776, 493);
             esNuevo = true;
             txtTratamiento.Focus();
+            cbxPaciente.Visible = true;
+            lblPaciente.Visible = true;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -73,6 +76,8 @@ namespace CpConsultorioOdontologico
             cbxPago.Text = cita.pago;
             txtAcuenta.Text = cita.aCuenta;
             txtHora.Text = cita.hora;
+            cbxPaciente.Visible = false;
+            lblPaciente.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)//Cancelar

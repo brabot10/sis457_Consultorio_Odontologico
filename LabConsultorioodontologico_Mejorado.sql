@@ -97,7 +97,7 @@ ALTER TABLE Medicamento ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminaci
 CREATE PROC paPersonalListar @parametro1 VARCHAR(50) 
 AS
   SELECT id, cedulaIdentidad, nombres, primerApellido, segundoApellido, direccion, celular, cargo, usuarioRegistro, fechaRegistro, estado 
-  FROM Personal  --De que tabla lo tomaremos
+  FROM Personal  
   WHERE estado<>-1 AND nombres LIKE '%'+REPLACE(@parametro1,' ','%')+'%';
 
 EXEC paPersonalListar 'Juan';
@@ -146,9 +146,7 @@ VALUES ('123456789', 'Juan', 'Pérez', 'García', 'Calle 123', 9876543210, 'Méd
 INSERT INTO Personal (cedulaIdentidad, nombres, primerApellido, segundoApellido, direccion, celular, cargo)
 VALUES ('987654321', 'María', 'González', 'Díaz', 'Calle 456', 1234567890, 'Secretaria');
 
-UPDATE Personal SET nombre='Pedro' WHERE id=1;
-UPDATE Personal SET estado=-1 WHERE id=2;
-UPDATE Personal SET estado=0 WHERE id=2;
+
 
 SELECT * FROM Personal WHERE estado=1;
 
@@ -159,4 +157,106 @@ VALUES ('bryan', '1234', 1),
        ('Rosa10', '1234', 2);
 
 SELECT * FROM Usuario;
+
+PROCEDIMIENTOS ALTERADOS FUNCIONALES
+CREATE PROC paCitaListar 
+  @parametro3 VARCHAR(50)
+AS
+BEGIN
+  -- Mostrar resultados
+  SELECT 
+    Cita.id, 
+    Paciente.nombres AS nombresPaciente,
+    Cita.fecha, 
+    Cita.hora, 
+    Cita.tratamiento, 
+    Cita.pago, 
+    Cita.aCuenta, 
+    Cita.usuarioRegistro, 
+    Cita.fechaRegistro, 
+    Cita.estado
+  FROM Cita
+  INNER JOIN Paciente ON Cita.idPaciente = Paciente.id
+  WHERE Cita.estado <> -1 AND Paciente.nombres LIKE '%' + REPLACE(@parametro3, ' ', '%') + '%';
+END;
+
+ 	-- Doctor Asignado Pacientes
+
+CREATE PROC paPacienteListar 
+  @parametro2 VARCHAR(50)
+AS
+BEGIN
+  -- Mostrar resultados
+  SELECT 
+    Paciente.id, 
+    Paciente.idPersonal, 
+    Personal.nombres AS nombresPersonal,
+    Paciente.cedulaIdentidad, 
+    Paciente.nombres, 
+    Paciente.alergias, 
+    Paciente.fechaNacimiento, 
+    Paciente.celular, 
+    Paciente.usuarioRegistro, 
+    Paciente.fechaRegistro, 
+    Paciente.estado
+  FROM Paciente
+  INNER JOIN Personal ON Paciente.idPersonal = Personal.id
+  WHERE Paciente.estado <> -1 AND Paciente.nombres LIKE '%' + REPLACE(@parametro2, ' ', '%') + '%';
+END;
+
+-- Ejecutar el procedimiento almacenado
+EXEC paPacienteListar 'María';
+
+
+
+
+
+ 	-- Encargado  Usuario
+
+CREATE PROC paUsuarioListar 
+  @parametro VARCHAR(50)
+AS
+BEGIN
+  -- Mostrar resultados
+  SELECT 
+    Usuario.id, 
+    Usuario.idPersonal, 
+    Personal.nombres AS nombresPersonal,
+    Usuario.usuario, 
+    Usuario.clave, 
+    Usuario.usuarioRegistro, 
+    Usuario.fechaRegistro, 
+    Usuario.estado
+  FROM Usuario
+  INNER JOIN Personal ON Usuario.idPersonal = Personal.id
+  WHERE Usuario.estado <> -1 AND Usuario.usuario LIKE '%' + REPLACE(@parametro, ' ', '%') + '%';
+END;
+
+-- Ejecutar el procedimiento almacenado
+EXEC paUsuarioListar 'bryan';
+
+
+	-- Nombre del paciente Medicamentos
+
+CREATE PROC paMedicamentoListar 
+  @parametro4 VARCHAR(50)
+AS
+BEGIN
+  SELECT 
+    Medicamento.id, 
+    Medicamento.idPaciente, 
+    Paciente.nombres AS nombresPaciente,
+    Medicamento.articulo, 
+    Medicamento.descripcion, 
+    Medicamento.precio, 
+    Medicamento.usuarioRegistro, 
+    Medicamento.fechaRegistro, 
+    Medicamento.estado
+FROM Medicamento
+INNER JOIN Paciente ON Medicamento.idPaciente = Paciente.id
+WHERE Medicamento.estado <> -1 AND Paciente.nombres LIKE '%' + REPLACE(@parametro4, ' ', '%') + '%';
+END;
+
+-- Ejecutar el procedimiento almacenado
+EXEC paMedicamentoListar 'Paracetamol';
 

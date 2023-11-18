@@ -124,7 +124,7 @@
   <data name="btnEliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAADFVJREFUaEPVWXlQVfcVBrVW1AYX0AiVBnetJmObNJlap1Otxq22xtpp/2nSGVON
+        DwAACw8BkvkDpQAADFVJREFUaEPVWXlQVfcVBrVW1AYX0AiVBnetJmObNJlap1Otxq22xtpp/2nSGVON
         abHGmrYpI4LohGgUt6KySXVceYCKiLI+9p3HvqMgm+ybO3p6vvPufTzgYVGpqb+ZM/e+u37f+Z1zvvO7
         z4yIXmkzefBVMpMHXyUzffC/DHNz8+EWFhZjLC0tJ9na2k6dPHnyLDs7u++zvTlAm4t7cC+ewc+yxDOV
         xz/bGAABcxubSfYLFy58f+3atR/x2LrZwcHVycnpX25ubic9PT0v+vr6Xj1x4kQ4W9QALRz34F48Y/v2
@@ -183,7 +183,7 @@
   <data name="btnGuardar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAADHBJREFUaEPVWQlUVeUWFt9qsGXLlomFJm+FQ1qZWaaW8hxQH2pmgqiQ5lxKKb18
+        EAAACxABrSO9dQAADHBJREFUaEPVWQlUVeUWFt9qsGXLlomFJm+FQ1qZWaaW8hxQH2pmgqiQ5lxKKb18
         liUPnkiOaaYmJuCACiKjzOgVBIHLPM+XyyQXEAUVcEz93t4/58AFroVD9txr7XXGe8737X//+/v3uZ0A
         PNGu8+ST5DpPPkmu++QfmJ6e3tNdunR5oVu3bga9e/fu26dPn4GGhoZvkL/VQX+Tf8O/5WfQs7rxM6XH
         3591gIBer14GrxobG//T3Nx8Adkqm5UrHe3t7fds3rz5sLOz84kDBw6EHjx4UEEe2UFX8G/4t/wMOzu7
@@ -242,7 +242,7 @@
   <data name="btnBuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAC9NJREFUaEPVWVlQVdkVFSumyo/WtBEiGNF21tY2WhkqcUhil8aYpFIFsdMmhe1H
+        DwAACw8BkvkDpQAAC9NJREFUaEPVWVlQVdkVFSumyo/WtBEiGNF21tY2WhkqcUhil8aYpFIFsdMmhe1H
         f/gTTYU23XYUu5UYaecJEESmJ6jMIiD4AEHmeVYGZ1BBAQUcwGFnrfPufT7gYVCxjadq173vjmvts/de
         +9w3SETearN68G0yqwffJrN+8H8MGxub7w4dOvR7w4cPtx89evSEMWPGTHV0dHwf9kE/bQbv4b18Bp41
         nM/UHv9iox8EbBwc7N+bP3/+b5ydnVdiuK5Zvdp948aNnh4eHsG+vr4x/v7+CQEBAUZYaj/NyHt4L5/h

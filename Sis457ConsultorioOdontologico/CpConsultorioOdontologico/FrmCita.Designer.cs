@@ -293,9 +293,9 @@
             this.lblBusqueda.Location = new System.Drawing.Point(7, 11);
             this.lblBusqueda.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(157, 16);
+            this.lblBusqueda.Size = new System.Drawing.Size(206, 16);
             this.lblBusqueda.TabIndex = 31;
-            this.lblBusqueda.Text = "Buscar cita por fecha:";
+            this.lblBusqueda.Text = "Buscar nombre del Paciente:";
             // 
             // pnlDatosDes
             // 
@@ -337,7 +337,7 @@
             // lblPaciente
             // 
             this.lblPaciente.AutoSize = true;
-            this.lblPaciente.Location = new System.Drawing.Point(440, 44);
+            this.lblPaciente.Location = new System.Drawing.Point(433, 44);
             this.lblPaciente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPaciente.Name = "lblPaciente";
             this.lblPaciente.Size = new System.Drawing.Size(114, 15);
@@ -363,7 +363,7 @@
             // 
             this.txtHora.Location = new System.Drawing.Point(551, 15);
             this.txtHora.Margin = new System.Windows.Forms.Padding(2);
-            this.txtHora.MaxLength = 250;
+            this.txtHora.MaxLength = 20;
             this.txtHora.Name = "txtHora";
             this.txtHora.Size = new System.Drawing.Size(190, 21);
             this.txtHora.TabIndex = 29;
@@ -377,10 +377,10 @@
             this.cbxPago.Items.AddRange(new object[] {
             "CANCELADO",
             "PENDIENTE"});
-            this.cbxPago.Location = new System.Drawing.Point(153, 78);
+            this.cbxPago.Location = new System.Drawing.Point(134, 38);
             this.cbxPago.Margin = new System.Windows.Forms.Padding(2);
             this.cbxPago.Name = "cbxPago";
-            this.cbxPago.Size = new System.Drawing.Size(265, 23);
+            this.cbxPago.Size = new System.Drawing.Size(284, 23);
             this.cbxPago.TabIndex = 27;
             // 
             // dtpFecha
@@ -391,24 +391,24 @@
             this.dtpFecha.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(84)))), ((int)(((byte)(87)))));
             this.dtpFecha.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(164)))), ((int)(((byte)(168)))));
             this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFecha.Location = new System.Drawing.Point(153, 15);
+            this.dtpFecha.Location = new System.Drawing.Point(134, 15);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(265, 22);
+            this.dtpFecha.Size = new System.Drawing.Size(284, 22);
             this.dtpFecha.TabIndex = 26;
             // 
             // txtAcuenta
             // 
-            this.txtAcuenta.Location = new System.Drawing.Point(153, 109);
+            this.txtAcuenta.Location = new System.Drawing.Point(134, 62);
             this.txtAcuenta.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAcuenta.MaxLength = 100;
+            this.txtAcuenta.MaxLength = 15;
             this.txtAcuenta.Name = "txtAcuenta";
-            this.txtAcuenta.Size = new System.Drawing.Size(264, 21);
+            this.txtAcuenta.Size = new System.Drawing.Size(283, 21);
             this.txtAcuenta.TabIndex = 25;
             // 
             // lblAcuenta
             // 
             this.lblAcuenta.AutoSize = true;
-            this.lblAcuenta.Location = new System.Drawing.Point(8, 109);
+            this.lblAcuenta.Location = new System.Drawing.Point(9, 68);
             this.lblAcuenta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAcuenta.Name = "lblAcuenta";
             this.lblAcuenta.Size = new System.Drawing.Size(66, 15);
@@ -434,17 +434,18 @@
             // 
             // txtTratamiento
             // 
-            this.txtTratamiento.Location = new System.Drawing.Point(153, 47);
+            this.txtTratamiento.Location = new System.Drawing.Point(134, 87);
             this.txtTratamiento.Margin = new System.Windows.Forms.Padding(2);
             this.txtTratamiento.MaxLength = 250;
+            this.txtTratamiento.Multiline = true;
             this.txtTratamiento.Name = "txtTratamiento";
-            this.txtTratamiento.Size = new System.Drawing.Size(265, 21);
+            this.txtTratamiento.Size = new System.Drawing.Size(284, 51);
             this.txtTratamiento.TabIndex = 21;
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(8, 23);
+            this.lblFecha.Location = new System.Drawing.Point(9, 22);
             this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(115, 15);
@@ -454,7 +455,7 @@
             // lblTratamiento
             // 
             this.lblTratamiento.AutoSize = true;
-            this.lblTratamiento.Location = new System.Drawing.Point(8, 50);
+            this.lblTratamiento.Location = new System.Drawing.Point(8, 91);
             this.lblTratamiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTratamiento.Name = "lblTratamiento";
             this.lblTratamiento.Size = new System.Drawing.Size(88, 15);
@@ -474,7 +475,7 @@
             // lblPago
             // 
             this.lblPago.AutoSize = true;
-            this.lblPago.Location = new System.Drawing.Point(8, 80);
+            this.lblPago.Location = new System.Drawing.Point(8, 46);
             this.lblPago.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPago.Name = "lblPago";
             this.lblPago.Size = new System.Drawing.Size(116, 15);
