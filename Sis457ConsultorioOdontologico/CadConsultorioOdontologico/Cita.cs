@@ -16,6 +16,7 @@ namespace CadConsultorioOdontologico
     {
         public int id { get; set; }
         public int idPaciente { get; set; }
+        public int idRegistro { get; set; }
         public System.DateTime fecha { get; set; }
         public System.TimeSpan hora { get; set; }
         public string tratamiento { get; set; }
@@ -26,5 +27,6 @@ namespace CadConsultorioOdontologico
         public short estado { get; set; }
     
         public virtual Paciente Paciente { get; set; }
+        public virtual Registro Registro { get; set; }
     }
 }

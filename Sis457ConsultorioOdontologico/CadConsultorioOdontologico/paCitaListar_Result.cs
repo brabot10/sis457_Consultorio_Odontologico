@@ -13,7 +13,9 @@ namespace CadConsultorioOdontologico
     
     public partial class paCitaListar_Result
     {
+        public string valorRegistro { get; set; }
         public int id { get; set; }
+        public int idRegistro { get; set; }
         public string nombresPaciente { get; set; }
         public System.DateTime fecha { get; set; }
         public System.TimeSpan hora { get; set; }
