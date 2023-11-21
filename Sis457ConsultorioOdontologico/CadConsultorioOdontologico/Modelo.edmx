@@ -12,7 +12,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idPaciente" Type="int" Nullable="false" />
           <Property Name="fecha" Type="date" Nullable="false" />
-          <Property Name="hora" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="hora" Type="time" Precision="7" Nullable="false" />
           <Property Name="tratamiento" Type="varchar" MaxLength="250" Nullable="false" />
           <Property Name="pago" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="aCuenta" Type="varchar" MaxLength="15" Nullable="false" />
@@ -174,7 +174,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idPaciente" Type="Int32" Nullable="false" />
           <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="hora" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hora" Type="Time" Nullable="false" Precision="7" />
           <Property Name="tratamiento" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="pago" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="aCuenta" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
@@ -336,7 +336,7 @@
           <Property Type="Int32" Name="id" Nullable="false" />
           <Property Type="String" Name="nombresPaciente" Nullable="false" MaxLength="20" />
           <Property Type="DateTime" Name="fecha" Nullable="false" />
-          <Property Type="String" Name="hora" Nullable="false" MaxLength="20" />
+          <Property Type="Time" Name="hora" Nullable="false" />
           <Property Type="String" Name="tratamiento" Nullable="false" MaxLength="250" />
           <Property Type="String" Name="pago" Nullable="false" MaxLength="20" />
           <Property Type="String" Name="aCuenta" Nullable="false" MaxLength="15" />

@@ -314,7 +314,7 @@
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(620, 32);
             this.lblTitulo.TabIndex = 29;
-            this.lblTitulo.Text = "Consultorio Odontologico :::Medicamentos:::";
+            this.lblTitulo.Text = "Consultorio Odontológico :::Medicamentos:::";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlMenu

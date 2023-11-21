@@ -75,7 +75,7 @@ namespace CpConsultorioOdontologico
             txtTratamiento.Text = cita.tratamiento;
             cbxPago.Text = cita.pago;
             txtAcuenta.Text = cita.aCuenta;
-            txtHora.Text = cita.hora;
+            dtpHora.Value = Convert.ToDateTime(cita.hora);
             cbxPaciente.Visible = false;
             lblPaciente.Visible = false;
         }
@@ -113,7 +113,7 @@ namespace CpConsultorioOdontologico
             erpTratamiento.SetError(txtTratamiento, "");
             erpPago.SetError(cbxPago, "");
             erpAcuenta.SetError(txtAcuenta, "");
-            erpHora.SetError(txtHora, "");
+            erpHora.SetError(dtpHora, "");
             if (string.IsNullOrEmpty(dtpFecha.Text))
             {
                 esValido = false;
@@ -144,10 +144,10 @@ namespace CpConsultorioOdontologico
                 esValido = false;
                 erpAcuenta.SetError(txtAcuenta, "El campo a Cuenta es obligatorio");
             }
-            if (string.IsNullOrEmpty(txtHora.Text))
+            if (string.IsNullOrEmpty(dtpHora.Text))
             {
                 esValido = false;
-                erpHora.SetError(txtHora, "El campo Hora es obligatorio");
+                erpHora.SetError(dtpHora, "El campo Hora es obligatorio");
             }
             return esValido;
         }
@@ -161,7 +161,9 @@ namespace CpConsultorioOdontologico
                 cita.tratamiento = txtTratamiento.Text.Trim();
                 cita.pago = cbxPago.Text;
                 cita.aCuenta = txtAcuenta.Text.Trim();
-                cita.hora = txtHora.Text.Trim();
+                cita.hora = dtpHora.Value.TimeOfDay;
+                //cita.hora = dtpHora.Value.ToString("HH:mm:ss");
+                //cita.hora = new TimeSpan(dtpHora.Value.Ticks);
                 cita.usuarioRegistro = "SIS457";
 
                 var existeCitas = CitaCln.Listar();
@@ -207,7 +209,7 @@ namespace CpConsultorioOdontologico
             txtTratamiento.Text = string.Empty;
             cbxPago.SelectedIndex = -1;
             txtAcuenta.Text = string.Empty;
-            txtHora.Text = string.Empty;
+            dtpHora.Text = string.Empty;
 
         }
 

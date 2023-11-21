@@ -29,9 +29,10 @@ namespace CpConsultorioOdontologico
             dgvLista.Columns["id"].Visible = false;
             dgvLista.Columns["estado"].Visible = false;
             dgvLista.Columns["idPersonal"].Visible = false;
+            dgvLista.Columns["clave"].Visible = false;
             dgvLista.Columns["nombresPersonal"].HeaderText = "Encargado";
             dgvLista.Columns["usuario"].HeaderText = "Usuario";
-            dgvLista.Columns["clave"].HeaderText = "Clave";
+            //dgvLista.Columns["clave"].HeaderText = "Clave";
             dgvLista.Columns["usuarioRegistro"].HeaderText = "Usuario";
             dgvLista.Columns["fechaRegistro"].HeaderText = "Fecha del Registro";
             btnEliminar.Enabled = usuario.Count > 0;

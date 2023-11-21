@@ -136,6 +136,9 @@
   <data name="Paciente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Paciente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="user_cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="per_buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\per_buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,8 +166,8 @@
   <data name="per_cerrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\per_cerrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CalcelarCitas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CalcelarCitas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="med_cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\med_cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,6 +184,9 @@
   <data name="per_agregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\per_agregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CalcelarCitas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CalcelarCitas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="3017912_annul_cancel_clean_delete_eliminate_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3017912_annul_cancel_clean_delete_eliminate_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -189,9 +195,6 @@
   </data>
   <data name="NuevoCitas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NuevoCitas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnNuevo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnNuevo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,7 +235,7 @@
   <data name="personal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\personal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user_cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hor_agregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hor_agregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
