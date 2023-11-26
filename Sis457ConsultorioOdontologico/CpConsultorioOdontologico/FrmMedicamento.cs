@@ -68,9 +68,8 @@ namespace CpConsultorioOdontologico
             int index = dgvLista.CurrentCell.RowIndex;
             int id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
             var medicamento = MedicamentoCln.get(id);
-            txtArticulo.Text = medicamento.articulo;
             txtDescripcion.Text = medicamento.descripcion;
-            txtPrecio.Text = medicamento.precio.ToString();
+            txtPrecio.Text = medicamento.total.ToString();
             cbxPaciente.Visible = false;
             lblPaciente.Visible = false;
         }
@@ -137,9 +136,9 @@ namespace CpConsultorioOdontologico
             if (validar())
             {
                 var medicamento = new Medicamento();
-                medicamento.articulo = txtArticulo.Text.Trim();
+                //medicamento.articulo = txtArticulo.Text.Trim();
                 medicamento.descripcion = txtDescripcion.Text.Trim();
-                medicamento.precio = int.Parse(txtPrecio.Text);
+                medicamento.total = int.Parse(txtPrecio.Text);
                 medicamento.usuarioRegistro = "SIS457";
                 if (esNuevo)
                 {

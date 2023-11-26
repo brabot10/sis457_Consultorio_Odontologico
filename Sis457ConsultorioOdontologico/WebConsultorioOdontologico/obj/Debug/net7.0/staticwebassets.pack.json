@@ -145,6 +145,18 @@
       "PackagePath": "staticwebassets\\images\\hero_bg_2.jpg"
     },
     {
+      "Id": "D:\\Bryan 2023\\Info\\Fundamentos de la programación- sis-457\\sis457_Consultorio_Odontologico\\Sis457ConsultorioOdontologico\\WebConsultorioOdontologico\\wwwroot\\images\\hero_bg_bryan.jpg",
+      "PackagePath": "staticwebassets\\images\\hero_bg_bryan.jpg"
+    },
+    {
+      "Id": "D:\\Bryan 2023\\Info\\Fundamentos de la programación- sis-457\\sis457_Consultorio_Odontologico\\Sis457ConsultorioOdontologico\\WebConsultorioOdontologico\\wwwroot\\images\\hero_bg_daniela.jpg",
+      "PackagePath": "staticwebassets\\images\\hero_bg_daniela.jpg"
+    },
+    {
+      "Id": "D:\\Bryan 2023\\Info\\Fundamentos de la programación- sis-457\\sis457_Consultorio_Odontologico\\Sis457ConsultorioOdontologico\\WebConsultorioOdontologico\\wwwroot\\images\\hero_bg_marquez.jpg",
+      "PackagePath": "staticwebassets\\images\\hero_bg_marquez.jpg"
+    },
+    {
       "Id": "D:\\Bryan 2023\\Info\\Fundamentos de la programación- sis-457\\sis457_Consultorio_Odontologico\\Sis457ConsultorioOdontologico\\WebConsultorioOdontologico\\wwwroot\\images\\img_1.jpg",
       "PackagePath": "staticwebassets\\images\\img_1.jpg"
     },

@@ -29,8 +29,8 @@ namespace CpConsultorioOdontologico
             dgvLista.Columns["estado"].Visible = false;
             dgvLista.Columns["cedulaIdentidad"].HeaderText = "Cedula de Identidad";
             dgvLista.Columns["nombres"].HeaderText = "Nombre";
-            dgvLista.Columns["primerApellido"].HeaderText = "Primer Apellido";
-            dgvLista.Columns["segundoApellido"].HeaderText = "Segundo Apellido";
+            dgvLista.Columns["especialidad"].HeaderText = "Primer Apellido";
+            dgvLista.Columns["antiguedad"].HeaderText = "Segundo Apellido";
             dgvLista.Columns["direccion"].HeaderText = "Dirección";
             dgvLista.Columns["celular"].HeaderText = "Celular";
             dgvLista.Columns["cargo"].HeaderText = "Cargo";
@@ -66,8 +66,8 @@ namespace CpConsultorioOdontologico
             var personal = PersonalCln.get(id);
             txtCedulaIdentidad.Text = personal.cedulaIdentidad;
             txtNombre.Text = personal.nombres;
-            txtPrimerApellido.Text = personal.primerApellido;
-            txtSegundoApellido.Text = personal.segundoApellido;
+            txtPrimerApellido.Text = personal.especialidad;
+            txtSegundoApellido.Text = personal.antiguedad;
             txtDireccion.Text = personal.direccion;
             txtCelular.Text = personal.celular.ToString();
             txtCargo.Text = personal.cargo;
@@ -177,8 +177,8 @@ namespace CpConsultorioOdontologico
                     var personal = new Personal();
                     personal.cedulaIdentidad = txtCedulaIdentidad.Text.Trim();
                     personal.nombres = txtNombre.Text.Trim();
-                    personal.primerApellido = txtPrimerApellido.Text;
-                    personal.segundoApellido = txtSegundoApellido.Text;
+                    personal.especialidad = txtPrimerApellido.Text;
+                    personal.antiguedad = txtSegundoApellido.Text;
                     personal.direccion = txtDireccion.Text;
                     personal.celular = int.Parse(txtCelular.Text);
                     personal.cargo = txtCargo.Text;
@@ -226,8 +226,8 @@ namespace CpConsultorioOdontologico
                     var personal = new Personal();
                     personal.cedulaIdentidad = txtCedulaIdentidad.Text.Trim();
                     personal.nombres = txtNombre.Text.Trim();
-                    personal.primerApellido = txtPrimerApellido.Text;
-                    personal.segundoApellido = txtSegundoApellido.Text;
+                    personal.especialidad = txtPrimerApellido.Text;
+                    personal.antiguedad = txtSegundoApellido.Text;
                     personal.direccion = txtDireccion.Text;
                     personal.celular = int.Parse(txtCelular.Text);
                     personal.cargo = txtCargo.Text;
