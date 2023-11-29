@@ -11211,23 +11211,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bryan\\.nuget\\packages\\": {},
+    "C:\\Users\\HP\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Bryan 2023\\Info\\Fundamentos de la programación- sis-457\\sis457_Consultorio_Odontologico\\Sis457ConsultorioOdontologico\\WebConsultorioOdontologico\\WebConsultorioOdontologico.csproj",
+      "projectUniqueName": "C:\\sis457_Consultorio_Odontologico\\Sis457ConsultorioOdontologico\\WebConsultorioOdontologico\\WebConsultorioOdontologico.csproj",
       "projectName": "WebConsultorioOdontologico",
-      "projectPath": "D:\\Bryan 2023\\Info\\Fundamentos de la programación- sis-457\\sis457_Consultorio_Odontologico\\Sis457ConsultorioOdontologico\\WebConsultorioOdontologico\\WebConsultorioOdontologico.csproj",
-      "packagesPath": "C:\\Users\\Bryan\\.nuget\\packages\\",
-      "outputPath": "D:\\Bryan 2023\\Info\\Fundamentos de la programación- sis-457\\sis457_Consultorio_Odontologico\\Sis457ConsultorioOdontologico\\WebConsultorioOdontologico\\obj\\",
+      "projectPath": "C:\\sis457_Consultorio_Odontologico\\Sis457ConsultorioOdontologico\\WebConsultorioOdontologico\\WebConsultorioOdontologico.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\sis457_Consultorio_Odontologico\\Sis457ConsultorioOdontologico\\WebConsultorioOdontologico\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Bryan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -11299,7 +11299,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
