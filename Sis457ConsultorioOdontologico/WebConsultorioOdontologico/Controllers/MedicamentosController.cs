@@ -22,7 +22,7 @@ namespace WebConsultorioOdontologico.Controllers
         public async Task<IActionResult> Index()
         {
             var labConsultorioOdontologicoContext = _context.Medicamentos.Include(m => m.IdInventarioNavigation).Include(m => m.IdPacienteNavigation);
-            return View(await labConsultorioOdontologicoContext.ToListAsync());
+            return View(await labConsultorioOdontologicoContext.Where(x => x.Estado != -1).ToListAsync());
         }
 
         // GET: Medicamentos/Details/5
@@ -58,16 +58,19 @@ namespace WebConsultorioOdontologico.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdPaciente,IdInventario,Cantidad,Descripcion,Total,UsuarioRegistro,FechaRegistro,Estado")] Medicamento medicamento)
+        public async Task<IActionResult> Create([Bind("Id,IdPaciente,IdInventario,Cantidad,Descripcion,Total")] Medicamento medicamento)
         {
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(medicamento.Descripcion))
             {
+                medicamento.UsuarioRegistro = "sis457 web";
+                medicamento.FechaRegistro = DateTime.Now;
+                medicamento.Estado = 1;
                 _context.Add(medicamento);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Id", medicamento.IdInventario);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Id", medicamento.IdPaciente);
+            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Artículo", medicamento.IdInventario);
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres", medicamento.IdPaciente);
             return View(medicamento);
         }
 
@@ -84,8 +87,8 @@ namespace WebConsultorioOdontologico.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Id", medicamento.IdInventario);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Id", medicamento.IdPaciente);
+            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Artículo", medicamento.IdInventario);
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres", medicamento.IdPaciente);
             return View(medicamento);
         }
 
@@ -94,17 +97,20 @@ namespace WebConsultorioOdontologico.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,IdPaciente,IdInventario,Cantidad,Descripcion,Total,UsuarioRegistro,FechaRegistro,Estado")] Medicamento medicamento)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,IdPaciente,IdInventario,Cantidad,Descripcion,Total")] Medicamento medicamento)
         {
             if (id != medicamento.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(medicamento.Descripcion))
             {
                 try
                 {
+                    medicamento.UsuarioRegistro = "sis457 web";
+                    medicamento.FechaRegistro = DateTime.Now;
+                    medicamento.Estado = 1;
                     _context.Update(medicamento);
                     await _context.SaveChangesAsync();
                 }
@@ -121,8 +127,8 @@ namespace WebConsultorioOdontologico.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Id", medicamento.IdInventario);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Id", medicamento.IdPaciente);
+            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Artículo", medicamento.IdInventario);
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres", medicamento.IdPaciente);
             return View(medicamento);
         }
 
@@ -158,7 +164,8 @@ namespace WebConsultorioOdontologico.Controllers
             var medicamento = await _context.Medicamentos.FindAsync(id);
             if (medicamento != null)
             {
-                _context.Medicamentos.Remove(medicamento);
+                medicamento.Estado = -1;
+                //_context.Medicamentos.Remove(medicamento);
             }
             
             await _context.SaveChangesAsync();
