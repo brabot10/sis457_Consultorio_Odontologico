@@ -61,7 +61,7 @@ namespace WebConsultorioOdontologico.Controllers
             {
                 inventario.UsuarioRegistro = "sis457 web";
                 inventario.FechaRegistro = DateTime.Now;
-                //inventario = 1;
+                inventario.Estado = 1;
                 _context.Add(inventario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -103,7 +103,7 @@ namespace WebConsultorioOdontologico.Controllers
                 {
                     inventario.UsuarioRegistro = "sis457 web";
                     inventario.FechaRegistro = DateTime.Now;
-                    //inventario = 1;
+                    inventario.Estado = 1;
                     _context.Update(inventario);
                     await _context.SaveChangesAsync();
                 }
