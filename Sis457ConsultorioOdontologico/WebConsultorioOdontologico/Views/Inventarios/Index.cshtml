@@ -5,51 +5,48 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<div class="mx-5">
+
+<h1>INVENTARIO</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">
+            <i class="fas fa-plus me-6"></i>Crear nuevo Inventario
+        </a>
 </p>
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Articulo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Precio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioRegistro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaRegistro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Estado)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Articulo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioRegistro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaRegistro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estado)
-            </td>
-            <td>
+        <tbody>
+        <thead>
+            <tr style="background-color: #333333">
+                <th style="color : #C7180C">Artículo</th>
+                <th style="color : #C7180C">Precio</th>
+                <th style="color : #C7180C">Usuario Registro</th>
+                <th style="color : #C7180C">Fecha Registro</th>
+                <th style="color : #C7180C">Estado</th>
+                <th style="color : #C7180C">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tbody>
+                    @foreach (var item in Model)
+                     {
+                <tr style="background-color: #333333">   
+                    <td style="color : white">
+                                @Html.DisplayFor(modelItem => item.Articulo)
+                    </td>
+                    <td style="color : white">
+                                @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                    <td style="color : white">
+                                @Html.DisplayFor(modelItem => item.UsuarioRegistro)
+                    </td>
+                    <td style="color : white">
+                                @Html.DisplayFor(modelItem => item.FechaRegistro)
+                    </td>
+                    <td style="color : white">
+                                @(item.Estado == 1 ? "Activo" : "Inactivo")
+                    </td>
+                    <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
@@ -58,3 +55,4 @@
 }
     </tbody>
 </table>
+</div>
