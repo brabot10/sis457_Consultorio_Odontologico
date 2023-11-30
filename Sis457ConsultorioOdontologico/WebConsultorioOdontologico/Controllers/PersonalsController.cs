@@ -22,7 +22,7 @@ namespace WebConsultorioOdontologico.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.Personals != null ? 
-                          View(await _context.Personals.ToListAsync()) :
+                          View(await _context.Personals.Where(x => x.Estado != -1).ToListAsync()) :
                           Problem("Entity set 'LabConsultorioOdontologicoContext.Personals'  is null.");
         }
 
@@ -55,10 +55,13 @@ namespace WebConsultorioOdontologico.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CedulaIdentidad,Nombres,Especialidad,Antiguedad,Direccion,Celular,Cargo,UsuarioRegistro,FechaRegistro,Estado")] Personal personal)
+        public async Task<IActionResult> Create([Bind("Id,CedulaIdentidad,Nombres,Especialidad,Antiguedad,Direccion,Celular,Cargo")] Personal personal)
         {
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(personal.Nombres))
             {
+                personal.UsuarioRegistro = "sis457 web";
+                personal.FechaRegistro = DateTime.Now;
+                personal.Estado = 1;
                 _context.Add(personal);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -87,17 +90,20 @@ namespace WebConsultorioOdontologico.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CedulaIdentidad,Nombres,Especialidad,Antiguedad,Direccion,Celular,Cargo,UsuarioRegistro,FechaRegistro,Estado")] Personal personal)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,CedulaIdentidad,Nombres,Especialidad,Antiguedad,Direccion,Celular,Cargo")] Personal personal)
         {
             if (id != personal.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(personal.Nombres))
             {
                 try
                 {
+                    personal.UsuarioRegistro = "sis457 web";
+                    personal.FechaRegistro = DateTime.Now;
+                    personal.Estado = 1;
                     _context.Update(personal);
                     await _context.SaveChangesAsync();
                 }
@@ -147,7 +153,8 @@ namespace WebConsultorioOdontologico.Controllers
             var personal = await _context.Personals.FindAsync(id);
             if (personal != null)
             {
-                _context.Personals.Remove(personal);
+                personal.Estado = -1;
+                //_context.Personals.Remove(personal);
             }
             
             await _context.SaveChangesAsync();
