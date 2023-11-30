@@ -1,0 +1,81 @@
+﻿@model IEnumerable<WebConsultorioOdontologico.Models.Citum>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mx-5">
+
+    <h1>LISTA DE CITAS</h1>
+
+    <p>
+        <a asp-action="Create">
+            <i class="fas fa-plus me-6"></i>Crear nueva cita
+        </a>
+    </p>
+    <table class="table">
+        <tbody>
+        <thead>
+            <tr style="background-color: #333333">
+                <th style="color : #C7180C">Nombre de Paciente</th>
+                <th style="color : #C7180C">Fecha de la cita</th>
+                <th style="color : #C7180C">Hora de la cita</th>
+                <th style="color : #C7180C">Tratamiento</th>
+                <th style="color : #C7180C">Pago</th>
+                <th style="color : #C7180C">Pago pendiente</th>
+                <th style="color : #C7180C">Usuario Registro</th>
+                <th style="color : #C7180C">Fecha Registro</th>
+                <th style="color : #C7180C">Estado</th>
+                <th style="color : #C7180C">Estado de la cita</th>
+                <th style="color : #C7180C">Acciones</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr style ="background-color: #333333">
+                    <td style="color : white">
+                            @item.IdPacienteNavigation.Nombres
+                    </td>
+                    <td style="color : white">
+                            @item.Fecha.ToShortDateString()
+                    </td>
+                    <td style="color : white">
+                            @Html.DisplayFor(modelItem => item.Hora)
+                    </td>
+                    <td style="color : white">
+                        @Html.DisplayFor(modelItem => item.Tratamiento)
+                    </td>
+                    <td style="color : white">
+                        @Html.DisplayFor(modelItem => item.Pago)
+                    </td>
+                    <td style="color : white">
+                        @Html.DisplayFor(modelItem => item.ACuenta)
+                    </td>
+                    <td style="color : white">
+                        @Html.DisplayFor(modelItem => item.UsuarioRegistro)
+                    </td>
+                    <td style="color : white">
+                        @Html.DisplayFor(modelItem => item.FechaRegistro)
+                    </td>
+                    <td style="color : white">
+                            @(item.Estado == 1 ? "Disponible" : "No disponible")
+                    </td>
+                    <td style="color : white">
+                            @item.IdRegistroNavigation.Valor
+                    </td>
+                    <td>
+                            @if (item.IdRegistroNavigation.Id == 1)
+                            {
+                            <a asp-action="Edit" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editar"><i class="fas fa-edit me-2"></i></a>
+                            } 
+                            <a asp-action="Details" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ver"><i class="fas fa-eye me-2"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Eliminar"><i class="fas fa-trash me-2"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

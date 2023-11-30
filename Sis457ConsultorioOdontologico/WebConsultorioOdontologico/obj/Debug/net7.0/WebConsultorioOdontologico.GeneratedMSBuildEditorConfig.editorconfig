@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\sis457_Consultorio_Odontologico\Sis457ConsultorioOdontologico\WebConsultorioOdontologico
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/sis457_Consultorio_Odontologico/Sis457ConsultorioOdontologico/WebConsultorioOdontologico/Views/Citas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0YXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/sis457_Consultorio_Odontologico/Sis457ConsultorioOdontologico/WebConsultorioOdontologico/Views/Citas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0YXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/sis457_Consultorio_Odontologico/Sis457ConsultorioOdontologico/WebConsultorioOdontologico/Views/Citas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0YXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/sis457_Consultorio_Odontologico/Sis457ConsultorioOdontologico/WebConsultorioOdontologico/Views/Citas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0YXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/sis457_Consultorio_Odontologico/Sis457ConsultorioOdontologico/WebConsultorioOdontologico/Views/Citas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0YXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/sis457_Consultorio_Odontologico/Sis457ConsultorioOdontologico/WebConsultorioOdontologico/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
