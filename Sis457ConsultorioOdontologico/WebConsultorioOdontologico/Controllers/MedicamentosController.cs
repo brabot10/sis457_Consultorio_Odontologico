@@ -48,8 +48,8 @@ namespace WebConsultorioOdontologico.Controllers
         // GET: Medicamentos/Create
         public IActionResult Create()
         {
-            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Id");
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Id");
+            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Articulo");
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres");
             return View();
         }
 
@@ -69,7 +69,7 @@ namespace WebConsultorioOdontologico.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Artículo", medicamento.IdInventario);
+            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Articulo", medicamento.IdInventario);
             ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres", medicamento.IdPaciente);
             return View(medicamento);
         }
@@ -87,7 +87,7 @@ namespace WebConsultorioOdontologico.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Artículo", medicamento.IdInventario);
+            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Articulo", medicamento.IdInventario);
             ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres", medicamento.IdPaciente);
             return View(medicamento);
         }
@@ -127,7 +127,7 @@ namespace WebConsultorioOdontologico.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Artículo", medicamento.IdInventario);
+            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Articulo", medicamento.IdInventario);
             ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres", medicamento.IdPaciente);
             return View(medicamento);
         }
