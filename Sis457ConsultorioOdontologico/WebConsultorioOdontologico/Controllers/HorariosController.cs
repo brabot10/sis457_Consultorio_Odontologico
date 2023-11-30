@@ -22,7 +22,7 @@ namespace WebConsultorioOdontologico.Controllers
         public async Task<IActionResult> Index()
         {
             var labConsultorioOdontologicoContext = _context.Horarios.Include(h => h.IdPersonalNavigation);
-            return View(await labConsultorioOdontologicoContext.ToListAsync());
+            return View(await labConsultorioOdontologicoContext.Where(x => x.Estado != -1).ToListAsync());
         }
 
         // GET: Horarios/Details/5
@@ -47,7 +47,7 @@ namespace WebConsultorioOdontologico.Controllers
         // GET: Horarios/Create
         public IActionResult Create()
         {
-            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Id");
+            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres");
             return View();
         }
 
@@ -56,15 +56,18 @@ namespace WebConsultorioOdontologico.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdPersonal,Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Mes,Permiso,UsuarioRegistro,FechaRegistro,Estado")] Horario horario)
+        public async Task<IActionResult> Create([Bind("Id,IdPersonal,Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Mes,Permiso")] Horario horario)
         {
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(horario.Lunes))
             {
+                horario.UsuarioRegistro = "sis457 web";
+                horario.FechaRegistro = DateTime.Now;
+                horario.Estado = 1;
                 _context.Add(horario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Id", horario.IdPersonal);
+            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres", horario.IdPersonal);
             return View(horario);
         }
 
@@ -90,17 +93,20 @@ namespace WebConsultorioOdontologico.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,IdPersonal,Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Mes,Permiso,UsuarioRegistro,FechaRegistro,Estado")] Horario horario)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,IdPersonal,Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Mes,Permiso")] Horario horario)
         {
             if (id != horario.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(horario.Lunes))
             {
                 try
                 {
+                    horario.UsuarioRegistro = "sis457 web";
+                    horario.FechaRegistro = DateTime.Now;
+                    horario.Estado = 1;
                     _context.Update(horario);
                     await _context.SaveChangesAsync();
                 }
@@ -117,7 +123,7 @@ namespace WebConsultorioOdontologico.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Id", horario.IdPersonal);
+            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres", horario.IdPersonal);
             return View(horario);
         }
 
@@ -152,7 +158,8 @@ namespace WebConsultorioOdontologico.Controllers
             var horario = await _context.Horarios.FindAsync(id);
             if (horario != null)
             {
-                _context.Horarios.Remove(horario);
+                horario.Estado = -1;
+                //_context.Horarios.Remove(horario);
             }
             
             await _context.SaveChangesAsync();
