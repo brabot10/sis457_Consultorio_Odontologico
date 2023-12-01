@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e46ade16b16e4fdb83f36c57e81de1f7" Name="Diagram1" ZoomLevel="34">
-        <EntityTypeShape EntityType="LabConsultorioOdontologicoModel.Cita" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabConsultorioOdontologicoModel.Horario" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabConsultorioOdontologicoModel.Inventario" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabConsultorioOdontologicoModel.Medicamento" Width="1.5" PointX="8.25" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabConsultorioOdontologicoModel.Paciente" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabConsultorioOdontologicoModel.Personal" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabConsultorioOdontologicoModel.Registro" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabConsultorioOdontologicoModel.Usuario" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+      <Diagram DiagramId="e46ade16b16e4fdb83f36c57e81de1f7" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="LabConsultorioOdontologicoModel.Cita" Width="1.5" PointX="17.375" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabConsultorioOdontologicoModel.Horario" Width="1.5" PointX="12.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabConsultorioOdontologicoModel.Inventario" Width="1.5" PointX="10.625" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabConsultorioOdontologicoModel.Medicamento" Width="1.5" PointX="12.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabConsultorioOdontologicoModel.Paciente" Width="1.5" PointX="15.125" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabConsultorioOdontologicoModel.Personal" Width="1.5" PointX="15.125" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabConsultorioOdontologicoModel.Registro" Width="1.5" PointX="19.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabConsultorioOdontologicoModel.Usuario" Width="1.5" PointX="17.375" PointY="7.5" IsExpanded="true" />
         <AssociationConnector Association="LabConsultorioOdontologicoModel.fk_Cita_Paciente" ManuallyRouted="false" />
         <AssociationConnector Association="LabConsultorioOdontologicoModel.fk_Cita_Registro" ManuallyRouted="false" />
         <AssociationConnector Association="LabConsultorioOdontologicoModel.fk_Horario_Personal" ManuallyRouted="false" />

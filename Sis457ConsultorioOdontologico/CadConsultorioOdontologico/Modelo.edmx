@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LabConsultorioOdontologicoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LabConsultorioOdontologicoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cita">
           <Key>
             <PropertyRef Name="id" />
@@ -70,8 +70,8 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idPersonal" Type="int" Nullable="false" />
-          <Property Name="nombres" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="cedulaIdentidad" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="nombres" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="cedulaIdentidad" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="alergias" Type="varchar" MaxLength="250" />
           <Property Name="fechaNacimiento" Type="date" Nullable="false" />
           <Property Name="celular" Type="bigint" Nullable="false" />
@@ -85,9 +85,9 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="cedulaIdentidad" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="nombres" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="especialidad" Type="varchar" MaxLength="20" />
-          <Property Name="antiguedad" Type="varchar" MaxLength="20" />
+          <Property Name="nombres" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="especialidad" Type="varchar" MaxLength="30" />
+          <Property Name="antiguedad" Type="varchar" MaxLength="30" />
           <Property Name="direccion" Type="varchar" MaxLength="250" Nullable="false" />
           <Property Name="celular" Type="bigint" Nullable="false" />
           <Property Name="cargo" Type="varchar" MaxLength="30" Nullable="false" />
@@ -263,8 +263,7 @@
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LabConsultorioOdontologicoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -339,8 +338,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idPersonal" Type="Int32" Nullable="false" />
-          <Property Name="nombres" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="cedulaIdentidad" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cedulaIdentidad" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="alergias" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="celular" Type="Int64" Nullable="false" />
@@ -357,9 +356,9 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="cedulaIdentidad" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nombres" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="especialidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="antiguedad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="nombres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="especialidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="antiguedad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="direccion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="celular" Type="Int64" Nullable="false" />
           <Property Name="cargo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
@@ -516,28 +515,28 @@
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
           <FunctionImport Name="paCitaListar" ReturnType="Collection(LabConsultorioOdontologicoModel.paCitaListar_Result)">
-            <Parameter Name="parametro3" Mode="In" Type="String" />
+          <Parameter Name="parametro3" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="paHorarioListar" ReturnType="Collection(LabConsultorioOdontologicoModel.paHorarioListar_Result)">
-            <Parameter Name="parametroHorario" Mode="In" Type="String" />
+          <Parameter Name="parametroHorario" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="paInventarioListar" ReturnType="Collection(LabConsultorioOdontologicoModel.paInventarioListar_Result)">
-            <Parameter Name="parametro" Mode="In" Type="String" />
+          <Parameter Name="parametro" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="paMedicamentoListar" ReturnType="Collection(LabConsultorioOdontologicoModel.paMedicamentoListar_Result)">
-            <Parameter Name="parametro4" Mode="In" Type="String" />
+          <Parameter Name="parametro4" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="paPacienteListar" ReturnType="Collection(LabConsultorioOdontologicoModel.paPacienteListar_Result)">
-            <Parameter Name="parametro2" Mode="In" Type="String" />
+          <Parameter Name="parametro2" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="paPersonalListar" ReturnType="Collection(LabConsultorioOdontologicoModel.paPersonalListar_Result)">
-            <Parameter Name="parametro1" Mode="In" Type="String" />
+          <Parameter Name="parametro1" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="paRegistroListar" ReturnType="Collection(LabConsultorioOdontologicoModel.paRegistroListar_Result)">
-            <Parameter Name="parametro" Mode="In" Type="String" />
+          <Parameter Name="parametro" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="paUsuarioListar" ReturnType="Collection(LabConsultorioOdontologicoModel.paUsuarioListar_Result)">
-            <Parameter Name="parametro" Mode="In" Type="String" />
+          <Parameter Name="parametro" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="paCitaListar_Result">
