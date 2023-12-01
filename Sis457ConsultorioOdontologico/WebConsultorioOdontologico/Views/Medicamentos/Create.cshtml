@@ -6,32 +6,32 @@
 }
 
 <div class="mx-5">
-    <h1>Crear Medicamento</h1>
+    <h1 style="color:red" >CREAR NUEVO MEDICAMENTO</h1>
     <hr />
     <div class="row">
         <div class="col-md-4">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label class="control-label"> Nombre completo del Paciente</label>
+                    <label class="control-label" style="color:red"> Nombre completo del Paciente</label>
                     <select asp-for="IdPaciente" class="form-control" asp-items="ViewBag.IdPaciente"></select>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Nombre del Artículo</label>
+                    <label class="control-label" style="color:red">Nombre del Artículo</label>
                     <select asp-for="IdInventario" class="form-control" asp-items="ViewBag.IdInventario"></select>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Cantidad</label>
+                    <label class="control-label" style="color:red">Cantidad</label>
                     <input asp-for="Cantidad" class="form-control" />
                     <span asp-validation-for="Cantidad" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Descripción</label>
+                    <label class="control-label" style="color:red">Descripción</label>
                     <input asp-for="Descripcion" class="form-control" />
                     <span asp-validation-for="Descripcion" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Total</label>
+                    <label class="control-label" style="color:red">Total</label>
                     <input asp-for="Total" class="form-control" />
                     <span asp-validation-for="Total" class="text-danger"></span>
                 </div>
@@ -43,12 +43,41 @@
     </div>
 
     <div>
-        <a asp-action="Index">Volver a la lista</a>
+        <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
+        <a asp-action="Index" style="color:red ">Volver a la lista</a>
     </div>
 </div>
+<script>
+        $(document).ready(function () {
+            // Maneja el cambio en la selección del artículo para mostrar el precio
+            $("#articuloSelect").on("change", function () {
+                mostrarPrecio();
+            });
+
+            function mostrarPrecio() {
+                var idInventarioSeleccionado = $("#articuloSelect").val();
+
+                // Realiza una llamada AJAX para obtener el precio del inventario seleccionado
+                $.ajax({
+                    url: "/TuControlador/ObtenerPrecioUnitario", // Reemplaza esto con la ruta correcta en tu aplicación
+                    method: "GET",
+                    data: { idInventario: idInventarioSeleccionado },
+                    success: function (data) {
+                        // Muestra el precio en el div y muestra el div
+                        $("#precioOutput").text(data);
+                        $("#precioDiv").show();
+                    },
+                    error: function () {
+                        console.log("Error al obtener el precio del inventario.");
+                    }
+                });
+            }
+        });
+    </script>
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+

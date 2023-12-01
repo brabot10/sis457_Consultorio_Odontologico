@@ -10,7 +10,7 @@
 
     <p>
         <a asp-action="Create">
-           <i class="fas fa-plus me-6"></i>Crear nuevo Medicamento
+            <i class="fas fa-folder-plus me-6" style="transition: transform 0.2s ease-in-out;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">Crear nuevo Medicamento</i>
            </a>
     </p>
     <table class="table">
@@ -22,8 +22,8 @@
                 <th style="color : #C7180C">Cantidad</th>
                 <th style="color : #C7180C">Descripción</th>
                 <th style="color : #C7180C">Total</th>
-                <th style="color : #C7180C">Usuario Registro</th>
-                <th style="color : #C7180C">Fecha Registro</th>
+                <th style="color : #C7180C">Usuariov del Registro</th>
+                <th style="color : #C7180C">Fecha del Registro</th>
                 <th style="color : #C7180C">Estado</th>
                 <th style="color : #C7180C">Acciones</th>
             </tr>
@@ -55,12 +55,12 @@
                         @Html.DisplayFor(modelItem => item.FechaRegistro)
                     </td>
                     <td style="color : white">
-                                @(item.Estado == 1 ? "Activo" : "Inactivo")
+                                @(item.Estado == 1 ? "Disponible" : "No disponible")
                     </td>
                     <td>
-                        <a asp-action="Details" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ver"><i class="fas fa-eye me-2"></i></a>
-                        <a asp-action="Edit" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editar"><i class="fas fa-edit me-2"></i></a>
-                        <a asp-action="Delete" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Eliminar"><i class="fas fa-trash me-2"></i></a>
+                        <a asp-action="Details" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ver"><i class="fas fa-eye me-2" style="transition: transform 0.2s ease-in-out;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'"></i></a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editar"><i class="fas fa-edit me-2" style="transition: transform 0.2s ease-in-out;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Eliminar"><i class="fas fa-trash me-2" style="transition: transform 0.2s ease-in-out;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'"></i></a>
                     </td>
                 </tr>
             }

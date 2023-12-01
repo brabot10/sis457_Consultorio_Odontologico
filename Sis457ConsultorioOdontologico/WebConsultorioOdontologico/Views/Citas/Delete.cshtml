@@ -5,79 +5,79 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="mx-5">
-    <h1>Eliminar Cita</h1>
+    <h1 style="color:red">Eliminar Cita</h1>
 
-    <h3>Estas seguro de eliminar la cita?</h3>
+    <h3 style="color:red">Estas seguro de eliminar la cita?</h3>
     <div>
-        <h4>Citas</h4>
         <hr />
         <dl class="row">
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Fecha)
+            <dt class="col-sm-2" style="color:red">
+                Nombre del Paciente
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdPacienteNavigation.Nombres)
+            </dd>
+            <dt class="col-sm-2" style="color:red">
+                Fecha de la cita
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Fecha)
             </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Hora)
+            <dt class="col-sm-2" style="color:red">
+                Hora de la cita
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Hora)
             </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Tratamiento)
+            <dt class="col-sm-2" style="color:red">
+                Tratamiento
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Tratamiento)
             </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Pago)
+            <dt class="col-sm-2" style="color:red">
+                Estado del Pago
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Pago)
             </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.ACuenta)
+            <dt class="col-sm-2" style="color:red">
+                Pago Pendiente
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.ACuenta)
             </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.UsuarioRegistro)
+            <dt class="col-sm-2" style="color:red">
+                Usuario de Registro
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.UsuarioRegistro)
             </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.FechaRegistro)
+            <dt class="col-sm-2" style="color:red">
+                Fecha de Registro
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.FechaRegistro)
             </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Estado)
+            <dt class="col-sm-2" style="color:red">
+                Estado
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Estado)
+                @(Model.Estado == 1 ? "Disponible" : "No disponible")
             </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.IdPacienteNavigation)
+            <dt class ="col-sm-2" style="color:red">
+                Estado de la cita
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.IdPacienteNavigation.Id)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.IdRegistroNavigation)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.IdRegistroNavigation.Id)
+                @Html.DisplayFor(model => model.IdRegistroNavigation.Valor)
             </dd>
         </dl>
 
         <form asp-action="Delete">
             <input type="hidden" asp-for="Id" />
             <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-            <a asp-action="Index">Volver a la Lista</a>
+            <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
+            <a asp-action="Index">Volver a la lista</a>
         </form>
     </div>
 </div>

@@ -197,6 +197,10 @@
       "PackagePath": "staticwebassets\\images\\person_4.jpg"
     },
     {
+      "Id": "D:\\Bryan 2023\\Info\\Fundamentos de la programación- sis-457\\sis457_Consultorio_Odontologico\\Sis457ConsultorioOdontologico\\WebConsultorioOdontologico\\wwwroot\\js\\Custom.js",
+      "PackagePath": "staticwebassets\\js\\Custom.js"
+    },
+    {
       "Id": "D:\\Bryan 2023\\Info\\Fundamentos de la programación- sis-457\\sis457_Consultorio_Odontologico\\Sis457ConsultorioOdontologico\\WebConsultorioOdontologico\\wwwroot\\js\\aos.js",
       "PackagePath": "staticwebassets\\js\\aos.js"
     },

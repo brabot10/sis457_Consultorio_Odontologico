@@ -9,61 +9,61 @@
     <h1>Detalles del Medicamento</h1>
 
     <div>
-        <h4>Medicamento</h4>
         <hr />
         <dl class="row">
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Cantidad)
+            <dt class="col-sm-2" style="color:red">
+                Nombre del Artículo
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdInventarioNavigation.Articulo)
+            </dd>
+            <dt class="col-sm-2" style="color:red">
+                Nombre del Paciente
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdPacienteNavigation.Nombres)
+            </dd>
+            <dt class="col-sm-2" style="color:red">
+                Cantidad
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Cantidad)
             </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Descripcion)
+            <dt class="col-sm-2" style="color:red">
+                Descipción
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Descripcion)
             </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Total)
+            <dt class="col-sm-2" style="color:red">
+                Total
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Total)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.UsuarioRegistro)
+            <dt class="col-sm-2" style="color:red">
+                Usuario de Registro
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.UsuarioRegistro)
+                    @Html.DisplayFor(model => model.UsuarioRegistro)
             </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.FechaRegistro)
+            <dt class="col-sm-2" style="color:red">
+                Fecha de Registro
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.FechaRegistro)
+                    @Model.FechaRegistro.ToLongDateString() @Model.FechaRegistro.ToShortTimeString()
             </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Estado)
+            <dt class="col-sm-2" style="color:red">
+                Estado
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Estado)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.IdInventarioNavigation)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.IdInventarioNavigation.Id)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.IdPacienteNavigation)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.IdPacienteNavigation.Id)
+                    @(Model.Estado == 1 ? "Disponible" : "Nodisponible")
             </dd>
         </dl>
     </div>
     <div>
+        <i class="fas fa-edit " style="color:red "></i>
         <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
-        <a asp-action="Index">Volver a la lista</a>
+        <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
+        <a asp-action="Index" style="color:red ">Volver a la lista</a>
     </div>
 </div>

@@ -110,7 +110,6 @@ namespace WebConsultorioOdontologico.Controllers
                 {
                     medicamento.UsuarioRegistro = "sis457 web";
                     medicamento.FechaRegistro = DateTime.Now;
-                    medicamento.Estado = 1;
                     _context.Update(medicamento);
                     await _context.SaveChangesAsync();
                 }

@@ -110,7 +110,6 @@ namespace WebConsultorioOdontologico.Controllers
                 {
                     citum.UsuarioRegistro = "sis457 web";
                     citum.FechaRegistro = DateTime.Now;
-                    citum.Estado = 1;
                     _context.Update(citum);
                     await _context.SaveChangesAsync();
                 }

@@ -106,7 +106,6 @@ namespace WebConsultorioOdontologico.Controllers
                 {
                     horario.UsuarioRegistro = "sis457 web";
                     horario.FechaRegistro = DateTime.Now;
-                    horario.Estado = 1;
                     _context.Update(horario);
                     await _context.SaveChangesAsync();
                 }
