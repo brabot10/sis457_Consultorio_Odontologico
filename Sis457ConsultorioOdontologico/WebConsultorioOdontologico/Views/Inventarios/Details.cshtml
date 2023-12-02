@@ -6,46 +6,47 @@
 }
 
 <div class="mx-5">
-    <h1>Detalles del Artículo</h1>
+    <h1 style="color:red">Detalles del Artículo</h1>
 
     <div>
-        <h4>Inventario</h4>
         <hr />
         <dl class="row">
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Articulo)
+            <dt class="col-sm-2" style="color:red">
+                Nombre del Artículo
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Articulo)
             </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Precio)
+            <dt class="col-sm-2" style="color:red">
+                Precio del Artículo
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Precio)
             </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.UsuarioRegistro)
+            <dt class="col-sm-2" style="color:red">
+                Usuario de Registro
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.UsuarioRegistro)
             </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.FechaRegistro)
+            <dt class="col-sm-2" style="color:red">
+                Fecha de Registro
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.FechaRegistro)
+                @Model.FechaRegistro.ToLongDateString() @Model.FechaRegistro.ToShortTimeString()
             </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Estado)
+            <dt class="col-sm-2" style="color:red">
+                Estado
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Estado)
+                @(Model.Estado == 1 ? "Disponible" : "No disponible")
             </dd>
         </dl>
     </div>
     <div>
+        <i class="fas fa-edit " style="color:red "></i>
         <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
-        <a asp-action="Index">Volver a la lista</a>
+        <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
+        <a asp-action="Index" style="color:red ">Volver a la lista</a>
     </div>
 </div>

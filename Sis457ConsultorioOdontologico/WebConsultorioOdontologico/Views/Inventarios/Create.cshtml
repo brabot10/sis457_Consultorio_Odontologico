@@ -6,19 +6,19 @@
 }
 
 <div class="mx-5">
-    <h1>Crear Inventario</h1>
+    <h1 style="color:red">CREAR NUEVO ARTÍCULO</h1>
     <hr />
     <div class="row">
         <div class="col-md-4">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label class="control-label">Artículo</label>
+                    <label class="control-label" style="color:red">Nombre del Artículo</label>
                     <input asp-for="Articulo" class="form-control" />
                     <span asp-validation-for="Articulo" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Precio</label>
+                    <label class="control-label" style="color:red">Precio del Artículo</label>
                     <input asp-for="Precio" class="form-control" />
                     <span asp-validation-for="Precio" class="text-danger"></span>
                 </div>
@@ -30,7 +30,8 @@
     </div>
 
     <div>
-        <a asp-action="Index">Volver a la lista</a>
+        <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
+        <a asp-action="Index" style="color:red ">Volver a la lista</a>
     </div>
 </div>
 
