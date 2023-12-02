@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using WebConsultorioOdontologico.Models;
 
 namespace WebConsultorioOdontologico.Controllers
 {
+    [Authorize]
     public class CitasController : Controller
     {
         private readonly LabConsultorioOdontologicoContext _context;
@@ -62,7 +64,7 @@ namespace WebConsultorioOdontologico.Controllers
         {
             if (!string.IsNullOrEmpty(citum.Tratamiento))
             {
-                citum.UsuarioRegistro = "sis457 web";
+                citum.UsuarioRegistro = User.Identity?.Name;
                 citum.FechaRegistro = DateTime.Now;
                 citum.Estado = 1;
                 _context.Add(citum);
@@ -108,7 +110,7 @@ namespace WebConsultorioOdontologico.Controllers
             {
                 try
                 {
-                    citum.UsuarioRegistro = "sis457 web";
+                    citum.UsuarioRegistro = User.Identity?.Name;
                     citum.FechaRegistro = DateTime.Now;
                     _context.Update(citum);
                     await _context.SaveChangesAsync();

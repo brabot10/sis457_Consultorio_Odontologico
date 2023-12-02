@@ -30,6 +30,7 @@
 </head>
 <body>
     <div class="site-wrap">
+        <!-- .margen global -->
 
         <div class="site-mobile-menu">
             <div class="site-mobile-menu-header">
@@ -81,33 +82,45 @@
                                         <ul class="site-menu js-clone-nav d-none d-lg-block">
 
                                             <li><a asp-controller="Home" asp-action="Index" class="nav-item nav-link">Inicio</a></li>
+                                            @if (User.Identity?.IsAuthenticated == true)
+                                            {
+                                                <li class="has-children">
+                                                    <a class="nav-item nav-link">Registros</a>
+                                                    <ul class="dropdown arrow-top" style="background-color:rgba(51, 51, 51,0.5)">
+                                                        <li><a asp-controller="Pacientes" asp-action="Index" class="nav-item nav-link" style="color : #C7180C ; font-weight: 900">Pacientes</a></li>
+                                                        <li><a asp-controller="Citas" asp-action="Index" class="nav-item nav-link" style="color : #C7180C ; font-weight: 900">Citas</a></li>
+                                                    </ul>
+                                                </li>
 
-                                            <li class="has-children">
-                                                <a class="nav-item nav-link">Registros</a>
-                                                <ul class="dropdown arrow-top" style="background-color:rgba(51, 51, 51,0.5)">
-                                                    <li><a asp-controller="Pacientes" asp-action="Index" class="nav-item nav-link" style="color : #C7180C ; font-weight: 900">Pacientes</a></li>
-                                                    <li><a asp-controller="Citas" asp-action="Index" class="nav-item nav-link" style="color : #C7180C ; font-weight: 900">Citas</a></li>
-                                                </ul>
-                                            </li>
+                                                <li class="has-children">
+                                                    <a class="nav-item nav-link">Instrumentos</a>
+                                                    <ul class="dropdown arrow-top" style="background-color:rgba(51, 51, 51,0.5)">
+                                                        <li><a asp-controller="Medicamentos" asp-action="Index" class="nav-item nav-link" style="color : #C7180C ; font-weight: 900">Medicamentos</a></li>
+                                                        <li><a asp-controller="Inventarios" asp-action="Index" class="nav-item nav-link" style="color : #C7180C ; font-weight: 900">Inventarios</a></li>
+                                                    </ul>
+                                                </li>
 
-                                            <li class="has-children">
-                                                <a class="nav-item nav-link">Instrumentos</a>
-                                                <ul class="dropdown arrow-top" style="background-color:rgba(51, 51, 51,0.5)">
-                                                    <li><a asp-controller="Medicamentos" asp-action="Index" class="nav-item nav-link" style="color : #C7180C ; font-weight: 900">Medicamentos</a></li>
-                                                    <li><a asp-controller="Inventarios" asp-action="Index" class="nav-item nav-link" style="color : #C7180C ; font-weight: 900">Inventarios</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="has-children">
-                                                <a class="nav-item nav-link">
-                                                    <span>Administrador</span>
-                                                    <span>&nbsp;&nbsp;&nbsp;</span>
-                                                </a>
-                                                <ul class="dropdown arrow-top" style="background-color:rgba(51, 51, 51,0.5)">
-                                                    <li><a asp-controller="Personals" asp-action="Index" class="nav-item nav-link" style="color : #C7180C ; font-weight: 900">Personal</a></li>
-                                                    <li><a asp-controller="horarios" asp-action="Index" class="nav-item nav-link" style="color : #C7180C ; font-weight: 900">Horarios</a></li>
-                                                    <li><a asp-controller="usuarios" asp-action="Index" class="nav-item nav-link" style="color : #C7180C ; font-weight: 900">Usuarios</a></li>
-                                                </ul>
+                                                <li class="has-children">
+                                                    <a class="nav-item nav-link">
+                                                        <span>Administrador</span>
+                                                        <span>&nbsp;&nbsp;&nbsp;</span>
+                                                    </a>
+                                                    <ul class="dropdown arrow-top" style="background-color:rgba(51, 51, 51,0.5)">
+                                                        <li><a asp-controller="Personals" asp-action="Index" class="nav-item nav-link" style="color : #C7180C ; font-weight: 900">Personal</a></li>
+                                                        <li><a asp-controller="horarios" asp-action="Index" class="nav-item nav-link" style="color : #C7180C ; font-weight: 900">Horarios</a></li>
+                                                        <li><a asp-controller="usuarios" asp-action="Index" class="nav-item nav-link" style="color : #C7180C ; font-weight: 900">Usuarios</a></li>
+                                                    </ul>
+                                                </li>
+                                            }
+                                            <li class="nav-item nav-link align-items-center justify-content-left ms-10">
+                                                @if (User.Identity?.IsAuthenticated == false)
+                                                {
+                                                    <a asp-controller="Account" asp-action="Login" style="color: wheat">Iniciar Sesión</a>
+                                                }
+                                                else
+                                                {
+                                                    @await Html.PartialAsync("_LogoutPartial")
+                                                }
                                             </li>
 
                                         </ul>

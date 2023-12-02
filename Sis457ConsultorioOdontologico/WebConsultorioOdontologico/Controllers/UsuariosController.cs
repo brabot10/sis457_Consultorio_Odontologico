@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using WebConsultorioOdontologico.Models;
 
 namespace WebConsultorioOdontologico.Controllers
 {
+    [Authorize]
     public class UsuariosController : Controller
     {
         private readonly LabConsultorioOdontologicoContext _context;
@@ -56,11 +58,12 @@ namespace WebConsultorioOdontologico.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdPersonal,Usuario1,Clave")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("Id,IdPersonal,Usuario1")] Usuario usuario)
         {
             if (!string.IsNullOrEmpty(usuario.Usuario1))
             {
-                usuario.UsuarioRegistro = "sis457 web";
+                usuario.Clave = Util.Encrypt("dental");
+                usuario.UsuarioRegistro = "sis457";
                 usuario.FechaRegistro = DateTime.Now;
                 usuario.Estado = 1;
                 _context.Add(usuario);
@@ -104,7 +107,9 @@ namespace WebConsultorioOdontologico.Controllers
             {
                 try
                 {
-                    usuario.UsuarioRegistro = "sis457 web";
+                    usuario.Clave = Util.Encrypt("dental");
+                    usuario.UsuarioRegistro = "sis457";
+                    usuario.FechaRegistro = DateTime.Now;
                     _context.Update(usuario);
                     await _context.SaveChangesAsync();
                 }
