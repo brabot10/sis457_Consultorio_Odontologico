@@ -93,7 +93,7 @@ namespace WebConsultorioOdontologico.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,IdPersonal,Nombres,CedulaIdentidad,Alergias,FechaNacimiento,Celular")] Paciente paciente)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,IdPersonal,Nombres,CedulaIdentidad,Alergias,FechaNacimiento,Celular,UsuarioRegistro,FechaRegistro,Estado")] Paciente paciente)
         {
             if (id != paciente.Id)
             {

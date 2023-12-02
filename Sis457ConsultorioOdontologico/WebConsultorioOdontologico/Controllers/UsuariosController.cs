@@ -22,7 +22,7 @@ namespace WebConsultorioOdontologico.Controllers
         public async Task<IActionResult> Index()
         {
             var labConsultorioOdontologicoContext = _context.Usuarios.Include(u => u.IdPersonalNavigation);
-            return View(await labConsultorioOdontologicoContext.ToListAsync());
+            return View(await labConsultorioOdontologicoContext.Where(x => x.Estado != -1).ToListAsync());
         }
 
         // GET: Usuarios/Details/5
@@ -47,7 +47,7 @@ namespace WebConsultorioOdontologico.Controllers
         // GET: Usuarios/Create
         public IActionResult Create()
         {
-            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Id");
+            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres");
             return View();
         }
 
@@ -56,15 +56,18 @@ namespace WebConsultorioOdontologico.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdPersonal,Usuario1,Clave,UsuarioRegistro,FechaRegistro,Estado")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("Id,IdPersonal,Usuario1,Clave")] Usuario usuario)
         {
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(usuario.Usuario1))
             {
+                usuario.UsuarioRegistro = "sis457 web";
+                usuario.FechaRegistro = DateTime.Now;
+                usuario.Estado = 1;
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Id", usuario.IdPersonal);
+            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres", usuario.IdPersonal);
             return View(usuario);
         }
 
@@ -81,7 +84,7 @@ namespace WebConsultorioOdontologico.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Id", usuario.IdPersonal);
+            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres", usuario.IdPersonal);
             return View(usuario);
         }
 
@@ -97,10 +100,11 @@ namespace WebConsultorioOdontologico.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(usuario.Usuario1))
             {
                 try
                 {
+                    usuario.UsuarioRegistro = "sis457 web";
                     _context.Update(usuario);
                     await _context.SaveChangesAsync();
                 }
@@ -117,7 +121,7 @@ namespace WebConsultorioOdontologico.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Id", usuario.IdPersonal);
+            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres", usuario.IdPersonal);
             return View(usuario);
         }
 
@@ -152,7 +156,8 @@ namespace WebConsultorioOdontologico.Controllers
             var usuario = await _context.Usuarios.FindAsync(id);
             if (usuario != null)
             {
-                _context.Usuarios.Remove(usuario);
+                usuario.Estado = -1;
+                //_context.Usuarios.Remove(usuario);
             }
             
             await _context.SaveChangesAsync();

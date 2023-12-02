@@ -84,7 +84,7 @@ namespace WebConsultorioOdontologico.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Id", horario.IdPersonal);
+            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres", horario.IdPersonal);
             return View(horario);
         }
 
@@ -93,7 +93,7 @@ namespace WebConsultorioOdontologico.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,IdPersonal,Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Mes,Permiso")] Horario horario)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,IdPersonal,Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Mes,Permiso,UsuarioRegistro,FechaRegistro,Estado")] Horario horario)
         {
             if (id != horario.Id)
             {

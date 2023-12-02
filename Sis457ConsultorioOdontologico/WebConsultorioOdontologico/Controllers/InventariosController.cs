@@ -90,7 +90,7 @@ namespace WebConsultorioOdontologico.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Articulo,Precio")] Inventario inventario)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Articulo,Precio,UsuarioRegistro,FechaRegistro,Estado")] Inventario inventario)
         {
             if (id != inventario.Id)
             {

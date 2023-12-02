@@ -26,7 +26,7 @@
                     <span asp-validation-for="Lunes" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label  class="control-label" style="color:red">Martes</label>
+                    <label class="control-label" style="color:red">Martes</label>
                     <select asp-for="Martes" class="form-control">
                         <option> Turno Mañana </option>
                         <option> Turno Tarde </option>
@@ -36,49 +36,70 @@
                     <span asp-validation-for="Martes" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Miercoles" class="control-label" style="color:red"></label>
-                    <input asp-for="Miercoles" class="form-control" />
+                    <label class="control-label" style="color:red">Miércoles</label>
+                    <select asp-for="Miercoles" class="form-control">
+                        <option> Turno Mañana </option>
+                        <option> Turno Tarde </option>
+                        <option> Turno Continuo </option>
+                        <option> Libre </option>
+                    </select>
                     <span asp-validation-for="Miercoles" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Jueves" class="control-label" style="color:red"></label>
-                    <input asp-for="Jueves" class="form-control" />
+                    <label class="control-label" style="color:red">Jueves</label>
+                    <select asp-for="Jueves" class="form-control">
+                        <option> Turno Mañana </option>
+                        <option> Turno Tarde </option>
+                        <option> Turno Continuo </option>
+                        <option> Libre </option>
+                    </select>
                     <span asp-validation-for="Jueves" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Viernes" class="control-label" style="color:red"></label>
-                    <input asp-for="Viernes" class="form-control" />
+                    <label class="control-label" style="color:red">Viernes</label>
+                    <select asp-for="Viernes" class="form-control">
+                        <option> Turno Mañana </option>
+                        <option> Turno Tarde </option>
+                        <option> Turno Continuo </option>
+                        <option> Libre </option>
+                    </select>
                     <span asp-validation-for="Viernes" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Sabado" class="control-label" style="color:red"></label>
-                    <input asp-for="Sabado" class="form-control" />
+                    <label class="control-label" style="color:red">Sábado</label>
+                    <select asp-for="Sabado" class="form-control">
+                        <option> Turno Mañana </option>
+                        <option> Turno Tarde </option>
+                        <option> Turno Continuo </option>
+                        <option> Libre </option>
+                    </select>
                     <span asp-validation-for="Sabado" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Mes" class="control-label" style="color:red"></label>
+                    <label class="control-label" style="color:red">Mes</label>
                     <input asp-for="Mes" class="form-control" />
                     <span asp-validation-for="Mes" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Permiso" class="control-label" style="color:red"></label>
+                    <label class="control-label" style="color:red">Permiso</label>
                     <input asp-for="Permiso" class="form-control" />
                     <span asp-validation-for="Permiso" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <input type="submit" value="Crear" class="btn btn-primary" />
                 </div>
+
             </form>
         </div>
     </div>
+    
 
     <div>
-        <a asp-action="Index">Back to List</a>
+        <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
+        <a asp-action="Index" style="color:red ">Volver a la lista</a>
     </div>
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{        await Html.RenderPartialAsync("_ValidationScriptsPartial");    }
 }
