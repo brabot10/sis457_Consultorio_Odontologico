@@ -49,7 +49,9 @@ namespace WebConsultorioOdontologico.Controllers
         // GET: Pacientes/Create
         public IActionResult Create()
         {
-            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres");
+            var personalFiltrados = _context.Personals.Where(x => x.Estado != -1).ToList();
+            ViewData["IdPersonal"] = new SelectList(personalFiltrados, "Id", "Nombres");
+            //ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres");
             return View();
         }
 
@@ -69,7 +71,9 @@ namespace WebConsultorioOdontologico.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Id", paciente.IdPersonal);
+            var personalFiltrados = _context.Personals.Where(x => x.Estado != -1).ToList();
+            ViewData["IdPersonal"] = new SelectList(personalFiltrados, "Id", "Nombres", paciente.IdPersonal);
+            //ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres", paciente.IdPersonal);
             return View(paciente);
         }
 
@@ -86,7 +90,8 @@ namespace WebConsultorioOdontologico.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres", paciente.IdPersonal);
+            var personalFiltrados = _context.Personals.Where(x => x.Estado != -1).ToList();
+            ViewData["IdPersonal"] = new SelectList(personalFiltrados, "Id", "Nombres", paciente.IdPersonal);
             return View(paciente);
         }
 
@@ -124,7 +129,8 @@ namespace WebConsultorioOdontologico.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Id", paciente.IdPersonal);
+            var personalFiltrados = _context.Personals.Where(x => x.Estado != -1).ToList();
+            ViewData["IdPersonal"] = new SelectList(personalFiltrados, "Id", "Nombres", paciente.IdPersonal);
             return View(paciente);
         }
 

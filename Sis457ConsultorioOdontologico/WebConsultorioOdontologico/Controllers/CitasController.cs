@@ -50,7 +50,14 @@ namespace WebConsultorioOdontologico.Controllers
         // GET: Citas/Create
         public IActionResult Create()
         {
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres");
+            //// Obtén todos los pacientes desde tu contexto de base de datos
+            //var todosLosPacientes = _context.Pacientes.ToList();
+
+            //// Filtra los pacientes con Estado = 1
+            //var pacientesFiltrados = todosLosPacientes.Where(x => x.Estado != -1).ToList();
+            var pacientesFiltrados = _context.Pacientes.Where(x => x.Estado != -1).ToList();
+
+            ViewData["IdPaciente"] = new SelectList(pacientesFiltrados, "Id", "Nombres");
             ViewData["IdRegistro"] = new SelectList(_context.Registros, "Id", "Valor");
             return View();
         }
@@ -71,7 +78,11 @@ namespace WebConsultorioOdontologico.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres", citum.IdPaciente);
+
+            var pacientesFiltrados = _context.Pacientes.Where(x => x.Estado != -1).ToList();
+
+            ViewData["IdPaciente"] = new SelectList(pacientesFiltrados, "Id", "Nombres", citum.IdPaciente);
+            //ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres", citum.IdPaciente);
             ViewData["IdRegistro"] = new SelectList(_context.Registros, "Id", "Valor", citum.IdRegistro);
             return View(citum);
         }
@@ -89,7 +100,10 @@ namespace WebConsultorioOdontologico.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres", citum.IdPaciente);
+            var pacientesFiltrados = _context.Pacientes.Where(x => x.Estado != -1).ToList();
+
+            ViewData["IdPaciente"] = new SelectList(pacientesFiltrados, "Id", "Nombres", citum.IdPaciente);
+            //ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres", citum.IdPaciente);
             ViewData["IdRegistro"] = new SelectList(_context.Registros, "Id", "Valor", citum.IdRegistro);
             return View(citum);
         }
@@ -128,7 +142,10 @@ namespace WebConsultorioOdontologico.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres", citum.IdPaciente);
+
+            var pacientesFiltrados = _context.Pacientes.Where(x => x.Estado != -1).ToList();
+
+            ViewData["IdPaciente"] = new SelectList(pacientesFiltrados, "Id", "Nombres", citum.IdPaciente);
             ViewData["IdRegistro"] = new SelectList(_context.Registros, "Id", "Valor", citum.IdRegistro);
             return View(citum);
         }

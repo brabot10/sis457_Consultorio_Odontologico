@@ -49,8 +49,11 @@ namespace WebConsultorioOdontologico.Controllers
         // GET: Horarios/Create
         public IActionResult Create()
         {
-            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres");
+            var personalFiltrados = _context.Personals.Where(x => x.Estado != -1).ToList();
+            ViewData["IdPersonal"] = new SelectList(personalFiltrados, "Id", "Nombres");
             return View();
+            //ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres");
+         
         }
 
         // POST: Horarios/Create
@@ -69,7 +72,8 @@ namespace WebConsultorioOdontologico.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres", horario.IdPersonal);
+            var personalFiltrados = _context.Personals.Where(x => x.Estado != -1).ToList();
+            ViewData["IdPersonal"] = new SelectList(personalFiltrados, "Id", "Nombres", horario.IdPersonal);
             return View(horario);
         }
 
@@ -86,7 +90,8 @@ namespace WebConsultorioOdontologico.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres", horario.IdPersonal);
+            var personalFiltrados = _context.Personals.Where(x => x.Estado != -1).ToList();
+            ViewData["IdPersonal"] = new SelectList(personalFiltrados, "Id", "Nombres", horario.IdPersonal);
             return View(horario);
         }
 
@@ -124,7 +129,8 @@ namespace WebConsultorioOdontologico.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdPersonal"] = new SelectList(_context.Personals, "Id", "Nombres", horario.IdPersonal);
+            var personalFiltrados = _context.Personals.Where(x => x.Estado != -1).ToList();
+            ViewData["IdPersonal"] = new SelectList(personalFiltrados, "Id", "Nombres", horario.IdPersonal);
             return View(horario);
         }
 

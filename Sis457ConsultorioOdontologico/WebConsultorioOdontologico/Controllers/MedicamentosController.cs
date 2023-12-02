@@ -50,8 +50,10 @@ namespace WebConsultorioOdontologico.Controllers
         // GET: Medicamentos/Create
         public IActionResult Create()
         {
-            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Articulo");
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres");
+            var pacientesFiltrados = _context.Pacientes.Where(x => x.Estado != -1).ToList();
+            var inventarioFiltrados = _context.Inventarios.Where(x => x.Estado != -1).ToList();
+            ViewData["IdInventario"] = new SelectList(inventarioFiltrados, "Id", "Articulo");
+            ViewData["IdPaciente"] = new SelectList(pacientesFiltrados, "Id", "Nombres");
             return View();
         }
 
@@ -71,8 +73,10 @@ namespace WebConsultorioOdontologico.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Articulo", medicamento.IdInventario);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres", medicamento.IdPaciente);
+            var pacientesFiltrados = _context.Pacientes.Where(x => x.Estado != -1).ToList();
+            var inventarioFiltrados = _context.Inventarios.Where(x => x.Estado != -1).ToList();
+            ViewData["IdInventario"] = new SelectList(inventarioFiltrados, "Id", "Articulo", medicamento.IdInventario);
+            ViewData["IdPaciente"] = new SelectList(pacientesFiltrados, "Id", "Nombres", medicamento.IdPaciente);
             return View(medicamento);
         }
 
@@ -89,8 +93,10 @@ namespace WebConsultorioOdontologico.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Articulo", medicamento.IdInventario);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres", medicamento.IdPaciente);
+            var pacientesFiltrados = _context.Pacientes.Where(x => x.Estado != -1).ToList();
+            var inventarioFiltrados = _context.Inventarios.Where(x => x.Estado != -1).ToList();
+            ViewData["IdInventario"] = new SelectList(inventarioFiltrados, "Id", "Articulo", medicamento.IdInventario);
+            ViewData["IdPaciente"] = new SelectList(pacientesFiltrados, "Id", "Nombres", medicamento.IdPaciente);
             return View(medicamento);
         }
 
@@ -128,8 +134,10 @@ namespace WebConsultorioOdontologico.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Articulo", medicamento.IdInventario);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres", medicamento.IdPaciente);
+            var pacientesFiltrados = _context.Pacientes.Where(x => x.Estado != -1).ToList();
+            var inventarioFiltrados = _context.Inventarios.Where(x => x.Estado != -1).ToList();
+            ViewData["IdInventario"] = new SelectList(inventarioFiltrados, "Id", "Articulo", medicamento.IdInventario);
+            ViewData["IdPaciente"] = new SelectList(pacientesFiltrados, "Id", "Nombres", medicamento.IdPaciente);
             return View(medicamento);
         }
 
