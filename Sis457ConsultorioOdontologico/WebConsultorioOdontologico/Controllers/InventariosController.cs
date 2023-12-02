@@ -155,6 +155,7 @@ namespace WebConsultorioOdontologico.Controllers
             if (inventario != null)
             {
                 inventario.Estado = -1;
+                inventario.UsuarioRegistro = User.Identity?.Name;
                 //_context.Inventarios.Remove(inventario);
             }
             

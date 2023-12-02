@@ -5,74 +5,77 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="mx-5">
-    <h1 style="color:red">EDITAR PERSONAL</h1>
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Edit">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="Id" />
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Nombre Completo</label>
-                    <input asp-for="Nombres" class="form-control" />
-                    <span asp-validation-for="Nombres" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Cedula de Identidad</label>
-                    <input asp-for="CedulaIdentidad" class="form-control" />
-                    <span asp-validation-for="CedulaIdentidad" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Especialidad</label>
-                    <input asp-for="Especialidad" class="form-control" />
-                    <span asp-validation-for="Especialidad" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Antiguedad</label>
-                    <input asp-for="Antiguedad" class="form-control" />
-                    <span asp-validation-for="Antiguedad" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Dirección</label>
-                    <input asp-for="Direccion" class="form-control" />
-                    <span asp-validation-for="Direccion" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Celular</label>
-                    <input asp-for="Celular" class="form-control" />
-                    <span asp-validation-for="Celular" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Cargo</label>
-                    <select asp-for="Cargo" class="form-control">
-                        <option>Doctor</option>
-                        <option>Doctora</option>
-                        <option>Pasante</option>
-                        <option>Administrador</option>
-                    </select>
-                    <span asp-validation-for="Cargo" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Estado</label>
-                    <select asp-for="Estado" class="form-select">
-                        <option value="1">Disponible</option>
-                        <option value="0">No Disponible</option>
-                    </select>
-                    <span asp-validation-for="Estado" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Guardar" class="btn btn-primary" />
-                </div>
-            </form>
+<div class="site-section site-block-3">
+    <div class="container">
+        <h1 style="color:red">EDITAR PERSONAL</h1>
+        <hr />
+        <div class="row" style="background-color: #333333">
+            <div class="col-md-12">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Nombre Completo</label>
+                        <input asp-for="Nombres" class="form-control" />
+                        <span asp-validation-for="Nombres" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Cedula de Identidad</label>
+                        <input asp-for="CedulaIdentidad" class="form-control" />
+                        <span asp-validation-for="CedulaIdentidad" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Especialidad</label>
+                        <input asp-for="Especialidad" class="form-control" />
+                        <span asp-validation-for="Especialidad" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Antiguedad</label>
+                        <input asp-for="Antiguedad" class="form-control" />
+                        <span asp-validation-for="Antiguedad" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Dirección</label>
+                        <input asp-for="Direccion" class="form-control" />
+                        <span asp-validation-for="Direccion" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Celular</label>
+                        <input asp-for="Celular" class="form-control" />
+                        <span asp-validation-for="Celular" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Cargo</label>
+                        <select asp-for="Cargo" class="form-control">
+                            <option>Doctor</option>
+                            <option>Doctora</option>
+                            <option>Pasante</option>
+                            <option>Administrador</option>
+                        </select>
+                        <span asp-validation-for="Cargo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Estado</label>
+                        <select asp-for="Estado" class="form-select">
+                            <option value="1">Disponible</option>
+                            <option value="0">No Disponible</option>
+                        </select>
+                        <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Guardar" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
+            <a asp-action="Index" style="color:red ">Volver a la lista</a>
         </div>
     </div>
-
-    <div>
-        <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
-        <a asp-action="Index" style="color:red ">Volver a la lista</a>
-    </div>
 </div>
+
 
 @section Scripts {
     @{

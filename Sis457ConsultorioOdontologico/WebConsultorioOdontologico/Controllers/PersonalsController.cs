@@ -155,6 +155,7 @@ namespace WebConsultorioOdontologico.Controllers
             if (personal != null)
             {
                 personal.Estado = -1;
+                personal.UsuarioRegistro = User.Identity?.Name;
                 //_context.Personals.Remove(personal);
             }
             

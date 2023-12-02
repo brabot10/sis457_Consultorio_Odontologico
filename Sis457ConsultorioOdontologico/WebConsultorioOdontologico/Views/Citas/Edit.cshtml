@@ -4,68 +4,71 @@
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="mx-5">
-    <h1 style="color:red">EDITAR CITA</h1>
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Edit">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="Id" />
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Nombre Completo del Paciente</label>
-                    <select asp-for="IdPaciente" class="form-control" asp-items="ViewBag.IdPaciente"></select>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Estado de la Cita</label>
-                    <select asp-for="IdRegistro" class="form-control" asp-items="ViewBag.IdRegistro"></select>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Fecha de la Cita</label>
-                    <input asp-for="Fecha" class="form-control" />
-                    <span asp-validation-for="Fecha" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Hora de la Cita</label>
-                    <input asp-for="Hora" class="form-control" />
-                    <span asp-validation-for="Hora" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Tratamiento</label>
-                    <input asp-for="Tratamiento" class="form-control" />
-                    <span asp-validation-for="Tratamiento" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Estado del Pago</label>
-                    <select asp-for="Pago" class="form-control">
-                        <option>CANCELADO</option>
-                        <option>PENDIENTE</option>
-                    </select>
-                    <span asp-validation-for="Pago" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Pago Pendiente</label>
-                    <input asp-for="ACuenta" class="form-control" />
-                    <span asp-validation-for="ACuenta" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Estado</label>
-                    <select asp-for="Estado" class="form-select">
-                        <option value="1">Disponible</option>
-                        <option value="0">No Disponible</option>
-                    </select>
-                    <span asp-validation-for="Estado" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Guardar" class="btn btn-primary" />
-                </div>
-            </form>
-        </div>
-    </div>
+<div class="site-section site-block-3">
+    <div class="container">
 
-    <div>
-        <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
-        <a asp-action="Index" style="color:red ">Volver a la lista</a>S
+        <h1 style="color:red">EDITAR CITA</h1>
+        <hr />
+        <div class="row" style="background-color: #333333">
+            <div class="col-md-12">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Nombre Completo del Paciente</label>
+                        <select asp-for="IdPaciente" class="form-control" asp-items="ViewBag.IdPaciente"></select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Estado de la Cita</label>
+                        <select asp-for="IdRegistro" class="form-control" asp-items="ViewBag.IdRegistro"></select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Fecha de la Cita</label>
+                        <input asp-for="Fecha" class="form-control" />
+                        <span asp-validation-for="Fecha" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Hora de la Cita</label>
+                        <input asp-for="Hora" class="form-control" />
+                        <span asp-validation-for="Hora" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Tratamiento</label>
+                        <input asp-for="Tratamiento" class="form-control" />
+                        <span asp-validation-for="Tratamiento" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Estado del Pago</label>
+                        <select asp-for="Pago" class="form-control">
+                            <option>CANCELADO</option>
+                            <option>PENDIENTE</option>
+                        </select>
+                        <span asp-validation-for="Pago" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Pago Pendiente</label>
+                        <input asp-for="ACuenta" class="form-control" />
+                        <span asp-validation-for="ACuenta" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Estado</label>
+                        <select asp-for="Estado" class="form-select">
+                            <option value="1">Disponible</option>
+                            <option value="0">No Disponible</option>
+                        </select>
+                        <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Guardar" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
+            <a asp-action="Index" style="color:red ">Volver a la lista</a>S
+        </div>
     </div>
 </div>
 @section Scripts {

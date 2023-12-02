@@ -160,6 +160,7 @@ namespace WebConsultorioOdontologico.Controllers
             if (horario != null)
             {
                 horario.Estado = -1;
+                horario.UsuarioRegistro = User.Identity?.Name;
                 //_context.Horarios.Remove(horario);
             }
             

@@ -5,111 +5,114 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="mx-5">
-    <h1 style="color:red">EDITAR HORARIO</h1>
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Edit">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="Id" />
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Nombre del Doctor</label>
-                    <select asp-for="IdPersonal" class="form-control" asp-items="ViewBag.IdPersonal"></select>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Lunes</label>
-                    <select asp-for="Lunes" class="form-control">
-                        <option> Turno Mañana </option>
-                        <option> Turno Tarde </option>
-                        <option> Turno Continuo </option>
-                        <option> Libre </option>
-                    </select>
-                    <span asp-validation-for="Lunes" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Martes</label>
-                    <select asp-for="Martes" class="form-control">
-                        <option> Turno Mañana </option>
-                        <option> Turno Tarde </option>
-                        <option> Turno Continuo </option>
-                        <option> Libre </option>
-                    </select>
-                    <span asp-validation-for="Martes" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Miércoles</label>
-                    <select asp-for="Miercoles" class="form-control">
-                        <option> Turno Mañana </option>
-                        <option> Turno Tarde </option>
-                        <option> Turno Continuo </option>
-                        <option> Libre </option>
-                    </select>
-                    <span asp-validation-for="Miercoles" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Jueves</label>
-                    <select asp-for="Jueves" class="form-control">
-                        <option> Turno Mañana </option>
-                        <option> Turno Tarde </option>
-                        <option> Turno Continuo </option>
-                        <option> Libre </option>
-                    </select>
-                    <span asp-validation-for="Jueves" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Viernes</label>
-                    <select asp-for="Viernes" class="form-control">
-                        <option> Turno Mañana </option>
-                        <option> Turno Tarde </option>
-                        <option> Turno Continuo </option>
-                        <option> Libre </option>
-                    </select>
-                    <span asp-validation-for="Viernes" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Sábado</label>
-                    <select asp-for="Sabado" class="form-control">
-                        <option> Turno Mañana </option>
-                        <option> Turno Tarde </option>
-                        <option> Turno Continuo </option>
-                        <option> Libre </option>
-                    </select>
-                    <span asp-validation-for="Sabado" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Mes</label>
-                    <input asp-for="Mes" class="form-control" />
-                    <span asp-validation-for="Mes" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Permiso</label>
-                    <input asp-for="Permiso" class="form-control" />
-                    <span asp-validation-for="Permiso" class="text-danger"></span>
-                </div>
-                <input type="hidden" asp-for="UsuarioRegistro" />
-                <input type="hidden" asp-for="FechaRegistro" />
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Estado</label>
-                    <select asp-for="Estado" class="form-select">
-                        <option value="1">Disponible</option>
-                        <option value="0">No Disponible</option>
-                    </select>
-                    <span asp-validation-for="Estado" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Guardar" class="btn btn-primary" />
-                </div>
+<div class="site-section site-block-3">
+    <div class="container">
+        <h1 style="color:red">EDITAR HORARIO</h1>
+        <hr />
+        <div class="row" style="background-color: #333333">
+            <div class="col-md-12">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Nombre del Doctor</label>
+                        <select asp-for="IdPersonal" class="form-control" asp-items="ViewBag.IdPersonal"></select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Lunes</label>
+                        <select asp-for="Lunes" class="form-control">
+                            <option> Turno Mañana </option>
+                            <option> Turno Tarde </option>
+                            <option> Turno Continuo </option>
+                            <option> Libre </option>
+                        </select>
+                        <span asp-validation-for="Lunes" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Martes</label>
+                        <select asp-for="Martes" class="form-control">
+                            <option> Turno Mañana </option>
+                            <option> Turno Tarde </option>
+                            <option> Turno Continuo </option>
+                            <option> Libre </option>
+                        </select>
+                        <span asp-validation-for="Martes" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Miércoles</label>
+                        <select asp-for="Miercoles" class="form-control">
+                            <option> Turno Mañana </option>
+                            <option> Turno Tarde </option>
+                            <option> Turno Continuo </option>
+                            <option> Libre </option>
+                        </select>
+                        <span asp-validation-for="Miercoles" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Jueves</label>
+                        <select asp-for="Jueves" class="form-control">
+                            <option> Turno Mañana </option>
+                            <option> Turno Tarde </option>
+                            <option> Turno Continuo </option>
+                            <option> Libre </option>
+                        </select>
+                        <span asp-validation-for="Jueves" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Viernes</label>
+                        <select asp-for="Viernes" class="form-control">
+                            <option> Turno Mañana </option>
+                            <option> Turno Tarde </option>
+                            <option> Turno Continuo </option>
+                            <option> Libre </option>
+                        </select>
+                        <span asp-validation-for="Viernes" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Sábado</label>
+                        <select asp-for="Sabado" class="form-control">
+                            <option> Turno Mañana </option>
+                            <option> Turno Tarde </option>
+                            <option> Turno Continuo </option>
+                            <option> Libre </option>
+                        </select>
+                        <span asp-validation-for="Sabado" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Mes</label>
+                        <input asp-for="Mes" class="form-control" />
+                        <span asp-validation-for="Mes" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Permiso</label>
+                        <input asp-for="Permiso" class="form-control" />
+                        <span asp-validation-for="Permiso" class="text-danger"></span>
+                    </div>
+                    <input type="hidden" asp-for="UsuarioRegistro" />
+                    <input type="hidden" asp-for="FechaRegistro" />
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Estado</label>
+                        <select asp-for="Estado" class="form-select">
+                            <option value="1">Disponible</option>
+                            <option value="0">No Disponible</option>
+                        </select>
+                        <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Guardar" class="btn btn-primary" />
+                    </div>
 
-            </form>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
+            <a asp-action="Index" style="color:red ">Volver a la lista</a>
         </div>
     </div>
-
-    <div>
-        <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
-        <a asp-action="Index" style="color:red ">Volver a la lista</a>
-    </div>
 </div>
+
 
 @section Scripts {
     @{

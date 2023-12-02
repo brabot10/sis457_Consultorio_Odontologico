@@ -5,66 +5,69 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="mx-5">
-    <h1>Eliminar Medicamento</h1>
-    <h3>Estas seguro de eliminar el Medicamento?</h3>
-    <div>
-        <hr />
-        <dl class="row">
-            <dt class="col-sm-2" style="color:red">
-                Nombre del Artículo
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.IdInventarioNavigation.Articulo)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Nombre del Paciente
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.IdPacienteNavigation.Nombres)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Cantidad
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Cantidad)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Descipción
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Descripcion)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-               Total
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Total)
-            <dt class="col-sm-2" style="color:red">
-                Usuario de Registro
-            </dt>
-            <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.UsuarioRegistro)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Fecha de Registro
-            </dt>
-            <dd class="col-sm-10">
-                    @Model.FechaRegistro.ToLongDateString() @Model.FechaRegistro.ToShortTimeString()
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Estado
-            </dt>
-            <dd class="col-sm-10">
-                    @(Model.Estado == 1 ? "Disponible" : "Nodisponible")
-            </dd>
-        </dl>
+<div class="site-section site-block-3">
+    <div class="container">
 
-        <form asp-action="Delete">
-            <input type="hidden" asp-for="Id" />
-            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-            <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
-            <a asp-action="Index">Volver a la lista</a>
-        </form>
+        <h1 style="color:red">ELIMINAR MEDICAMENTO</h1>
+        <h3 style="color:red">Estas seguro de eliminar el Medicamento?</h3>
+        <div>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2" style="color:red">
+                    Nombre del Artículo
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.IdInventarioNavigation.Articulo)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Nombre del Paciente
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.IdPacienteNavigation.Nombres)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Cantidad
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Cantidad)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Descipción
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Descripcion)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Total
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Total)
+                <dt class="col-sm-2" style="color:red">
+                    Usuario de Registro
+                </dt>
+                <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.UsuarioRegistro)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Fecha de Registro
+                </dt>
+                <dd class="col-sm-10">
+                        @Model.FechaRegistro.ToLongDateString() @Model.FechaRegistro.ToShortTimeString()
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Estado
+                </dt>
+                <dd class="col-sm-10">
+                        @(Model.Estado == 1 ? "Disponible" : "Nodisponible")
+                </dd>
+            </dl>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
+                <a asp-action="Index">Volver a la lista</a>
+            </form>
+        </div>
     </div>
 </div>

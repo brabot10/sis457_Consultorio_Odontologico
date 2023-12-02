@@ -5,57 +5,60 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="mx-5">
-    <h1 style="color:red">EDITAR MEDICAMENTO</h1>
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Edit">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="Id" />
-                <div class="form-group">
-                    <label class="control-label" style="color:red"> Nombre completo del Paciente</label>
-                    <select asp-for="IdPaciente" class="form-control" asp-items="ViewBag.IdPaciente"></select>
-                    <span asp-validation-for="IdPaciente" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Nombre del Artículo</label>
-                    <select asp-for="IdInventario" class="form-control" asp-items="ViewBag.IdInventario"></select>
-                    <span asp-validation-for="IdInventario" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Cantidad</label>
-                    <input asp-for="Cantidad" class="form-control" />
-                    <span asp-validation-for="Cantidad" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Descripción</label>
-                    <input asp-for="Descripcion" class="form-control" />
-                    <span asp-validation-for="Descripcion" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Total</label>
-                    <input asp-for="Total" class="form-control" />
-                    <span asp-validation-for="Total" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Estado</label>
-                    <select asp-for="Estado" class="form-select">
-                        <option value="1">Disponible</option>
-                        <option value="0">No Disponible</option>
-                    </select>
-                    <span asp-validation-for="Estado" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Guardar" class="btn btn-primary" />
-                </div>
-            </form>
-        </div>
-    </div>
+<div class="site-section site-block-3">
+    <div class="container">
 
-    <div>
-        <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
-        <a asp-action="Index" style="color:red ">Volver a la lista</a>
+        <h1 style="color:red">EDITAR MEDICAMENTO</h1>
+        <hr />
+        <div class="row" style="background-color: #333333">
+            <div class="col-md-12">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label class="control-label" style="color:red"> Nombre completo del Paciente</label>
+                        <select asp-for="IdPaciente" class="form-control" asp-items="ViewBag.IdPaciente"></select>
+                        <span asp-validation-for="IdPaciente" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Nombre del Artículo</label>
+                        <select asp-for="IdInventario" class="form-control" asp-items="ViewBag.IdInventario"></select>
+                        <span asp-validation-for="IdInventario" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Cantidad</label>
+                        <input asp-for="Cantidad" class="form-control" />
+                        <span asp-validation-for="Cantidad" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Descripción</label>
+                        <input asp-for="Descripcion" class="form-control" />
+                        <span asp-validation-for="Descripcion" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Total</label>
+                        <input asp-for="Total" class="form-control" />
+                        <span asp-validation-for="Total" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Estado</label>
+                        <select asp-for="Estado" class="form-select">
+                            <option value="1">Disponible</option>
+                            <option value="0">No Disponible</option>
+                        </select>
+                        <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Guardar" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
+            <a asp-action="Index" style="color:red ">Volver a la lista</a>
+        </div>
     </div>
 </div>
 @section Scripts {

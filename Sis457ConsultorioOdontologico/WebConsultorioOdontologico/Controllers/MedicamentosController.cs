@@ -166,6 +166,7 @@ namespace WebConsultorioOdontologico.Controllers
             if (medicamento != null)
             {
                 medicamento.Estado = -1;
+                medicamento.UsuarioRegistro = User.Identity?.Name;
                 //_context.Medicamentos.Remove(medicamento);
             }
             

@@ -5,80 +5,82 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="mx-5">
-    <h1 style="color:red">Eliminar Personal</h1>
+<div class="site-section site-block-3">
+    <div class="container">
+        <h1 style="color:red">ELIMINAR PERSONAL</h1>
 
-    <h3 style="color:red">Esta seguro de eliminar Personal?</h3>
-    <div>
-        <hr />
-        <dl class="row">
-            <dt class="col-sm-2" style="color:red">
-                Nombre del Doctor
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Nombres)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Cédula de Identidad
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.CedulaIdentidad)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Especialidad
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Especialidad)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Antiguedad en la Clínica
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Antiguedad)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Dirección
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Direccion)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Celular
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Celular)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Cargo
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Cargo)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Usuario de Registro
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.UsuarioRegistro)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Fecha de Registro
-            </dt>
-            <dd class="col-sm-10">
-                @Model.FechaRegistro.ToLongDateString() @Model.FechaRegistro.ToShortTimeString()
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Estado
-            </dt>
-            <dd class="col-sm-10">
-                @(Model.Estado == 1 ? "Disponible" : "No disponible")
-            </dd>
-        </dl>
+        <h3 style="color:red">Esta seguro de eliminar Personal?</h3>
+        <div>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2" style="color:red">
+                    Nombre del Doctor
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Nombres)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Cédula de Identidad
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CedulaIdentidad)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Especialidad
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Especialidad)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Antiguedad en la Clínica
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Antiguedad)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Dirección
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Direccion)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Celular
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Celular)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Cargo
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Cargo)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Usuario de Registro
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.UsuarioRegistro)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Fecha de Registro
+                </dt>
+                <dd class="col-sm-10">
+                    @Model.FechaRegistro.ToLongDateString() @Model.FechaRegistro.ToShortTimeString()
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Estado
+                </dt>
+                <dd class="col-sm-10">
+                    @(Model.Estado == 1 ? "Disponible" : "No disponible")
+                </dd>
+            </dl>
 
-        <form asp-action="Delete">
-            <input type="hidden" asp-for="Id" />
-            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-            <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
-            <a asp-action="Index">Volver a la lista</a>
-        </form>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
+                <a asp-action="Index">Volver a la lista</a>
+            </form>
+        </div>
     </div>
 </div>

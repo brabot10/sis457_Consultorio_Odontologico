@@ -5,92 +5,95 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="mx-5">
-    <h1 style="color:red">Eliminar Horario</h1>
+<div class="site-section site-block-3">
+    <div class="container">
+        <h1 style="color:red">ELIMINAR HORARIO </h1>
 
-    <h3 style="color:red">¿Esta seguro que desea eliminar el Horario?</h3>
-    <div>
-        <hr />
-        <dl class="row">
-            <dt class="col-sm-2" style="color:red">
-                Nombre del Doctor
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.IdPersonalNavigation.Nombres)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Lunes
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Lunes)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Martes
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Martes)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Miércoles
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Miercoles)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Jueves
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Jueves)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Viernes
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Viernes)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Sábado
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Sabado)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Mes
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Mes)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Permiso
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Permiso)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Usuario de Registro
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.UsuarioRegistro)
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Fecha de Registro
-            </dt>
-            <dd class="col-sm-10">
-                @Model.FechaRegistro.ToLongDateString() @Model.FechaRegistro.ToShortTimeString()
-            </dd>
-            <dt class="col-sm-2" style="color:red">
-                Estado
-            </dt>
-            <dd class="col-sm-10">
-                @(Model.Estado == 1 ? "Disponible" : "No disponible")
-            </dd>
-        </dl>
+        <h3 style="color:red">¿Esta seguro que desea eliminar el Horario?</h3>
+        <div>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2" style="color:red">
+                    Nombre del Doctor
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.IdPersonalNavigation.Nombres)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Lunes
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Lunes)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Martes
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Martes)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Miércoles
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Miercoles)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Jueves
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Jueves)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Viernes
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Viernes)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Sábado
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Sabado)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Mes
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Mes)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Permiso
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Permiso)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Usuario de Registro
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.UsuarioRegistro)
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Fecha de Registro
+                </dt>
+                <dd class="col-sm-10">
+                    @Model.FechaRegistro.ToLongDateString() @Model.FechaRegistro.ToShortTimeString()
+                </dd>
+                <dt class="col-sm-2" style="color:red">
+                    Estado
+                </dt>
+                <dd class="col-sm-10">
+                    @(Model.Estado == 1 ? "Disponible" : "No disponible")
+                </dd>
+            </dl>
 
-        <form asp-action="Delete">
-            <input type="hidden" asp-for="Id" />
-            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-            <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
-            <a asp-action="Index">Volver a la lista</a>
-        </form>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
+                <a asp-action="Index">Volver a la lista</a>
+            </form>
+        </div>
     </div>
 </div>
+

@@ -160,6 +160,7 @@ namespace WebConsultorioOdontologico.Controllers
             if (paciente != null)
             {
                 paciente.Estado = -1;
+                paciente.UsuarioRegistro = User.Identity?.Name;
                 //_context.Pacientes.Remove(paciente);
             }
             

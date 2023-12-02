@@ -166,6 +166,7 @@ namespace WebConsultorioOdontologico.Controllers
             if (citum != null)
             {
                 citum.Estado = -1;
+                citum.UsuarioRegistro = User.Identity?.Name;
                 //_context.Cita.Remove(citum);
             }
             

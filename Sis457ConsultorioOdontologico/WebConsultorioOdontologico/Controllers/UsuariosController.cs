@@ -63,7 +63,7 @@ namespace WebConsultorioOdontologico.Controllers
             if (!string.IsNullOrEmpty(usuario.Usuario1))
             {
                 usuario.Clave = Util.Encrypt("dental");
-                usuario.UsuarioRegistro = "sis457";
+                usuario.UsuarioRegistro = User.Identity?.Name; 
                 usuario.FechaRegistro = DateTime.Now;
                 usuario.Estado = 1;
                 _context.Add(usuario);
@@ -108,7 +108,7 @@ namespace WebConsultorioOdontologico.Controllers
                 try
                 {
                     usuario.Clave = Util.Encrypt("dental");
-                    usuario.UsuarioRegistro = "sis457";
+                    usuario.UsuarioRegistro = User.Identity?.Name;
                     usuario.FechaRegistro = DateTime.Now;
                     _context.Update(usuario);
                     await _context.SaveChangesAsync();
@@ -162,6 +162,7 @@ namespace WebConsultorioOdontologico.Controllers
             if (usuario != null)
             {
                 usuario.Estado = -1;
+                usuario.UsuarioRegistro = User.Identity?.Name;
                 //_context.Usuarios.Remove(usuario);
             }
             

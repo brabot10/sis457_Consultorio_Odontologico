@@ -5,36 +5,41 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="mx-5">
-    <h1 style="color:red">CREAR NUEVO ARTÍCULO</h1>
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Nombre del Artículo</label>
-                    <input asp-for="Articulo" class="form-control" />
-                    <span asp-validation-for="Articulo" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" style="color:red">Precio del Artículo</label>
-                    <input asp-for="Precio" class="form-control" />
-                    <span asp-validation-for="Precio" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Crear" class="btn btn-primary" />
-                </div>
-            </form>
-        </div>
-    </div>
+<div class="site-section site-block-3">
+    <div class="container">
 
-    <div>
-        <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
-        <a asp-action="Index" style="color:red ">Volver a la lista</a>
+        <h1 style="color:red">CREAR NUEVO ARTÍCULO</h1>
+        <hr />
+        <div class="row" style="background-color: #333333">
+            <div class="col-md-12">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Nombre del Artículo</label>
+                        <input asp-for="Articulo" class="form-control" />
+                        <span asp-validation-for="Articulo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="color:red">Precio del Artículo</label>
+                        <input asp-for="Precio" class="form-control" />
+                        <span asp-validation-for="Precio" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Crear" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <i class="fas fa-share fa-flip-horizontal" style="color:red "></i>
+            <a asp-action="Index" style="color:red ">Volver a la lista</a>
+        </div>
     </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
