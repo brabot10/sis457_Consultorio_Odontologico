@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -61,6 +62,22 @@ namespace WebConsultorioOdontologico.Controllers
         {
             if (!string.IsNullOrEmpty(personal.Nombres))
             {
+                if (!Regex.IsMatch(personal.Nombres, "^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ()\\s]+$"))
+                {
+                    ModelState.AddModelError(nameof(personal.Nombres), "El campo Nombres solo puede contener letras");
+                }
+                if (!Regex.IsMatch(personal.Celular.ToString(), "^\\d+$"))
+                {
+                    ModelState.AddModelError(nameof(personal.Celular), "El campo Celular debe contener solo números");
+                }
+                var pacienteExistente = await _context.Personals
+                    .FirstOrDefaultAsync(x => x.CedulaIdentidad == personal.CedulaIdentidad && x.Estado != -1);
+
+                if (pacienteExistente != null)
+                {
+                    ModelState.AddModelError("CedulaIdentidad", "Ya existe un personal con la mismo cédula  de identidad.");
+                    return View(personal);
+                }
                 personal.UsuarioRegistro = User.Identity?.Name;
                 personal.FechaRegistro = DateTime.Now;
                 personal.Estado = 1;

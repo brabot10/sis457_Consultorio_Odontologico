@@ -69,8 +69,24 @@ namespace WebConsultorioOdontologico.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IdPaciente,IdRegistro,Fecha,Hora,Tratamiento,Pago,ACuenta")] Citum citum)
         {
+
+            var pacientesFiltrados = _context.Pacientes.Where(x => x.Estado != -1).ToList();
             if (!string.IsNullOrEmpty(citum.Tratamiento))
             {
+                if (citum.Fecha.Date < DateTime.Now.Date)
+                {
+                    ModelState.AddModelError(nameof(citum.Fecha), "La fecha de consulta no puede ser anterior a la fecha actual");
+                }
+                var citaExistente = await _context.Cita
+                .FirstOrDefaultAsync(x => x.Fecha == citum.Fecha && x.Hora == citum.Hora && x.Estado != -1);
+
+                if (citaExistente != null)
+                {
+                    ModelState.AddModelError(nameof(citum.Hora), "Ya existe una cita en ese horario.");
+                    ViewData["IdPaciente"] = new SelectList(pacientesFiltrados, "Id", "Nombres", citum.IdPaciente);
+                    ViewData["IdRegistro"] = new SelectList(_context.Registros, "Id", "Valor", citum.IdRegistro);
+                    return View(citum);
+                }
                 citum.UsuarioRegistro = User.Identity?.Name;
                 citum.FechaRegistro = DateTime.Now;
                 citum.Estado = 1;
@@ -79,10 +95,8 @@ namespace WebConsultorioOdontologico.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            var pacientesFiltrados = _context.Pacientes.Where(x => x.Estado != -1).ToList();
 
             ViewData["IdPaciente"] = new SelectList(pacientesFiltrados, "Id", "Nombres", citum.IdPaciente);
-            //ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Nombres", citum.IdPaciente);
             ViewData["IdRegistro"] = new SelectList(_context.Registros, "Id", "Valor", citum.IdRegistro);
             return View(citum);
         }

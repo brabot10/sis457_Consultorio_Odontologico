@@ -65,6 +65,10 @@ namespace WebConsultorioOdontologico.Controllers
         {
             if (!string.IsNullOrEmpty(horario.Lunes))
             {
+                if (horario.Permiso.Date < DateTime.Now.Date)
+                {
+                    ModelState.AddModelError(nameof(horario.Permiso), "La Permiso no puede ser anterior a la fecha actual");
+                }
                 horario.UsuarioRegistro = User.Identity?.Name;
                 horario.FechaRegistro = DateTime.Now;
                 horario.Estado = 1;

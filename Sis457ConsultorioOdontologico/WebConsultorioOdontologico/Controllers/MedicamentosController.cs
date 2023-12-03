@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -66,6 +67,14 @@ namespace WebConsultorioOdontologico.Controllers
         {
             if (!string.IsNullOrEmpty(medicamento.Descripcion))
             {
+                if (!Regex.IsMatch(medicamento.Cantidad.ToString(), "^\\d+$"))
+                {
+                    ModelState.AddModelError(nameof(medicamento.Cantidad), "El campo Cantidad debe contener solo números");
+                }
+                if (!Regex.IsMatch(medicamento.Total.ToString(), "^\\d+$"))
+                {
+                    ModelState.AddModelError(nameof(medicamento.Total), "El campo Total debe contener solo números");
+                }
                 medicamento.UsuarioRegistro = User.Identity?.Name;
                 medicamento.FechaRegistro = DateTime.Now;
                 medicamento.Estado = 1;

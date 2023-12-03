@@ -61,8 +61,18 @@ namespace WebConsultorioOdontologico.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IdPersonal,Usuario1")] Usuario usuario)
         {
+            var personalFiltrados = _context.Personals.Where(x => x.Estado != -1).ToList();
             if (!string.IsNullOrEmpty(usuario.Usuario1))
             {
+                var usuarioExistente = await _context.Usuarios
+                    .FirstOrDefaultAsync(x => x.Usuario1 == usuario.Usuario1 && x.Estado != -1);
+
+                if (usuarioExistente != null)
+                {
+                    ModelState.AddModelError("Usuario1", "Ya existe un usuario con el mismo identificador.");
+                    ViewData["IdPersonal"] = new SelectList(personalFiltrados, "Id", "Nombres", usuario.IdPersonal);
+                    return View(usuario);
+                }
                 usuario.Clave = Util.Encrypt("dental");
                 usuario.UsuarioRegistro = User.Identity?.Name; 
                 usuario.FechaRegistro = DateTime.Now;
@@ -71,7 +81,7 @@ namespace WebConsultorioOdontologico.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            var personalFiltrados = _context.Personals.Where(x => x.Estado != -1).ToList();
+
             ViewData["IdPersonal"] = new SelectList(personalFiltrados, "Id", "Nombres", usuario.IdPersonal);
             return View(usuario);
         }

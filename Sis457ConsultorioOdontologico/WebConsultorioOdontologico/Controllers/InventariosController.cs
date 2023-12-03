@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -23,9 +24,9 @@ namespace WebConsultorioOdontologico.Controllers
         // GET: Inventarios
         public async Task<IActionResult> Index()
         {
-              return _context.Inventarios != null ? 
-                          View(await _context.Inventarios.Where(x => x.Estado != -1).ToListAsync()) :
-                          Problem("Entity set 'LabConsultorioOdontologicoContext.Inventarios'  is null.");
+            return _context.Inventarios != null ?
+                        View(await _context.Inventarios.Where(x => x.Estado != -1).ToListAsync()) :
+                        Problem("Entity set 'LabConsultorioOdontologicoContext.Inventarios'  is null.");
         }
 
         // GET: Inventarios/Details/5
@@ -61,6 +62,18 @@ namespace WebConsultorioOdontologico.Controllers
         {
             if (!string.IsNullOrEmpty(inventario.Articulo))
             {
+                if (!Regex.IsMatch(inventario.Precio.ToString(), "^\\d+$"))
+                {
+                    ModelState.AddModelError(nameof(inventario.Precio), "El campo Precio debe contener solo números");
+                }
+                var inventarioExistente = await _context.Inventarios
+                    .FirstOrDefaultAsync(x => x.Articulo == inventario.Articulo && x.Estado != -1);
+                if (inventarioExistente != null)
+                {
+                    ModelState.AddModelError("Articulo", "Ya existe un Articulo con el mismo nombre.");
+                    return View(inventario);
+                }
+
                 inventario.UsuarioRegistro = User.Identity?.Name;
                 inventario.FechaRegistro = DateTime.Now;
                 inventario.Estado = 1;
@@ -158,14 +171,14 @@ namespace WebConsultorioOdontologico.Controllers
                 inventario.UsuarioRegistro = User.Identity?.Name;
                 //_context.Inventarios.Remove(inventario);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool InventarioExists(int id)
         {
-          return (_context.Inventarios?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Inventarios?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
