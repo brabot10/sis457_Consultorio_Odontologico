@@ -52,7 +52,7 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label" style="color:red">Fecha de Nacimiento</label>
-                        <input asp-for="FechaNacimiento" class="form-control" />
+                        <input asp-for="FechaNacimiento" class="form-control" type="date" onblur="validateDate(event)" />
                         <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
                     </div>
                     <div class="form-group">
@@ -61,7 +61,7 @@
                         <span asp-validation-for="Celular" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Crear" class="btn btn-primary" style="transition: transform 0.2s ease-in-out;" onmouseover="this.style.transform='translateY(-5px)'" />
+                        <input type="submit" value="Crear" class="btn btn-primary" style="transition: transform 0.2s ease-in-out;" onmouseover="this.style.transform='translateY(-5px)'"/>
                     </div>
                 </form>
             </div>

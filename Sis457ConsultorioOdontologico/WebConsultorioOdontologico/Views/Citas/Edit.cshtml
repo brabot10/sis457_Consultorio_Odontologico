@@ -24,12 +24,12 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label" style="color:red">Fecha de la Cita</label>
-                        <input asp-for="Fecha" class="form-control" />
+                        <input asp-for="Fecha" class="form-control" type="date" onblur="validateFutureDate(event)" />
                         <span asp-validation-for="Fecha" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label class="control-label" style="color:red">Hora de la Cita</label>
-                        <input asp-for="Hora" class="form-control" />
+                        <input asp-for="Hora" class="form-control" type="time" />
                         <span asp-validation-for="Hora" class="text-danger"></span>
                     </div>
                     <div class="form-group">
