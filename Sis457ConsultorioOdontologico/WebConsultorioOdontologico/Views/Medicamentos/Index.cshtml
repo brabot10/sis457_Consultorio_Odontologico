@@ -12,8 +12,37 @@
     <p>
         <a asp-action="Create">
             <i class="fas fa-folder-plus me-6" style="transition: transform 0.2s ease-in-out;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">Crear nuevo Medicamento</i>
-           </a>
+        </a>
     </p>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 text-center">
+                <div class="card text-white bg-danger mb-3 " >
+                    <img src="@item.Descripcion" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">
+                            PACIENTE: @item.IdPacienteNavigation.Nombres
+                        </p>
+                        <p class="card-text">
+                            RECETA: @item.IdInventarioNavigation.Articulo
+                        </p>
+                        <p class="card-text">
+                            CANTIDAD: @item.Cantidad
+                        </p>
+                        <p class="card-text">
+                            TOTAL: @item.Total   Bs.
+                        </p>
+                        <div align="center">
+                            <a asp-action="Details" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ver"><i class="fas fa-eye me-2" style="transition: transform 0.2s ease-in-out; color: black" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'"></i></a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editar"><i class="fas fa-edit me-2" style="transition: transform 0.2s ease-in-out; color: black" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'"></i></a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Eliminar"><i class="fas fa-trash me-2" style="transition: transform 0.2s ease-in-out; color: black" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
     <table class="table">
         <tbody>
         <thead>
@@ -21,7 +50,7 @@
                 <th style="color : #C7180C">Artículo</th>
                 <th style="color : #C7180C">Nombre del Paciente</th>
                 <th style="color : #C7180C">Cantidad</th>
-                <th style="color : #C7180C">Descripción</th>
+                @* <th style="color : #C7180C">Descripción</th> *@
                 <th style="color : #C7180C">Total</th>
                 <th style="color : #C7180C">Usuario del Registro</th>
                 <th style="color : #C7180C">Fecha del Registro</th>
@@ -31,29 +60,29 @@
         </thead>
         <tbody>
         <tbody>
-            @foreach (var item in Model)
-            {
+                    @foreach (var item in Model)
+                    {
                 <tr style="background-color: #333333">
                     <td style="color : white">
-                         @item.IdInventarioNavigation.Articulo
+                                @item.IdInventarioNavigation.Articulo
                     </td>
                     <td style="color : white">
-                          @item.IdPacienteNavigation.Nombres
+                                @item.IdPacienteNavigation.Nombres
                     </td>
                     <td style="color : white">
-                        @Html.DisplayFor(modelItem => item.Cantidad)
+                                @Html.DisplayFor(modelItem => item.Cantidad)
+                    </td>
+@*                     <td style="color : white">
+                                @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td> *@
+                    <td style="color : white">
+                                @Html.DisplayFor(modelItem => item.Total)
                     </td>
                     <td style="color : white">
-                        @Html.DisplayFor(modelItem => item.Descripcion)
+                                @Html.DisplayFor(modelItem => item.UsuarioRegistro)
                     </td>
                     <td style="color : white">
-                        @Html.DisplayFor(modelItem => item.Total)
-                    </td>
-                    <td style="color : white">
-                        @Html.DisplayFor(modelItem => item.UsuarioRegistro)
-                    </td>
-                    <td style="color : white">
-                        @Html.DisplayFor(modelItem => item.FechaRegistro)
+                                @Html.DisplayFor(modelItem => item.FechaRegistro)
                     </td>
                     <td style="color : white">
                                 @(item.Estado == 1 ? "Disponible" : "No disponible")
@@ -64,7 +93,7 @@
                         <a asp-action="Delete" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Eliminar"><i class="fas fa-trash me-2" style="transition: transform 0.2s ease-in-out;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'"></i></a>
                     </td>
                 </tr>
-            }
+                    }
         </tbody>
     </table>
 </div>
