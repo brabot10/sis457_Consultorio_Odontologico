@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadConsultorioOdontologico"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClnConsultorioOdontologico", "ClnConsultorioOdontologico\ClnConsultorioOdontologico.csproj", "{376BE4A5-C10F-47E3-BC26-46DB2653D912}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebConsultorioOdontologico", "WebConsultorioOdontologico\WebConsultorioOdontologico.csproj", "{1BA9CAA7-2CD2-4F7F-9B48-992BD938FE8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebConsultorioOdontologico", "WebConsultorioOdontologico\WebConsultorioOdontologico.csproj", "{1BA9CAA7-2CD2-4F7F-9B48-992BD938FE8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
